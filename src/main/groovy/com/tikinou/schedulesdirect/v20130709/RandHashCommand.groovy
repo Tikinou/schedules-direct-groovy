@@ -42,7 +42,7 @@ class RandHashCommand extends Command{
             api apiVersion.value
             object "randhash"
         }
-        return jsonRequest.toString()
+        jsonRequest.toString()
     }
 
     protected void processResult(resultData, success){

@@ -17,13 +17,36 @@
 package com.tikinou.schedulesdirect.v20130709
 
 import com.tikinou.schedulesdirect.Command
+import com.tikinou.schedulesdirect.CommandStatus
+import groovy.json.JsonBuilder
+import org.codehaus.groovy.GroovyException
 
 /**
  * @author: Sebastien Astie
  */
 class StatusCommand extends Command{
     @Override
-    protected prepareJsonRequestData(Object credentials) {
-        return null
+    protected prepareJsonRequestData(credentials) {
+        failIfUnathenticated(credentials)
+        def jsonRequest = new JsonBuilder()
+        jsonRequest {
+            randhash credentials.randhash
+            action action.name().toLowerCase()
+            api apiVersion.value
+            object "status"
+        }
+        jsonRequest.toString()
+    }
+
+    protected void processResult(resultData, success){
+        if(resultData.response == "OK"){
+            status = CommandStatus.SUCCESS
+            results = resultData
+            println resultData
+        } else {
+            status = CommandStatus.FAILURE
+            results = resultData
+            println "ERROR " + resultData
+        }
     }
 }

@@ -53,7 +53,7 @@ class Client {
             throw new GroovyException("Could not login to schedules direct. response was:" + cmd.results)
     }
 
-    def execute(Command command){
+    void execute(Command command){
         command.execute(this)
     }
 

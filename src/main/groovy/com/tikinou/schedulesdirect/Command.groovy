@@ -51,10 +51,14 @@ abstract class Command {
             }
 
         }
-
     }
 
     protected abstract def prepareJsonRequestData(credentials)
 
     protected void processResult(resultData, success){}
+
+    protected void failIfUnathenticated(credentials){
+        if(credentials.randhash == null)
+            throw new AuthenticationException("Not authenticated")
+    }
 }
