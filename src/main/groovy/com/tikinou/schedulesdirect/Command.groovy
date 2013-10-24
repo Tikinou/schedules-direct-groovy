@@ -34,7 +34,7 @@ abstract class Command {
     void execute(client) {
         status = CommandStatus.RUNNING
         def jsonRequest = prepareJsonRequestData(client.credentials)
-        def postBody = "request=" + URLEncoder.encode(jsonRequest.toString(), "UTF-8")
+        def postBody = "request=" + URLEncoder.encode(jsonRequest, "UTF-8")
         // this is a post request setup
         client.httpBuilder.request(Method.POST) {
             uri.path = client.endpoint
