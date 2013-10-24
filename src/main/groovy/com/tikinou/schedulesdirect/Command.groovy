@@ -16,16 +16,46 @@
 
 package com.tikinou.schedulesdirect
 
+import groovy.json.JsonSlurper
+import groovyx.net.http.ContentType
+import groovyx.net.http.Method
+
 /**
  * @author: Sebastien Astie
  */
-class Command {
+abstract class Command {
     ActionType action
     SchedulesDirectApiVersion apiVersion
 
     def parameters
-    def status
+    def status = CommandStatus.NONE
     def results
 
-    void execute(){}
+    void execute(client) {
+        status = CommandStatus.RUNNING
+        def jsonRequest = prepareJsonRequestData(client.credentials)
+        def postBody = "request=" + URLEncoder.encode(jsonRequest.toString(), "UTF-8")
+        // this is a post request setup
+        client.httpBuilder.request(Method.POST) {
+            uri.path = client.endpoint
+            requestContentType = ContentType.URLENC
+            body = postBody
+            response.success = { resp, json ->
+                def slurp = new JsonSlurper()
+                results = slurp.parseText(json.text())
+                if(results.response == "OK")
+                    status = CommandStatus.SUCCESS
+                else
+                    status = CommandStatus.FAILURE
+            }
+            response.failure = { resp ->
+                status = CommandStatus.FAILURE
+                results = resp.text()
+            }
+
+        }
+
+    }
+
+    protected abstract def prepareJsonRequestData(credentials)
 }

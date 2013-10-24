@@ -25,6 +25,7 @@ public enum ObjectTypes {
     MESSAGE,
     METADATA,
     PROGRAMS,
+    RANDHASH,
     SCHEDULES,
     STATUS
 }

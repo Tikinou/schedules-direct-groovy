@@ -14,16 +14,14 @@
  * limitations under the License.
  */
 
-package com.tikinou.schedulesdirect.v20130709
-
-import com.tikinou.schedulesdirect.Command
+package com.tikinou.schedulesdirect
 
 /**
  * @author: Sebastien Astie
  */
-class MessageCommand extends Command{
-    @Override
-    protected prepareJsonRequestData(Object credentials) {
-        return null
-    }
+public enum CommandStatus {
+    NONE,
+    RUNNING,
+    SUCCESS,
+    FAILURE
 }

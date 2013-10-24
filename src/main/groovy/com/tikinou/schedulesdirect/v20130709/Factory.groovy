@@ -9,10 +9,16 @@ import static com.tikinou.schedulesdirect.SchedulesDirectApiVersion.VERSION_2013
  * @author: Sebastien Astie
  */
 class Factory {
-    private final static def GET_VALID = [STATUS, HEADENDS, LINEUPS, PROGRAMS, SCHEDULES]
+    private final static def GET_VALID = [STATUS, HEADENDS, LINEUPS, PROGRAMS, RANDHASH, SCHEDULES]
     private final static def ADD_VALID = [HEADENDS]
     private final static def DELETE_VALID = [HEADENDS, MESSAGE]
     private final static def UPDATE_VALID = [METADATA]
+
+    private final static def DEFAUlT_BASE_URL = "https://data2.schedulesdirect.org/"
+    private final static def DEFAULT_ENDPOINT = "handleRequest.php"
+
+    def static getDefaultBaseUrl() { DEFAUlT_BASE_URL}
+    def static getDefaultEndpoint() { DEFAULT_ENDPOINT }
 
     static def getCommand(actionType, objectType) {
         switch (actionType){
@@ -52,6 +58,8 @@ class Factory {
                 return new MetadataCommand(action: actionType, apiVersion: VERSION_20130709)
             case PROGRAMS:
                 return new ProgramsCommand(action: actionType, apiVersion: VERSION_20130709)
+            case RANDHASH:
+                return new RandHashCommand(action: actionType, apiVersion: VERSION_20130709)
             case SCHEDULES:
                 return new SchedulesCommand(action: actionType, apiVersion: VERSION_20130709)
             case STATUS:

@@ -6,4 +6,6 @@ package com.tikinou.schedulesdirect
 class CommandFactory {
     def static concreteFactory
     def static getCommand(actionType, objectType) { concreteFactory.getCommand(actionType, objectType)}
+    def static getDefaultBaseUrl() { concreteFactory.getDefaultBaseUrl() }
+    def static getDefaultEndpoint() { concreteFactory.getDefautEndpoint() }
 }

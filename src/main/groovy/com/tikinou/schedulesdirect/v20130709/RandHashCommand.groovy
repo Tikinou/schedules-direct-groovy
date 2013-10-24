@@ -21,9 +21,9 @@ import com.tikinou.schedulesdirect.Command
 /**
  * @author: Sebastien Astie
  */
-class MessageCommand extends Command{
+class RandHashCommand extends Command{
     @Override
-    protected prepareJsonRequestData(Object credentials) {
+    protected prepareJsonRequestData(credentials) {
         return null
     }
 }

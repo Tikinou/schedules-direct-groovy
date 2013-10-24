@@ -16,6 +16,11 @@
 
 package com.tikinou.schedulesdirect
 
+import groovyx.net.http.HTTPBuilder
+import org.codehaus.groovy.GroovyException
+
+import static com.tikinou.schedulesdirect.SchedulesDirectApiVersion.VERSION_20130709
+
 /**
  * Client class that handles the communication with Schedules Direct JSON API Server.
  * The communication is done via http, the information is processed using JSON
@@ -24,15 +29,42 @@ package com.tikinou.schedulesdirect
  */
 
 class Client {
-    def baseUrl
-    def endpoint
-    def randhash
+    Client(SchedulesDirectApiVersion apiVersion){
+        switch (apiVersion){
+            case VERSION_20130709:
+                CommandFactory.concreteFactory = new com.tikinou.schedulesdirect.v20130709.Factory()
+                break;
+        }
+    }
 
-    def connect(credentials){
+    String baseUrl
+    String endpoint
+    HTTPBuilder httpBuilder
+    Credentials credentials
 
+    def connect(Credentials credentials){
+        this.credentials = credentials
+        initializeConnectivityData()
+        Command cmd = getCommand(ActionType.GET, ObjectTypes.RANDHASH)
+        execute(cmd)
+        if(cmd.status != CommandStatus.SUCCESS)
+            throw new GroovyException("Could not login to schedules direct. response was:" + cmd.results)
     }
 
     def execute(Command command){
         command.execute(this)
+    }
+
+    def getCommand(actionType, objectType){
+        return CommandFactory.getCommand(actionType, objectType)
+    }
+
+    private void initializeConnectivityData() {
+        if(baseUrl == null)
+            baseUrl = CommandFactory.getDefaultBaseUrl()
+        if(endpoint == null)
+            endpoint = CommandFactory.getDefaultEndpoint()
+        if(httpBuilder == null)
+            httpBuilder = new HTTPBuilder(baseUrl)
     }
 }

@@ -22,4 +22,8 @@ import com.tikinou.schedulesdirect.Command
  * @author: Sebastien Astie
  */
 class SchedulesCommand extends Command{
+    @Override
+    protected prepareJsonRequestData(Object credentials) {
+        return null
+    }
 }
