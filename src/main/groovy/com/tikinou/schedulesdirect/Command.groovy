@@ -42,15 +42,12 @@ abstract class Command {
             body = postBody
             response.success = { resp, json ->
                 def slurp = new JsonSlurper()
-                results = slurp.parseText(json.text())
-                if(results.response == "OK")
-                    status = CommandStatus.SUCCESS
-                else
-                    status = CommandStatus.FAILURE
+                def res = slurp.parseText(json.text())
+                processResult(res, true)
             }
             response.failure = { resp ->
                 status = CommandStatus.FAILURE
-                results = resp.text()
+                processResult(resp.text(), false)
             }
 
         }
@@ -58,4 +55,6 @@ abstract class Command {
     }
 
     protected abstract def prepareJsonRequestData(credentials)
+
+    protected void processResult(resultData, success){}
 }

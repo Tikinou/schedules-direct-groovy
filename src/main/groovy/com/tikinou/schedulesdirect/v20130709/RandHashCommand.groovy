@@ -17,13 +17,40 @@
 package com.tikinou.schedulesdirect.v20130709
 
 import com.tikinou.schedulesdirect.Command
+import com.tikinou.schedulesdirect.CommandStatus
+import groovy.json.JsonBuilder
+import org.apache.commons.codec.digest.DigestUtils
 
 /**
  * @author: Sebastien Astie
  */
 class RandHashCommand extends Command{
+    //store a reference.
+    private def credentials
+
     @Override
-    protected prepareJsonRequestData(credentials) {
-        return null
+    protected def prepareJsonRequestData(credentials) {
+        this.credentials = credentials
+        def shaVal = DigestUtils.shaHex(credentials.password)
+        def jsonRequest = new JsonBuilder()
+        jsonRequest {
+            request {
+                username credentials.username
+                password shaVal
+            }
+            action action.name().toLowerCase()
+            api apiVersion.value
+            object "randhash"
+        }
+    }
+
+    protected void processResult(resultData, success){
+        if(resultData.response == "OK"){
+            status = CommandStatus.SUCCESS
+            credentials.randhash = resultData.randhash
+        } else {
+            status = CommandStatus.FAILURE
+            results = resultData
+        }
     }
 }
