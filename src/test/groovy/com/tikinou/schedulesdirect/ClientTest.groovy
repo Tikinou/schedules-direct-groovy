@@ -16,7 +16,9 @@
 package com.tikinou.schedulesdirect
 
 import groovy.json.JsonSlurper
+import org.codehaus.groovy.GroovyException
 import org.junit.Test
+import org.junit.rules.ExpectedException
 
 /**
  * Created by sebastien on 10/24/13.
@@ -24,11 +26,14 @@ import org.junit.Test
 class ClientTest {
     void setUp() {
         super.setUp()
-
     }
 
     void tearDown() {
+    }
 
+    @Test(expected = GroovyException.class)
+    void testUnknownVersion() {
+        new Client(null)
     }
 
     @Test
@@ -36,17 +41,20 @@ class ClientTest {
         def slurper = new JsonSlurper()
         def config = slurper.parseText( ClientTest.class.getResource( '/credentials.json' ).text )
         Credentials credentials = new Credentials(username:config.username, password:config.password)
+        assert credentials.username != "CHANGE_USER_NAME"
+        assert credentials.password != "CHANGE_PASSWORD"
         Client client = new Client(SchedulesDirectApiVersion.VERSION_20130709)
         assert credentials.randhash == null
         client.connect(credentials)
         assert credentials.randhash != null
     }
 
-    void testExecute() {
-
-    }
-
+    @Test
     void testGetCommand() {
-
+        Client client = new Client(SchedulesDirectApiVersion.VERSION_20130709)
+        assert client.getCommand(ActionType.ADD, ObjectTypes.RANDHASH) == null
+        assert client.getCommand(ActionType.DELETE, ObjectTypes.RANDHASH) == null
+        assert client.getCommand(ActionType.GET, ObjectTypes.RANDHASH) != null
+        assert client.getCommand(ActionType.UPDATE, ObjectTypes.RANDHASH) == null
     }
 }

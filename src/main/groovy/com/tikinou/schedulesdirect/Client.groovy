@@ -33,7 +33,9 @@ class Client {
         switch (apiVersion){
             case VERSION_20130709:
                 CommandFactory.concreteFactory = new com.tikinou.schedulesdirect.v20130709.Factory()
-                break;
+                break
+            default:
+                throw new GroovyException("Unknown api version " + apiVersion)
         }
     }
 
