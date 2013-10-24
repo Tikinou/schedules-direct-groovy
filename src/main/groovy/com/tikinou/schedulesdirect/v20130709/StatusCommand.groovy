@@ -42,11 +42,9 @@ class StatusCommand extends Command{
         if(resultData.response == "OK"){
             status = CommandStatus.SUCCESS
             results = resultData
-            println resultData
         } else {
             status = CommandStatus.FAILURE
             results = resultData
-            println "ERROR " + resultData
         }
     }
 }
