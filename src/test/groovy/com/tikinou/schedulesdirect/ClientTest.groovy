@@ -77,7 +77,7 @@ class ClientTest {
         if(password != null)
             credentials.password = password
 
-        println credentials.username + " | " + credentials.password
+        println "credentials used :" + credentials.username + " | " + credentials.password
         assert credentials.username != "CHANGE_USER_NAME"
         assert credentials.password != "CHANGE_PASSWORD"
         return credentials
