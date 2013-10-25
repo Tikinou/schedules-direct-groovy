@@ -19,7 +19,7 @@ package com.tikinou.schedulesdirect.v20130709
 import com.tikinou.schedulesdirect.Command
 
 /**
- * @author: Sebastien Astie
+ * @author Sebastien Astie
  */
 class MessageCommand extends Command{
     @Override

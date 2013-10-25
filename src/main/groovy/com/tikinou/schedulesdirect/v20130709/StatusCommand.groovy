@@ -18,11 +18,10 @@ package com.tikinou.schedulesdirect.v20130709
 
 import com.tikinou.schedulesdirect.Command
 import com.tikinou.schedulesdirect.CommandStatus
+import com.tikinou.schedulesdirect.ObjectTypes
 import groovy.json.JsonBuilder
-import org.codehaus.groovy.GroovyException
-
 /**
- * @author: Sebastien Astie
+ * @author Sebastien Astie
  */
 class StatusCommand extends Command{
     @Override
@@ -33,7 +32,7 @@ class StatusCommand extends Command{
             randhash credentials.randhash
             action action.name().toLowerCase()
             api apiVersion.value
-            object "status"
+            object ObjectTypes.STATUS.name().toLowerCase()
         }
         jsonRequest.toString()
     }

@@ -17,7 +17,7 @@
 package com.tikinou.schedulesdirect
 
 /**
- * @author: Sebastien Astie
+ * @author Sebastien Astie
  */
 class Credentials {
     def username

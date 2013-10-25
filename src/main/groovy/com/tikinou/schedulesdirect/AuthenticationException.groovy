@@ -19,7 +19,12 @@ package com.tikinou.schedulesdirect
 import org.codehaus.groovy.GroovyException
 
 /**
- * @author: Sebastien Astie
+ * @author Sebastien Astie
  */
 class AuthenticationException extends GroovyException{
+    def responseData
+    AuthenticationException(msg, response){
+        super(msg)
+        responseData = response
+    }
 }

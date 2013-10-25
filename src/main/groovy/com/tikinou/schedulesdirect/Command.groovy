@@ -21,7 +21,7 @@ import groovyx.net.http.ContentType
 import groovyx.net.http.Method
 
 /**
- * @author: Sebastien Astie
+ * @author Sebastien Astie
  */
 abstract class Command {
     ActionType action

@@ -24,7 +24,18 @@ import static com.tikinou.schedulesdirect.SchedulesDirectApiVersion.VERSION_2013
 /**
  * Client class that handles the communication with Schedules Direct JSON API Server.
  * The communication is done via http, the information is processed using JSON
- *
+ * This is the main entry point to deal with Schedules Direct.
+ * The flow should be the following.
+ * -> Instantiate the client by passing it the schedules direct JSON API version.
+ *      -> If the version is not supported it will throw a VersionNotSupportedException
+ * -> Create a Credentials instance and provide it you username / pasword for schedules direct.
+ * -> Call the connect method providing the credentials instance.
+ *      -> This will throw an AuthenticationException if the client cannot authenticate;
+ *          response data will be in the responseData member.
+ * -> Call the getCommandMethod() with action type GET and object type status.(this will create a StatusCommand instance)
+ * -> Call the execute() method by passing it the status command previously create.
+ *      -> upon execution check the command status property for success or failure.
+ *      -> the command property result data will contain the parsed json response.
  * @author: Sebastien Astie
  */
 
@@ -35,7 +46,7 @@ class Client {
                 CommandFactory.concreteFactory = new com.tikinou.schedulesdirect.v20130709.Factory()
                 break
             default:
-                throw new GroovyException("Unknown api version " + apiVersion)
+                throw new VersionNotSupportedException("Unknown api version " + apiVersion)
         }
     }
 
@@ -50,7 +61,7 @@ class Client {
         Command cmd = getCommand(ActionType.GET, ObjectTypes.RANDHASH)
         execute(cmd)
         if(cmd.status != CommandStatus.SUCCESS)
-            throw new GroovyException("Could not login to schedules direct. response was:" + cmd.results)
+            throw new AuthenticationException("Could not login to schedules direct", cmd.results)
     }
 
     void execute(Command command){

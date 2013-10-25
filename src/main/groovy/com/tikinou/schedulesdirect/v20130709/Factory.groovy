@@ -21,7 +21,7 @@ import static com.tikinou.schedulesdirect.SchedulesDirectApiVersion.VERSION_2013
 
 /**
  * Factory for Commands running against version 20130709
- * @author: Sebastien Astie
+ * @author Sebastien Astie
  */
 class Factory {
     private final static def GET_VALID = [STATUS, HEADENDS, LINEUPS, PROGRAMS, RANDHASH, SCHEDULES]

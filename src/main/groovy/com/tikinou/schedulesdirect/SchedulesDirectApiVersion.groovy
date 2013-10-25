@@ -17,7 +17,7 @@
 package com.tikinou.schedulesdirect
 
 /**
- * @author: Sebastien Astie
+ * @author Sebastien Astie
  */
 public enum SchedulesDirectApiVersion {
     VERSION_20130709("20130709")

@@ -18,11 +18,12 @@ package com.tikinou.schedulesdirect.v20130709
 
 import com.tikinou.schedulesdirect.Command
 import com.tikinou.schedulesdirect.CommandStatus
+import com.tikinou.schedulesdirect.ObjectTypes
 import groovy.json.JsonBuilder
 import org.apache.commons.codec.digest.DigestUtils
 
 /**
- * @author: Sebastien Astie
+ * @author Sebastien Astie
  */
 class RandHashCommand extends Command{
     //store a reference.
@@ -40,7 +41,7 @@ class RandHashCommand extends Command{
             }
             action action.name().toLowerCase()
             api apiVersion.value
-            object "randhash"
+            object ObjectTypes.RANDHASH.name().toLowerCase()
         }
         jsonRequest.toString()
     }

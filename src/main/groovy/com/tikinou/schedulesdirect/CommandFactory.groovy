@@ -16,7 +16,7 @@
 package com.tikinou.schedulesdirect
 
 /**
- * @author: Sebastien Astie
+ * @author Sebastien Astie
  */
 class CommandFactory {
     def static concreteFactory

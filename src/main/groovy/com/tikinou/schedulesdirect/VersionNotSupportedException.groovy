@@ -14,18 +14,17 @@
  * limitations under the License.
  */
 
+
+
 package com.tikinou.schedulesdirect
+
+import org.codehaus.groovy.GroovyException
 
 /**
  * @author Sebastien Astie
  */
-public enum ObjectTypes {
-    HEADENDS,
-    LINEUPS,
-    MESSAGE,
-    METADATA,
-    PROGRAMS,
-    RANDHASH,
-    SCHEDULES,
-    STATUS
+class VersionNotSupportedException extends GroovyException{
+    VersionNotSupportedException(msg){
+        super(msg)
+    }
 }
