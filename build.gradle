@@ -20,6 +20,13 @@ repositories {
     mavenCentral()
 }
 
+test{
+    // you can set this up in a gradle.properties
+    systemProperties = [
+                "credentials.username": System.properties["credentials.username"],
+                "credentials.password": System.properties["credentials.password"]]
+}
+
 dependencies {
     compile group:'org.codehaus.groovy', name:'groovy-all', version:'2.1.8'
     compile group:'org.codehaus.groovy.modules.http-builder', name: 'http-builder', version: '0.6'
