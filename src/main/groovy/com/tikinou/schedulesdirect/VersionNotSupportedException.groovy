@@ -18,13 +18,12 @@
 
 package com.tikinou.schedulesdirect
 
+import groovy.transform.InheritConstructors
 import org.codehaus.groovy.GroovyException
 
 /**
  * @author Sebastien Astie
  */
+@InheritConstructors
 class VersionNotSupportedException extends GroovyException{
-    VersionNotSupportedException(msg){
-        super(msg)
-    }
 }

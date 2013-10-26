@@ -83,23 +83,4 @@ class HeadendsCommand extends Command {
                 break
         }
     }
-
-//    void execute(client) {
-//        status = CommandStatus.RUNNING
-//        def jsonRequest = prepareJsonRequestData(client.credentials)
-//        def postBody = "request=" + URLEncoder.encode(jsonRequest, "UTF-8")
-//        // this is a post request setup
-//        client.httpBuilder.request(Method.POST) {
-//            uri.path = client.endpoint
-//            requestContentType = ContentType.URLENC
-//            body = postBody
-//            response.success = { resp ->
-//                println "###########" + resp.data
-//            }
-//            response.failure = { resp ->
-//                status = CommandStatus.FAILURE
-//                println resp
-//            }
-//        }
-//    }
 }

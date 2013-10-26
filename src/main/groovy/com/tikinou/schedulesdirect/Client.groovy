@@ -16,6 +16,7 @@
 
 package com.tikinou.schedulesdirect
 
+import groovy.util.logging.Commons
 import groovyx.net.http.HTTPBuilder
 import groovyx.net.http.RESTClient
 import org.codehaus.groovy.GroovyException
@@ -37,18 +38,23 @@ import static com.tikinou.schedulesdirect.SchedulesDirectApiVersion.VERSION_2013
  * -> Call the execute() method by passing it the status command previously create.
  *      -> upon execution check the command status property for success or failure.
  *      -> the command property result data will contain the parsed json response.
- * @author: Sebastien Astie
+ * @author Sebastien Astie
  */
 
+@Commons
 class Client {
+    static final int CREDENTIALS_EXPIRY_HOURS = 12
     Client(SchedulesDirectApiVersion apiVersion){
+        log.debug("Trying to use api version ${apiVersion.value}")
         switch (apiVersion){
             case VERSION_20130709:
                 CommandFactory.concreteFactory = new com.tikinou.schedulesdirect.v20130709.Factory()
                 break
             default:
-                throw new VersionNotSupportedException("Unknown api version " + apiVersion)
+                log.error("Unknown api version provided: ${apiVersion}")
+                throw new VersionNotSupportedException("Unknown api version provided: ${apiVersion}")
         }
+        log.debug("Using api version ${apiVersion.value}")
     }
 
     String baseUrl
@@ -56,9 +62,24 @@ class Client {
     RESTClient restClient
     Credentials credentials
 
-    def connect(Credentials credentials){
-        this.credentials = credentials
+
+    void connect(Credentials credentials){
+        if(credentials == null)
+            throw AuthenticationException("credentials object cannot be null")
         initializeConnectivityData()
+
+        if(this.credentials != null){
+            //are these the same credentials ?
+            if(this.credentials.sameUserNamePassword(credentials)){
+                // is the randhash older than 12 hours ?
+                if(!this.credentials.isOlderThan(CREDENTIALS_EXPIRY_HOURS)){
+                    log.info("credentials less than ${CREDENTIALS_EXPIRY_HOURS} hours. No need to get a new randhash" )
+                    return;
+                }
+            }
+        }
+        // if we got here we need to get a new randhash
+        this.credentials = credentials
         Command cmd = getCommand(ActionType.GET, ObjectTypes.RANDHASH)
         execute(cmd)
         if(cmd.status != CommandStatus.SUCCESS)

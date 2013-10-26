@@ -16,13 +16,12 @@
 
 package com.tikinou.schedulesdirect
 
+import groovy.transform.InheritConstructors
 import org.codehaus.groovy.GroovyException
 
 /**
  * @author Sebastien Astie
  */
+@InheritConstructors
 class ValidationException extends GroovyException {
-    ValidationException(msg){
-        super(msg)
-    }
 }

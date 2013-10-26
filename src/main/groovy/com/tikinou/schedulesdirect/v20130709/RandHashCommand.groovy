@@ -22,6 +22,7 @@ import com.tikinou.schedulesdirect.ObjectTypes
 import com.tikinou.schedulesdirect.ResponseCode
 import groovy.json.JsonBuilder
 import org.apache.commons.codec.digest.DigestUtils
+import org.joda.time.DateTime
 
 import static ResponseCode.OK
 
@@ -53,7 +54,10 @@ class RandHashCommand extends Command{
         if(resultData.code == OK.code){
             status = CommandStatus.SUCCESS
             credentials.randhash = resultData.randhash
+            credentials.randhashDateTime = DateTime.now()
         } else {
+            credentials.randhash = null
+            credentials.randhashDateTime = null
             status = CommandStatus.FAILURE
             results = resultData
         }

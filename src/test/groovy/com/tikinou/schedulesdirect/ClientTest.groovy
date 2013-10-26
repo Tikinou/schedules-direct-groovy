@@ -37,7 +37,7 @@ class ClientTest {
     void tearDown() {
     }
 
-    @Test(expected = GroovyException.class)
+    @Test(expected = VersionNotSupportedException.class)
     void testUnknownVersion() {
         new Client(null)
     }
@@ -45,9 +45,20 @@ class ClientTest {
     @Test
     void testConnect() {
         def credentials = createCredentials()
+        println "credentials used " << credentials
         assert credentials.randhash == null
         client.connect(credentials)
         assert credentials.randhash != null
+        println "TestConnect success: credentials now " << credentials
+    }
+
+    @Test
+    void testMultipleConnect() {
+        def credentials = createCredentials()
+        println "credentials used " << credentials
+        client.connect(credentials)
+        client.connect(credentials)
+        println "TestMultipleConnect success: credentials now " << credentials
     }
 
     @Test
@@ -63,6 +74,7 @@ class ClientTest {
         def credentials = createCredentials()
         client.connect(credentials)
         def cmd = client.getCommand(ActionType.GET, ObjectTypes.STATUS)
+        println "credentials used " << credentials
         client.execute(cmd)
         println "Get Status: " << cmd.results
     }
@@ -74,6 +86,7 @@ class ClientTest {
         def cmd = client.getCommand(ActionType.GET, ObjectTypes.HEADENDS)
         cmd.parameters.country = Country.UnitedState
         cmd.parameters.postalCode = 10562
+        println "credentials used " << credentials
         client.execute(cmd)
         println "Get Headends: " << cmd.results
         assert cmd.results.code == ResponseCode.OK.code
@@ -91,7 +104,6 @@ class ClientTest {
         if(password != null)
             credentials.password = password
 
-        println "credentials used :" + credentials.username + " | " + credentials.password
         assert credentials.username != "CHANGE_USER_NAME"
         assert credentials.password != "CHANGE_PASSWORD"
         return credentials

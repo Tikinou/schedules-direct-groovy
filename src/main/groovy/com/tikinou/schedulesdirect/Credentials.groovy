@@ -16,11 +16,30 @@
 
 package com.tikinou.schedulesdirect
 
+import groovy.transform.ToString
+import org.joda.time.DateTime
+
 /**
  * @author Sebastien Astie
  */
+@ToString
 class Credentials {
     def username
     def password
     def randhash
+    def randhashDateTime
+
+    boolean sameUserNamePassword(credentials){
+        if (username == null)
+            return false
+        if (password == null)
+            return false
+        return username == credentials?.username && password == credentials?.password
+    }
+
+    boolean isOlderThan(int hours){
+        if(randhash == null || randhashDateTime == null)
+            return true
+        return randhashDateTime.isBefore(DateTime.now().minusHours(hours))
+    }
 }
