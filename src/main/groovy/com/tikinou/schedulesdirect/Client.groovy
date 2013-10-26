@@ -17,6 +17,7 @@
 package com.tikinou.schedulesdirect
 
 import groovyx.net.http.HTTPBuilder
+import groovyx.net.http.RESTClient
 import org.codehaus.groovy.GroovyException
 
 import static com.tikinou.schedulesdirect.SchedulesDirectApiVersion.VERSION_20130709
@@ -52,7 +53,7 @@ class Client {
 
     String baseUrl
     String endpoint
-    HTTPBuilder httpBuilder
+    RESTClient restClient
     Credentials credentials
 
     def connect(Credentials credentials){
@@ -77,7 +78,7 @@ class Client {
             baseUrl = CommandFactory.getDefaultBaseUrl()
         if(endpoint == null)
             endpoint = CommandFactory.getDefaultEndpoint()
-        if(httpBuilder == null)
-            httpBuilder = new HTTPBuilder(baseUrl)
+        if(restClient == null)
+            restClient = new RESTClient(baseUrl)
     }
 }

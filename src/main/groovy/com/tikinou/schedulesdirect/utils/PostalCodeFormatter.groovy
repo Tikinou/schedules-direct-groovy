@@ -32,16 +32,12 @@ class PostalCodeFormatter {
             case Canada:
                 if(postalcode.length() < 4)
                     throw new ValidationException("postal code for Canada must be at least 4 characters long")
-                code << postalcode[0..4] // grab the 4 left most
-                return code
+                return code + postalcode[0..3] // grab the 4 left most
             case UnitedState:
                 if(postalcode.length() < 5)
                     throw new ValidationException("postal code for United States must be at least 5 characters long")
-                code << postalcode[0..5]
-                return code
-            default:
-                code << postalcode
+                return code + postalcode[0..4]
         }
-        return code
+        return code + postalcode
     }
 }

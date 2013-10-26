@@ -39,14 +39,4 @@ class StatusCommand extends Command{
         }
         jsonRequest.toString()
     }
-
-    protected void processResult(resultData, success){
-        if(resultData.code == OK.code){
-            status = CommandStatus.SUCCESS
-            results = resultData
-        } else {
-            status = CommandStatus.FAILURE
-            results = resultData
-        }
-    }
 }

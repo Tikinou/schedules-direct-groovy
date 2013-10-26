@@ -19,6 +19,7 @@ package com.tikinou.schedulesdirect
 import groovy.json.JsonSlurper
 import groovyx.net.http.ContentType
 import groovyx.net.http.Method
+import net.sf.json.JSON
 
 /**
  * @author Sebastien Astie
@@ -27,7 +28,7 @@ abstract class Command {
     ActionType action
     SchedulesDirectApiVersion apiVersion
 
-    def parameters
+    def parameters = [:]
     def status = CommandStatus.NONE
     def results
 
@@ -36,30 +37,47 @@ abstract class Command {
         def jsonRequest = prepareJsonRequestData(client.credentials)
         def postBody = "request=" + URLEncoder.encode(jsonRequest, "UTF-8")
         // this is a post request setup
-        client.httpBuilder.request(Method.POST) {
-            uri.path = client.endpoint
-            requestContentType = ContentType.URLENC
-            body = postBody
-            response.success = { resp, json ->
-                def slurp = new JsonSlurper()
-                def res = slurp.parseText(json.text())
-                processResult(res, true)
-            }
-            response.failure = { resp ->
-                status = CommandStatus.FAILURE
-                processResult(resp.text(), false)
-            }
-
-        }
+        def response = client.restClient.post(path: client.endpoint,
+            requestContentType: ContentType.URLENC,
+            body: postBody)
+        handleResponse(response)
     }
 
     protected abstract def prepareJsonRequestData(credentials)
 
-    protected void processResult(resultData, success){}
+
+    protected void processResult(resultData, success){
+        if(resultData.code == ResponseCode.OK.code){
+            status = CommandStatus.SUCCESS
+            results = resultData
+        } else {
+            status = CommandStatus.FAILURE
+            results = resultData
+        }
+    }
+
     protected void validateParameters(){}
 
     protected void failIfUnathenticated(credentials){
         if(credentials.randhash == null)
             throw new AuthenticationException("Not authenticated")
+    }
+
+    protected void handleResponse(response){
+        if(response.status == 200){
+            def slurp = new JsonSlurper()
+            if(response.data != null){
+                def res = null
+                if(response.data instanceof InputStream){
+                    res = slurp.parse(new InputStreamReader(response.data))
+                } else {
+                    res = slurp.parseText(response.data.text())
+                }
+                processResult(res, true)
+            }
+        } else {
+            status = CommandStatus.FAILURE
+            processResult(resp.text(), false)
+        }
     }
 }

@@ -15,6 +15,7 @@
 
 package com.tikinou.schedulesdirect
 
+import com.tikinou.schedulesdirect.utils.Country
 import groovy.json.JsonSlurper
 import org.codehaus.groovy.GroovyException
 import org.junit.After
@@ -63,6 +64,19 @@ class ClientTest {
         client.connect(credentials)
         def cmd = client.getCommand(ActionType.GET, ObjectTypes.STATUS)
         client.execute(cmd)
+        println "Get Status: " << cmd.results
+    }
+
+    @Test
+    void testGetheadends(){
+        def credentials = createCredentials()
+        client.connect(credentials)
+        def cmd = client.getCommand(ActionType.GET, ObjectTypes.HEADENDS)
+        cmd.parameters.country = Country.UnitedState
+        cmd.parameters.postalCode = 10562
+        client.execute(cmd)
+        println "Get Headends: " << cmd.results
+        assert cmd.results.code == ResponseCode.OK.code
     }
 
     private def createCredentials(){
