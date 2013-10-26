@@ -25,7 +25,8 @@ enum Country {
     Worldwide("ZZ")
 
     final String code
-    Country(String code){
+
+    Country(String code) {
         this.code = code
     }
 }

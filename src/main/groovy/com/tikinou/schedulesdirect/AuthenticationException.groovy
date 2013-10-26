@@ -21,9 +21,10 @@ import org.codehaus.groovy.GroovyException
 /**
  * @author Sebastien Astie
  */
-class AuthenticationException extends GroovyException{
+class AuthenticationException extends GroovyException {
     def responseData
-    AuthenticationException(msg, response){
+
+    AuthenticationException(msg, response) {
         super(msg)
         responseData = response
     }

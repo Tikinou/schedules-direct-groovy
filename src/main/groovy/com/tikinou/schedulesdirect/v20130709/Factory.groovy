@@ -24,7 +24,7 @@ import static com.tikinou.schedulesdirect.SchedulesDirectApiVersion.VERSION_2013
  * @author Sebastien Astie
  */
 class Factory {
-    private final static def GET_VALID = [STATUS, HEADENDS, LINEUPS, PROGRAMS, RANDHASH, SCHEDULES]
+    private final static def GET_VALID = [HEADENDS, LINEUPS, PROGRAMS, RANDHASH, SCHEDULES, STATUS]
     private final static def ADD_VALID = [HEADENDS]
     private final static def DELETE_VALID = [HEADENDS, MESSAGE]
     private final static def UPDATE_VALID = [METADATA]
@@ -32,25 +32,26 @@ class Factory {
     private final static def DEFAUlT_BASE_URL = "https://data2.schedulesdirect.org/"
     private final static def DEFAULT_ENDPOINT = "handleRequest.php"
 
-    def static getDefaultBaseUrl() { DEFAUlT_BASE_URL}
+    def static getDefaultBaseUrl() { DEFAUlT_BASE_URL }
+
     def static getDefaultEndpoint() { DEFAULT_ENDPOINT }
 
     static def getCommand(actionType, objectType) {
-        switch (actionType){
+        switch (actionType) {
             case ADD:
-                if(!ADD_VALID.contains(objectType))
+                if (!ADD_VALID.contains(objectType))
                     return null
                 break
             case DELETE:
-                if(!DELETE_VALID.contains(objectType))
+                if (!DELETE_VALID.contains(objectType))
                     return null
                 break
             case GET:
-                if(!GET_VALID.contains(objectType))
+                if (!GET_VALID.contains(objectType))
                     return null
                 break;
             case UPDATE:
-                if(!UPDATE_VALID.contains(objectType))
+                if (!UPDATE_VALID.contains(objectType))
                     return null
                 break;
             default:
@@ -61,8 +62,8 @@ class Factory {
         return instantiateCommand(actionType, objectType)
     }
 
-    private static def instantiateCommand(actionType, objectType){
-        switch(objectType){
+    private static def instantiateCommand(actionType, objectType) {
+        switch (objectType) {
             case HEADENDS:
                 return new HeadendsCommand(action: actionType, apiVersion: VERSION_20130709)
             case LINEUPS:

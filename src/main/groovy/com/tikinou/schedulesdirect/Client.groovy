@@ -17,12 +17,9 @@
 package com.tikinou.schedulesdirect
 
 import groovy.util.logging.Commons
-import groovyx.net.http.HTTPBuilder
 import groovyx.net.http.RESTClient
-import org.codehaus.groovy.GroovyException
 
 import static com.tikinou.schedulesdirect.SchedulesDirectApiVersion.VERSION_20130709
-
 /**
  * Client class that handles the communication with Schedules Direct JSON API Server.
  * The communication is done via http, the information is processed using JSON
@@ -44,9 +41,10 @@ import static com.tikinou.schedulesdirect.SchedulesDirectApiVersion.VERSION_2013
 @Commons
 class Client {
     static final int CREDENTIALS_EXPIRY_HOURS = 12
-    Client(SchedulesDirectApiVersion apiVersion){
+
+    Client(SchedulesDirectApiVersion apiVersion) {
         log.debug("Trying to use api version ${apiVersion.value}")
-        switch (apiVersion){
+        switch (apiVersion) {
             case VERSION_20130709:
                 CommandFactory.concreteFactory = new com.tikinou.schedulesdirect.v20130709.Factory()
                 break
@@ -63,17 +61,17 @@ class Client {
     Credentials credentials
 
 
-    void connect(Credentials credentials){
-        if(credentials == null)
+    void connect(Credentials credentials) {
+        if (credentials == null)
             throw AuthenticationException("credentials object cannot be null")
         initializeConnectivityData()
 
-        if(this.credentials != null){
+        if (this.credentials != null) {
             //are these the same credentials ?
-            if(this.credentials.sameUserNamePassword(credentials)){
+            if (this.credentials.sameUserNamePassword(credentials)) {
                 // is the randhash older than 12 hours ?
-                if(!this.credentials.isOlderThan(CREDENTIALS_EXPIRY_HOURS)){
-                    log.info("credentials less than ${CREDENTIALS_EXPIRY_HOURS} hours. No need to get a new randhash" )
+                if (!this.credentials.isOlderThan(CREDENTIALS_EXPIRY_HOURS)) {
+                    log.info("credentials less than ${CREDENTIALS_EXPIRY_HOURS} hours. No need to get a new randhash")
                     return;
                 }
             }
@@ -82,24 +80,24 @@ class Client {
         this.credentials = credentials
         Command cmd = getCommand(ActionType.GET, ObjectTypes.RANDHASH)
         execute(cmd)
-        if(cmd.status != CommandStatus.SUCCESS)
+        if (cmd.status != CommandStatus.SUCCESS)
             throw new AuthenticationException("Could not login to schedules direct", cmd.results)
     }
 
-    void execute(Command command){
+    void execute(Command command) {
         command.execute(this)
     }
 
-    def getCommand(actionType, objectType){
+    def getCommand(actionType, objectType) {
         return CommandFactory.getCommand(actionType, objectType)
     }
 
     private void initializeConnectivityData() {
-        if(baseUrl == null)
+        if (baseUrl == null)
             baseUrl = CommandFactory.getDefaultBaseUrl()
-        if(endpoint == null)
+        if (endpoint == null)
             endpoint = CommandFactory.getDefaultEndpoint()
-        if(restClient == null)
+        if (restClient == null)
             restClient = new RESTClient(baseUrl)
     }
 }

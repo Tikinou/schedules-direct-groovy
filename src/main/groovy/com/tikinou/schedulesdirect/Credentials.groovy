@@ -29,7 +29,7 @@ class Credentials {
     def randhash
     def randhashDateTime
 
-    boolean sameUserNamePassword(credentials){
+    boolean sameUserNamePassword(credentials) {
         if (username == null)
             return false
         if (password == null)
@@ -37,8 +37,8 @@ class Credentials {
         return username == credentials?.username && password == credentials?.password
     }
 
-    boolean isOlderThan(int hours){
-        if(randhash == null || randhashDateTime == null)
+    boolean isOlderThan(int hours) {
+        if (randhash == null || randhashDateTime == null)
             return true
         return randhashDateTime.isBefore(DateTime.now().minusHours(hours))
     }

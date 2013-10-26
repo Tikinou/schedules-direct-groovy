@@ -25,5 +25,5 @@ import org.codehaus.groovy.GroovyException
  * @author Sebastien Astie
  */
 @InheritConstructors
-class VersionNotSupportedException extends GroovyException{
+class VersionNotSupportedException extends GroovyException {
 }

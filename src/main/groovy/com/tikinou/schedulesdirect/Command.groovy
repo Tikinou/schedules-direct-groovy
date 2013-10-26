@@ -18,9 +18,6 @@ package com.tikinou.schedulesdirect
 
 import groovy.json.JsonSlurper
 import groovyx.net.http.ContentType
-import groovyx.net.http.Method
-import net.sf.json.JSON
-
 /**
  * @author Sebastien Astie
  */
@@ -38,16 +35,16 @@ abstract class Command {
         def postBody = "request=" + URLEncoder.encode(jsonRequest, "UTF-8")
         // this is a post request setup
         def response = client.restClient.post(path: client.endpoint,
-            requestContentType: ContentType.URLENC,
-            body: postBody)
+                requestContentType: ContentType.URLENC,
+                body: postBody)
         handleResponse(response)
     }
 
     protected abstract def prepareJsonRequestData(credentials)
 
 
-    protected void processResult(resultData, success){
-        if(resultData.code == ResponseCode.OK.code){
+    protected void processResult(resultData, success) {
+        if (resultData.code == ResponseCode.OK.code) {
             status = CommandStatus.SUCCESS
             results = resultData
         } else {
@@ -56,19 +53,19 @@ abstract class Command {
         }
     }
 
-    protected void validateParameters(){}
+    protected void validateParameters() {}
 
-    protected void failIfUnathenticated(credentials){
-        if(credentials.randhash == null)
+    protected void failIfUnathenticated(credentials) {
+        if (credentials.randhash == null)
             throw new AuthenticationException("Not authenticated")
     }
 
-    protected void handleResponse(response){
-        if(response.status == 200){
+    protected void handleResponse(response) {
+        if (response.status == 200) {
             def slurp = new JsonSlurper()
-            if(response.data != null){
+            if (response.data != null) {
                 def res = null
-                if(response.data instanceof InputStream){
+                if (response.data instanceof InputStream) {
                     res = slurp.parse(new InputStreamReader(response.data))
                 } else {
                     res = slurp.parseText(response.data.text())

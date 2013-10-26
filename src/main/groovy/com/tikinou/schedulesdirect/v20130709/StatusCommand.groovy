@@ -17,16 +17,13 @@
 package com.tikinou.schedulesdirect.v20130709
 
 import com.tikinou.schedulesdirect.Command
-import com.tikinou.schedulesdirect.CommandStatus
 import com.tikinou.schedulesdirect.ObjectTypes
 import com.tikinou.schedulesdirect.ResponseCode
 import groovy.json.JsonBuilder
-
-import static ResponseCode.OK
 /**
  * @author Sebastien Astie
  */
-class StatusCommand extends Command{
+class StatusCommand extends Command {
     @Override
     protected def prepareJsonRequestData(credentials) {
         failIfUnathenticated(credentials)

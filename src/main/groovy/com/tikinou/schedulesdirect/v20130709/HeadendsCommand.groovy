@@ -32,10 +32,10 @@ class HeadendsCommand extends Command {
         failIfUnathenticated(credentials)
         validateParameters()
         def jsonRequest = new JsonBuilder()
-        switch(action){
+        switch (action) {
             case ActionType.GET:
                 jsonRequest {
-                    request{
+                    request {
                         country parameters.country.code
                         postalcode PostalCodeFormatter.format(parameters.country, parameters.postalCode.toString())
                     }
@@ -44,7 +44,7 @@ class HeadendsCommand extends Command {
                     api apiVersion.value
                     object ObjectTypes.HEADENDS.name().toLowerCase()
                 }
-            break
+                break
             case ActionType.ADD:
             case ActionType.DELETE:
                 jsonRequest {
@@ -54,23 +54,23 @@ class HeadendsCommand extends Command {
                     api apiVersion.value
                     object ObjectTypes.HEADENDS.name().toLowerCase()
                 }
-            break
+                break
         }
         jsonRequest.toString()
     }
 
     @Override
     protected void validateParameters() {
-        switch(action){
+        switch (action) {
             case ActionType.GET:
-                if(parameters.country == null)
+                if (parameters.country == null)
                     throw new ValidationException("country parameter is required")
-                if(parameters.postalCode == null)
+                if (parameters.postalCode == null)
                     throw new ValidationException("postalCode parameter is required")
                 break
             case ActionType.ADD:
             case ActionType.DELETE:
-                if(parameters.headendId == null)
+                if (parameters.headendId == null)
                     throw new ValidationException("headendId parameter is required")
                 break
             default:

@@ -23,7 +23,7 @@ import groovy.json.JsonBuilder
 /**
  * @author Sebastien Astie
  */
-class LineupsCommand extends Command{
+class LineupsCommand extends Command {
     @Override
     protected def prepareJsonRequestData(credentials) {
         failIfUnathenticated(credentials)
@@ -41,7 +41,7 @@ class LineupsCommand extends Command{
 
     @Override
     protected void validateParameters() {
-        if(parameters.headendIds == null)
+        if (parameters.headendIds == null)
             throw new ValidationException("headendIds parameter is required")
 
     }

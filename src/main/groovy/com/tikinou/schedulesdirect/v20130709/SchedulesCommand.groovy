@@ -17,13 +17,33 @@
 package com.tikinou.schedulesdirect.v20130709
 
 import com.tikinou.schedulesdirect.Command
+import com.tikinou.schedulesdirect.ObjectTypes
+import com.tikinou.schedulesdirect.ValidationException
+import groovy.json.JsonBuilder
 
 /**
  * @author Sebastien Astie
  */
-class SchedulesCommand extends Command{
+class SchedulesCommand extends Command {
     @Override
-    protected prepareJsonRequestData(Object credentials) {
-        return null
+    protected def prepareJsonRequestData(credentials) {
+        failIfUnathenticated(credentials)
+        validateParameters()
+        def jsonRequest = new JsonBuilder()
+        jsonRequest {
+            request parameters.stationIds
+            randhash credentials.randhash
+            action action.name().toLowerCase()
+            api apiVersion.value
+            object ObjectTypes.SCHEDULES.name().toLowerCase()
+        }
+        jsonRequest.toString()
+    }
+
+    @Override
+    protected void validateParameters() {
+        if (parameters.stationIds == null)
+            throw new ValidationException("stationIds parameter is required")
+
     }
 }

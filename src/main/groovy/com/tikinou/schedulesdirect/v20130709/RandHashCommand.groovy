@@ -29,7 +29,7 @@ import static ResponseCode.OK
 /**
  * @author Sebastien Astie
  */
-class RandHashCommand extends Command{
+class RandHashCommand extends Command {
     //store a reference.
     private def credentials
 
@@ -50,8 +50,8 @@ class RandHashCommand extends Command{
         jsonRequest.toString()
     }
 
-    protected void processResult(resultData, success){
-        if(resultData.code == OK.code){
+    protected void processResult(resultData, success) {
+        if (resultData.code == OK.code) {
             status = CommandStatus.SUCCESS
             credentials.randhash = resultData.randhash
             credentials.randhashDateTime = DateTime.now()

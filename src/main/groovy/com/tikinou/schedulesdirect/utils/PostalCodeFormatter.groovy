@@ -17,24 +17,22 @@
 package com.tikinou.schedulesdirect.utils
 
 import com.tikinou.schedulesdirect.ValidationException
-import org.codehaus.groovy.GroovyException
 
 import static com.tikinou.schedulesdirect.utils.Country.Canada
 import static com.tikinou.schedulesdirect.utils.Country.UnitedState
-
 /**
  * @author Sebastien Astie
  */
 class PostalCodeFormatter {
-    static def format(Country country, String postalcode){
+    static def format(Country country, String postalcode) {
         def code = "PC:"
-        switch(country){
+        switch (country) {
             case Canada:
-                if(postalcode.length() < 4)
+                if (postalcode.length() < 4)
                     throw new ValidationException("postal code for Canada must be at least 4 characters long")
                 return code + postalcode[0..3] // grab the 4 left most
             case UnitedState:
-                if(postalcode.length() < 5)
+                if (postalcode.length() < 5)
                     throw new ValidationException("postal code for United States must be at least 5 characters long")
                 return code + postalcode[0..4]
         }

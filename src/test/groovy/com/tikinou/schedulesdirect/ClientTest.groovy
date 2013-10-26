@@ -17,12 +17,9 @@ package com.tikinou.schedulesdirect
 
 import com.tikinou.schedulesdirect.utils.Country
 import groovy.json.JsonSlurper
-import org.codehaus.groovy.GroovyException
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-import org.junit.rules.ExpectedException
-
 /**
  * @author: Sebastien Astie
  */
@@ -72,7 +69,7 @@ class ClientTest {
     }
 
     @Test
-    void testStatus(){
+    void testStatus() {
         def credentials = createCredentials()
         client.connect(credentials)
         def cmd = client.getCommand(ActionType.GET, ObjectTypes.STATUS)
@@ -82,7 +79,7 @@ class ClientTest {
     }
 
     @Test
-    void testGetheadends(){
+    void testGetheadends() {
         def credentials = createCredentials()
         client.connect(credentials)
         def cmd = client.getCommand(ActionType.GET, ObjectTypes.HEADENDS)
@@ -95,19 +92,44 @@ class ClientTest {
     }
 
     @Test
-    void testLineups(){
+    void testGetLineups() {
         def credentials = createCredentials()
         client.connect(credentials)
         def cmd = client.getCommand(ActionType.GET, ObjectTypes.LINEUPS)
-        cmd.parameters.headendIds = ["NY67791","CA61516"]
+        cmd.parameters.headendIds = ["NY67791", "CA61516"]
         println "credentials used " << credentials
         client.execute(cmd)
         println "Get Lineups: " << cmd.results
         assert cmd.results.code == ResponseCode.OK.code
     }
 
+    @Test
+    void testGetPrograms() {
+        def credentials = createCredentials()
+        client.connect(credentials)
+        def cmd = client.getCommand(ActionType.GET, ObjectTypes.PROGRAMS)
+        cmd.parameters.programIds = ["EP009311820146", "SH015736490000"]
+        println "credentials used " << credentials
+        client.execute(cmd)
+        println "Get programs: " << cmd.results
+        assert cmd.results.code == ResponseCode.OK.code
+    }
+
+
+    @Test
+    void testGetSchedules() {
+        def credentials = createCredentials()
+        client.connect(credentials)
+        def cmd = client.getCommand(ActionType.GET, ObjectTypes.SCHEDULES)
+        cmd.parameters.stationIds = ["45702", "20454"]
+        println "credentials used " << credentials
+        client.execute(cmd)
+        println "Get Schedules: " << cmd.results
+        assert cmd.results.code == ResponseCode.OK.code
+    }
+
 //    @Test
-    void testAddAndDeleteHeadends(){
+    void testAddAndDeleteHeadends() {
         def credentials = createCredentials()
         client.connect(credentials)
         def cmd = client.getCommand(ActionType.GET, ObjectTypes.HEADENDS)
@@ -134,16 +156,16 @@ class ClientTest {
         assert cmd.results.code == ResponseCode.OK.code
     }
 
-    private def createCredentials(){
+    private def createCredentials() {
         def slurper = new JsonSlurper()
-        def config = slurper.parseText( ClientTest.class.getResource( '/credentials.json' ).text )
-        def credentials = new Credentials(username:config.username, password:config.password)
+        def config = slurper.parseText(ClientTest.class.getResource('/credentials.json').text)
+        def credentials = new Credentials(username: config.username, password: config.password)
         // override from system props (can be provided from gradle.properties)
         String userName = System.properties["credentials.username"]
-        if(userName != null)
+        if (userName != null)
             credentials.username = userName
         String password = System.properties["credentials.password"]
-        if(password != null)
+        if (password != null)
             credentials.password = password
 
         assert credentials.username != "CHANGE_USER_NAME"
