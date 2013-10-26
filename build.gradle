@@ -24,7 +24,8 @@ test{
     // you can set this up in a gradle.properties
     systemProperties = [
                 "credentials.username": System.properties["credentials.username"],
-                "credentials.password": System.properties["credentials.password"]]
+                "credentials.password": System.properties["credentials.password"]
+    ]
 }
 
 dependencies {

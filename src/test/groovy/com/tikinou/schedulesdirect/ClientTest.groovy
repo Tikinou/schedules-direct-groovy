@@ -27,7 +27,9 @@ import org.junit.rules.ExpectedException
  * @author: Sebastien Astie
  */
 class ClientTest {
-    private def client;
+    private def client
+    private def postalCode = 94002
+
     @Before
     void setUp() {
         client = new Client(SchedulesDirectApiVersion.VERSION_20130709)
@@ -85,10 +87,38 @@ class ClientTest {
         client.connect(credentials)
         def cmd = client.getCommand(ActionType.GET, ObjectTypes.HEADENDS)
         cmd.parameters.country = Country.UnitedState
-        cmd.parameters.postalCode = 10562
+        cmd.parameters.postalCode = postalCode
         println "credentials used " << credentials
         client.execute(cmd)
         println "Get Headends: " << cmd.results
+        assert cmd.results.code == ResponseCode.OK.code
+    }
+
+//    @Test
+    void testAddAndDeleteHeadends(){
+        def credentials = createCredentials()
+        client.connect(credentials)
+        def cmd = client.getCommand(ActionType.GET, ObjectTypes.HEADENDS)
+        cmd.parameters.country = Country.UnitedState
+        cmd.parameters.postalCode = postalCode
+        println "credentials used " << credentials
+        client.execute(cmd)
+        println "Got Headends, try to find the first comcast one and add it"
+        assert cmd.results.code == ResponseCode.OK.code
+        // now lets find the first headend...
+        def headendId = cmd.results.data[0].headend
+        // adding the headend
+        cmd = client.getCommand(ActionType.ADD, ObjectTypes.HEADENDS)
+        cmd.parameters.headendId = headendId
+        println "Adding headend ${headendId}"
+        client.execute(cmd)
+        println cmd.results
+        assert cmd.results.code == ResponseCode.OK.code
+        cmd = client.getCommand(ActionType.DELETE, ObjectTypes.HEADENDS)
+        cmd.parameters.headendId = headendId
+        println "Deleting headend ${headendId}"
+        client.execute(cmd)
+        println cmd.results
         assert cmd.results.code == ResponseCode.OK.code
     }
 

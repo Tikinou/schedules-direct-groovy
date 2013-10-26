@@ -18,16 +18,10 @@ package com.tikinou.schedulesdirect.v20130709
 
 import com.tikinou.schedulesdirect.ActionType
 import com.tikinou.schedulesdirect.Command
-import com.tikinou.schedulesdirect.CommandStatus
 import com.tikinou.schedulesdirect.ObjectTypes
-import com.tikinou.schedulesdirect.ResponseCode
 import com.tikinou.schedulesdirect.ValidationException
 import com.tikinou.schedulesdirect.utils.PostalCodeFormatter
 import groovy.json.JsonBuilder
-import groovy.json.JsonSlurper
-import groovyx.net.http.ContentType
-import groovyx.net.http.Method
-
 /**
  * @author Sebastien Astie
  */
