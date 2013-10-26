@@ -56,6 +56,7 @@ abstract class Command {
     protected abstract def prepareJsonRequestData(credentials)
 
     protected void processResult(resultData, success){}
+    protected void validateParameters(){}
 
     protected void failIfUnathenticated(credentials){
         if(credentials.randhash == null)
