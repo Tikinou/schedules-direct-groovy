@@ -94,6 +94,18 @@ class ClientTest {
         assert cmd.results.code == ResponseCode.OK.code
     }
 
+    @Test
+    void testLineups(){
+        def credentials = createCredentials()
+        client.connect(credentials)
+        def cmd = client.getCommand(ActionType.GET, ObjectTypes.LINEUPS)
+        cmd.parameters.headendIds = ["NY67791","CA61516"]
+        println "credentials used " << credentials
+        client.execute(cmd)
+        println "Get Lineups: " << cmd.results
+        assert cmd.results.code == ResponseCode.OK.code
+    }
+
 //    @Test
     void testAddAndDeleteHeadends(){
         def credentials = createCredentials()
