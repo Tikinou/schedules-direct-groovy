@@ -162,7 +162,7 @@ task gitTag(type: GitTag) {
 }
 
 gitTag.doFirst {
-    if(!isReleaseBuild)
+    if(build_type != 'release')
         throw new StopExecutionException()
 }
 
@@ -175,7 +175,7 @@ task gitRelease(type:GitPush, dependsOn:gitTag, description: 'Creates the tag fo
 }
 
 gitRelease.doFirst {
-    if(!isReleaseBuild)
+    if(build_type != 'release')
         throw new StopExecutionException()
 }
 
