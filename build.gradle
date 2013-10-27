@@ -14,7 +14,41 @@
  * limitations under the License.
  */
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath group:'org.ajoberstar', name:'gradle-git', version:'0.6.3'
+    }
+}
+import org.ajoberstar.gradle.git.tasks.*
+
 apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
+
+group = 'com.tikinou.oss'
+version = '1.0'
+
+def isDevBuild
+def isReleaseBuild
+def sonatypeRepositoryUrl
+
+//set build variables based on build type (release, development)
+if(hasProperty('release')) {
+    isReleaseBuild = true
+    isDevBuild = false
+    sonatypeRepositoryUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+} else {
+    version += '-SNAPSHOT'
+    isDevBuild = true
+    isReleaseBuild = false
+    sonatypeRepositoryUrl = null
+}
 
 repositories {
     mavenCentral()
@@ -34,3 +68,99 @@ dependencies {
     compile group:'joda-time', name:'joda-time', version:'2.3'
     testCompile group:'junit', name:'junit', version:'4.11'
 }
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from 'build/docs/javadoc'
+}
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
+task gitTag(type: GitTag) {
+    tagName = "schedules-direct-groovy-${version}"
+    message = "Release of schedules-direct-groovy-${version}"
+}
+gitTag.doFirst {
+    if(!isReleaseBuild)
+        throw new StopExecutionException()
+}
+
+task gitRelease(type:GitPush, dependsOn:gitTag, description: 'Creates the tag for this release and push it the the remote repository.') {
+    credentials {
+        username = githubUsername
+        password = githubPassword
+    }
+    pushTags = true
+}
+
+gitRelease.doFirst {
+    if(!isReleaseBuild)
+        throw new StopExecutionException()
+}
+
+artifacts {
+    archives jar
+    archives javadocJar
+    archives sourcesJar
+}
+
+//********* artifact signing *********
+if(isReleaseBuild) {
+    signing {
+        sign configurations.archives
+    }
+} else {
+    task signArchives {
+        // do nothing
+    }
+}
+
+uploadArchives {
+    repositories {
+        if (isDevBuild) {
+            mavenLocal()
+        }
+        else {
+            mavenDeployer {
+                beforeDeployment { MavenDeployment deployment -> signPom(deployment) }
+
+                repository(url: sonatypeRepositoryUrl) {
+                    authentication(userName: sonatypeUsername, password: sonatypePassword)
+                }
+
+                pom.project {
+                    name 'schedules-direct-groovy'
+                    packaging 'jar'
+                    description 'www.schedulesdirect.org JSON API client for groovy'
+                    url 'https://github.com/Tikinou/schedules-direct-groovy'
+
+                    scm {
+                        url 'git@github.com:Tikinou/schedules-direct-groovy.git'
+                        connection 'scm:git:git@github.com:Tikinou/schedules-direct-groovy.git'
+                        developerConnection 'scm:git:git@github.com:Tikinou/schedules-direct-groovy.git'
+                    }
+
+                    licenses {
+                        license {
+                            name 'Apache License Version 2.0, January 2004'
+                            url ' http://www.apache.org/licenses/LICENSE-2.0'
+                            distribution 'repo'
+                        }
+                    }
+
+                    developers {
+                        developer {
+                            id 'tafypz'
+                            organization 'Tikinou LLC'
+                            name 'Sebastien Astie'
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
