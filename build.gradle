@@ -119,7 +119,10 @@ uploadArchives {
                         packaging 'jar'
                         description 'www.schedulesdirect.org JSON API client for groovy'
                         url 'https://github.com/Tikinou/schedules-direct-groovy'
-
+                        organization {
+                            name 'Tikinou LLC'
+                            url 'http://www.tikinou.com'
+                        }
                         scm {
                             url 'git@github.com:Tikinou/schedules-direct-groovy.git'
                             connection 'scm:git:git@github.com:Tikinou/schedules-direct-groovy.git'
@@ -137,7 +140,8 @@ uploadArchives {
                         developers {
                             developer {
                                 id 'tafypz'
-                                organization 'Tikinou LLC'
+                                // workaround for bug, should be : organization 'Tikinou LLC'
+                                organization = 'Tikinou LLC'
                                 name 'Sebastien Astie'
                             }
                         }
