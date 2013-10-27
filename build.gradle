@@ -30,24 +30,24 @@ apply plugin: 'signing'
 
 sourceCompatibility = JavaVersion.VERSION_1_7
 targetCompatibility = JavaVersion.VERSION_1_7
-
+ext.versionFile = file('version.properties')
 group = 'com.tikinou.oss'
-version = '1.0'
 
-def isDevBuild
-def isReleaseBuild
 def sonatypeRepositoryUrl
 
-//set build variables based on build type (release, development)
-if(hasProperty('release')) {
-    isReleaseBuild = true
-    isDevBuild = false
-    sonatypeRepositoryUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
-} else {
-    version += '-SNAPSHOT'
-    isDevBuild = true
-    isReleaseBuild = false
-    sonatypeRepositoryUrl = null
+// set build variables based on build type (release, snapshot, local)
+switch(build_type){
+    case 'release':
+        sonatypeRepositoryUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+        break
+    case 'snapshot':
+        sonatypeRepositoryUrl = 'https://oss.sonatype.org/content/repositories/snapshots/'
+        break
+    case 'local':
+    default:
+        sonatypeRepositoryUrl = null
+        build_type = 'local' // in case it is null...
+        break
 }
 
 repositories {
@@ -79,10 +79,88 @@ task sourcesJar(type: Jar) {
     classifier = 'sources'
 }
 
-task gitTag(type: GitTag) {
-    tagName = "schedules-direct-groovy-${version}"
-    message = "Release of schedules-direct-groovy-${version}"
+artifacts {
+    archives jar
+    archives javadocJar
+    archives sourcesJar
 }
+
+//************************************
+//********* artifact signing *********
+//************************************
+switch(build_type){
+    case 'release':
+    case 'snapshot':
+        signing {
+            sign configurations.archives
+        }
+        break
+    default:
+        task signArchives {
+            // do nothing
+        }
+        break
+}
+
+uploadArchives {
+    repositories {
+        switch(build_type){
+            case 'snapshot':
+            case 'release':
+                mavenDeployer {
+                    beforeDeployment { MavenDeployment deployment -> signPom(deployment) }
+
+                    repository(url: sonatypeRepositoryUrl) {
+                        authentication(userName: sonatypeUsername, password: sonatypePassword)
+                    }
+
+                    pom.project {
+                        name 'schedules-direct-groovy'
+                        packaging 'jar'
+                        description 'www.schedulesdirect.org JSON API client for groovy'
+                        url 'https://github.com/Tikinou/schedules-direct-groovy'
+
+                        scm {
+                            url 'git@github.com:Tikinou/schedules-direct-groovy.git'
+                            connection 'scm:git:git@github.com:Tikinou/schedules-direct-groovy.git'
+                            developerConnection 'scm:git:git@github.com:Tikinou/schedules-direct-groovy.git'
+                        }
+
+                        licenses {
+                            license {
+                                name 'Apache License Version 2.0, January 2004'
+                                url ' http://www.apache.org/licenses/LICENSE-2.0'
+                                distribution 'repo'
+                            }
+                        }
+
+                        developers {
+                            developer {
+                                id 'tafypz'
+                                organization 'Tikinou LLC'
+                                name 'Sebastien Astie'
+                            }
+                        }
+                    }
+                }
+                break
+            case 'local':
+            default:
+                mavenLocal()
+                break
+        }
+    }
+}
+
+//************************************
+//********* Git custom tasks *********
+//************************************
+
+task gitTag(type: GitTag) {
+    tagName = "schedules-direct-groovy-${project.version}"
+    message = "Release of schedules-direct-groovy-${project.version}"
+}
+
 gitTag.doFirst {
     if(!isReleaseBuild)
         throw new StopExecutionException()
@@ -101,66 +179,73 @@ gitRelease.doFirst {
         throw new StopExecutionException()
 }
 
-artifacts {
-    archives jar
-    archives javadocJar
-    archives sourcesJar
+
+//************************************
+//***** Custom Version Handling ******
+//************************************
+task loadVersion {
+    project.version = readVersion()
 }
 
-//********* artifact signing *********
-if(isReleaseBuild) {
-    signing {
-        sign configurations.archives
+ProjectVersion readVersion() {
+    logger.quiet 'Reading the version file.'
+
+    if(!versionFile.exists()) {
+        throw new GradleException("Required version file does not exit: $versionFile.canonicalPath")
     }
-} else {
-    task signArchives {
-        // do nothing
+
+    Properties versionProps = new Properties()
+
+    versionFile.withInputStream { stream ->
+        versionProps.load(stream)
+    }
+    ProjectVersion v = new ProjectVersion(versionProps.major.toInteger(), versionProps.minor.toInteger(), build_type == 'release')
+}
+
+
+task incrementMajorVersion(group: 'versioning', description: 'Increments project major version.') << {
+    String currentVersion = version.toString()
+    ++version.major
+    String newVersion = version.toString()
+    logger.info "Incrementing major project version: $currentVersion -> $newVersion"
+
+    ant.propertyfile(file: versionFile) {
+        entry(key: 'major', type: 'int', operation: '+', value: 1)
     }
 }
 
-uploadArchives {
-    repositories {
-        if (isDevBuild) {
-            mavenLocal()
-        }
-        else {
-            mavenDeployer {
-                beforeDeployment { MavenDeployment deployment -> signPom(deployment) }
+task incrementMinorVersion(group: 'versioning', description: 'Increments project minor version.') << {
+    String currentVersion = version.toString()
+    ++version.minor
+    String newVersion = version.toString()
+    logger.info "Incrementing minor project version: $currentVersion -> $newVersion"
 
-                repository(url: sonatypeRepositoryUrl) {
-                    authentication(userName: sonatypeUsername, password: sonatypePassword)
-                }
-
-                pom.project {
-                    name 'schedules-direct-groovy'
-                    packaging 'jar'
-                    description 'www.schedulesdirect.org JSON API client for groovy'
-                    url 'https://github.com/Tikinou/schedules-direct-groovy'
-
-                    scm {
-                        url 'git@github.com:Tikinou/schedules-direct-groovy.git'
-                        connection 'scm:git:git@github.com:Tikinou/schedules-direct-groovy.git'
-                        developerConnection 'scm:git:git@github.com:Tikinou/schedules-direct-groovy.git'
-                    }
-
-                    licenses {
-                        license {
-                            name 'Apache License Version 2.0, January 2004'
-                            url ' http://www.apache.org/licenses/LICENSE-2.0'
-                            distribution 'repo'
-                        }
-                    }
-
-                    developers {
-                        developer {
-                            id 'tafypz'
-                            organization 'Tikinou LLC'
-                            name 'Sebastien Astie'
-                        }
-                    }
-                }
-            }
-        }
+    ant.propertyfile(file: versionFile) {
+        entry(key: 'minor', type: 'int', operation: '+', value: 1)
     }
 }
+
+class ProjectVersion {
+    Integer major
+    Integer minor
+    Boolean release
+
+    ProjectVersion(Integer major, Integer minor) {
+        this(major, minor, Boolean.FALSE)
+    }
+
+    ProjectVersion(Integer major, Integer minor, Boolean release) {
+
+        this.major = major
+        this.minor = minor
+        this.release = release
+    }
+
+    @Override
+    String toString() {
+        "$major.$minor${release ? '' : '-SNAPSHOT'}"
+    }
+}
+
+
 
