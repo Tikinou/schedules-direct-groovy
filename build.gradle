@@ -38,10 +38,10 @@ def sonatypeRepositoryUrl
 // set build variables based on build type (release, snapshot, local)
 switch(build_type){
     case 'release':
-        sonatypeRepositoryUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+        sonatypeRepositoryUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2'
         break
     case 'snapshot':
-        sonatypeRepositoryUrl = 'https://oss.sonatype.org/content/repositories/snapshots/'
+        sonatypeRepositoryUrl = 'https://oss.sonatype.org/content/repositories/snapshots'
         break
     case 'local':
     default:
@@ -157,34 +157,6 @@ uploadArchives {
 }
 
 //************************************
-//********* Git custom tasks *********
-//************************************
-
-task gitTag(type: GitTag) {
-    tagName = "schedules-direct-groovy-${project.version}"
-    message = "Release of schedules-direct-groovy-${project.version}"
-}
-
-gitTag.doFirst {
-    if(build_type != 'release')
-        throw new StopExecutionException()
-}
-
-task gitRelease(type:GitPush, dependsOn:gitTag, description: 'Creates the tag for this release and push it the the remote repository.') {
-    credentials {
-        username = githubUsername
-        password = githubPassword
-    }
-    pushTags = true
-}
-
-gitRelease.doFirst {
-    if(build_type != 'release')
-        throw new StopExecutionException()
-}
-
-
-//************************************
 //***** Custom Version Handling ******
 //************************************
 task loadVersion {
@@ -203,9 +175,8 @@ ProjectVersion readVersion() {
     versionFile.withInputStream { stream ->
         versionProps.load(stream)
     }
-    ProjectVersion v = new ProjectVersion(versionProps.major.toInteger(), versionProps.minor.toInteger(), build_type == 'release')
+    new ProjectVersion(versionProps.major.toInteger(), versionProps.minor.toInteger(), build_type == 'release')
 }
-
 
 task incrementMajorVersion(group: 'versioning', description: 'Increments project major version.') << {
     String currentVersion = version.toString()
@@ -251,5 +222,30 @@ class ProjectVersion {
     }
 }
 
+//************************************
+//********* Git custom tasks *********
+//************************************
 
+task gitTag(type: GitTag, dependsOn:loadVersion) {
+    tagName = project.version
+    message = "Release of schedules-direct-groovy-${project.version}"
+}
+
+gitTag.doFirst {
+    if(build_type != 'release')
+        throw new StopExecutionException()
+}
+
+task gitRelease(type:GitPush, dependsOn:gitTag, description: 'Creates the tag for this release and push it the the remote repository.') {
+    credentials {
+        username = githubUsername
+        password = githubPassword
+    }
+    pushTags = true
+}
+
+gitRelease.doFirst {
+    if(build_type != 'release')
+        throw new StopExecutionException()
+}
 
