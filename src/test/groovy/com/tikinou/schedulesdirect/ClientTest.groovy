@@ -96,7 +96,7 @@ class ClientTest {
         def credentials = createCredentials()
         client.connect(credentials)
         def cmd = client.getCommand(ActionType.GET, ObjectTypes.LINEUPS)
-        cmd.parameters.headendIds = ["NY67791", "CA61516"]
+        cmd.parameters.headendIds = ["NY67791", "NY62482", "PC:10562", "DISH501"]
         println "credentials used " << credentials
         client.execute(cmd)
         println "Get Lineups: " << cmd.results
@@ -109,7 +109,6 @@ class ClientTest {
         client.connect(credentials)
         def cmd = client.getCommand(ActionType.GET, ObjectTypes.HEADENDS)
         cmd.parameters.subscribed = true
-//        cmd.parameters.headendIds = ["NY67791", "CA61516"]
         println "credentials used " << credentials
         client.execute(cmd)
         println "Get Subscribed headends: " << cmd.results
@@ -121,7 +120,7 @@ class ClientTest {
         def credentials = createCredentials()
         client.connect(credentials)
         def cmd = client.getCommand(ActionType.GET, ObjectTypes.PROGRAMS)
-        cmd.parameters.programIds = ["EP009311820146", "SH015736490000"]
+        cmd.parameters.programIds = ["EP017398160007", "SH013762600000", "MV003954050000"]
         println "credentials used " << credentials
         client.execute(cmd)
         println "Get programs: " << cmd.results
@@ -134,14 +133,13 @@ class ClientTest {
         def credentials = createCredentials()
         client.connect(credentials)
         def cmd = client.getCommand(ActionType.GET, ObjectTypes.SCHEDULES)
-        cmd.parameters.stationIds = ["45702", "20454"]
+        cmd.parameters.stationIds = ["16689", "20360", "20453", "21868"]
         println "credentials used " << credentials
         client.execute(cmd)
         println "Get Schedules: " << cmd.results
         assert cmd.results.code == ResponseCode.OK.code
     }
 
-//    @Test
     void testAddAndDeleteHeadends() {
         def credentials = createCredentials()
         client.connect(credentials)
@@ -164,6 +162,19 @@ class ClientTest {
         cmd = client.getCommand(ActionType.DELETE, ObjectTypes.HEADENDS)
         cmd.parameters.headendId = headendId
         println "Deleting headend ${headendId}"
+        client.execute(cmd)
+        println cmd.results
+        assert cmd.results.code == ResponseCode.OK.code
+    }
+
+    void testAddAndHeadend() {
+        def credentials = createCredentials()
+        client.connect(credentials)
+        def headendId = "DISH501"
+        // adding the headend
+        def cmd = client.getCommand(ActionType.ADD, ObjectTypes.HEADENDS)
+        cmd.parameters.headendId = headendId
+        println "Adding headend ${headendId}"
         client.execute(cmd)
         println cmd.results
         assert cmd.results.code == ResponseCode.OK.code

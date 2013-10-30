@@ -1,0 +1,2254 @@
+{"deviceTypes": ["Antenna"], "headend": "PC:10562", "name": "Antenna", "location": "Over-the-air", "Antenna": {
+    "map": [
+        {
+            "stationID": 16454,
+            "uhfVhf": 48
+        },
+        {
+            "stationID": 18154,
+            "uhfVhf": 18
+        },
+        {
+            "stationID": 33016,
+            "uhfVhf": 22
+        },
+        {
+            "stationID": 33083,
+            "uhfVhf": 35
+        },
+        {
+            "stationID": 16689,
+            "uhfVhf": 33,
+            "atscMajor": 2,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 19576,
+            "uhfVhf": 10,
+            "atscMajor": 8,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 20360,
+            "uhfVhf": 44,
+            "atscMajor": 5,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 20373,
+            "uhfVhf": 11,
+            "atscMajor": 11,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 20453,
+            "uhfVhf": 7,
+            "atscMajor": 7,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 20459,
+            "uhfVhf": 28,
+            "atscMajor": 4,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 26182,
+            "uhfVhf": 13,
+            "atscMajor": 13,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 26196,
+            "uhfVhf": 24,
+            "atscMajor": 25,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 26566,
+            "uhfVhf": 38,
+            "atscMajor": 9,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 28270,
+            "uhfVhf": 24,
+            "atscMajor": 25,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 28271,
+            "uhfVhf": 24,
+            "atscMajor": 25,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 29139,
+            "uhfVhf": 51,
+            "atscMajor": 50,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 30763,
+            "uhfVhf": 44,
+            "atscMajor": 5,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 31780,
+            "uhfVhf": 13,
+            "atscMajor": 13,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 33860,
+            "uhfVhf": 51,
+            "atscMajor": 50,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 34135,
+            "uhfVhf": 21,
+            "atscMajor": 21,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 34254,
+            "uhfVhf": 49,
+            "atscMajor": 49,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 34260,
+            "uhfVhf": 49,
+            "atscMajor": 49,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 34262,
+            "uhfVhf": 49,
+            "atscMajor": 49,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 34325,
+            "uhfVhf": 21,
+            "atscMajor": 21,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 35230,
+            "uhfVhf": 7,
+            "atscMajor": 7,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 35361,
+            "uhfVhf": 40,
+            "atscMajor": 41,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 35364,
+            "uhfVhf": 30,
+            "atscMajor": 68,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 35469,
+            "uhfVhf": 39,
+            "atscMajor": 59,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 35855,
+            "uhfVhf": 48,
+            "atscMajor": 48,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 35911,
+            "uhfVhf": 18,
+            "atscMajor": 63,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 36164,
+            "uhfVhf": 27,
+            "atscMajor": 54,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 36166,
+            "uhfVhf": 27,
+            "atscMajor": 54,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 36168,
+            "uhfVhf": 27,
+            "atscMajor": 54,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 36171,
+            "uhfVhf": 27,
+            "atscMajor": 54,
+            "atscMinor": 4
+        },
+        {
+            "stationID": 40520,
+            "uhfVhf": 10,
+            "atscMajor": 8,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 40521,
+            "uhfVhf": 10,
+            "atscMajor": 8,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 43679,
+            "uhfVhf": 29,
+            "atscMajor": 66,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 43691,
+            "uhfVhf": 8,
+            "atscMajor": 58,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 43818,
+            "uhfVhf": 31,
+            "atscMajor": 31,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 43839,
+            "uhfVhf": 29,
+            "atscMajor": 66,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 44147,
+            "uhfVhf": 21,
+            "atscMajor": 21,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 44667,
+            "uhfVhf": 13,
+            "atscMajor": 13,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 44936,
+            "uhfVhf": 28,
+            "atscMajor": 4,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 45650,
+            "uhfVhf": 38,
+            "atscMajor": 9,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 50276,
+            "uhfVhf": 7,
+            "atscMajor": 7,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 50777,
+            "uhfVhf": 11,
+            "atscMajor": 11,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 54437,
+            "uhfVhf": 36,
+            "atscMajor": 47,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 54618,
+            "uhfVhf": 31,
+            "atscMajor": 31,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 55285,
+            "uhfVhf": 31,
+            "atscMajor": 31,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 55347,
+            "uhfVhf": 31,
+            "atscMajor": 31,
+            "atscMinor": 4
+        },
+        {
+            "stationID": 55478,
+            "uhfVhf": 27,
+            "atscMajor": 54,
+            "atscMinor": 5
+        },
+        {
+            "stationID": 55565,
+            "uhfVhf": 48,
+            "atscMajor": 48,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 55567,
+            "uhfVhf": 48,
+            "atscMajor": 48,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 55772,
+            "uhfVhf": 18,
+            "atscMajor": 63,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 55773,
+            "uhfVhf": 18,
+            "atscMajor": 63,
+            "atscMinor": 4
+        },
+        {
+            "stationID": 55810,
+            "uhfVhf": 18,
+            "atscMajor": 63,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 59401,
+            "uhfVhf": 39,
+            "atscMajor": 59,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 62811,
+            "uhfVhf": 18,
+            "atscMajor": 63,
+            "atscMinor": 5
+        },
+        {
+            "stationID": 64008,
+            "uhfVhf": 42,
+            "atscMajor": 43,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 64933,
+            "uhfVhf": 18,
+            "atscMajor": 63,
+            "atscMinor": 6
+        },
+        {
+            "stationID": 65092,
+            "uhfVhf": 11,
+            "atscMajor": 11,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 66259,
+            "uhfVhf": 29,
+            "atscMajor": 66,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 66260,
+            "uhfVhf": 29,
+            "atscMajor": 66,
+            "atscMinor": 4
+        },
+        {
+            "stationID": 66261,
+            "uhfVhf": 29,
+            "atscMajor": 66,
+            "atscMinor": 5
+        },
+        {
+            "stationID": 66262,
+            "uhfVhf": 29,
+            "atscMajor": 66,
+            "atscMinor": 6
+        },
+        {
+            "stationID": 67228,
+            "uhfVhf": 30,
+            "atscMajor": 68,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 68621,
+            "uhfVhf": 2,
+            "atscMajor": 42,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 70833,
+            "uhfVhf": 2,
+            "atscMajor": 42,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 70835,
+            "uhfVhf": 2,
+            "atscMajor": 42,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 70837,
+            "uhfVhf": 2,
+            "atscMajor": 42,
+            "atscMinor": 4
+        },
+        {
+            "stationID": 72024,
+            "uhfVhf": 39,
+            "atscMajor": 59,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 74322,
+            "uhfVhf": 42,
+            "atscMajor": 43,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 74569,
+            "uhfVhf": 36,
+            "atscMajor": 47,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 74578,
+            "uhfVhf": 36,
+            "atscMajor": 47,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 74916,
+            "uhfVhf": 33,
+            "atscMajor": 2,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 75009,
+            "uhfVhf": 38,
+            "atscMajor": 9,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 75011,
+            "uhfVhf": 25,
+            "atscMajor": 24,
+            "atscMinor": 1
+        },
+        {
+            "stationID": 75494,
+            "uhfVhf": 48,
+            "atscMajor": 48,
+            "atscMinor": 5
+        },
+        {
+            "stationID": 75533,
+            "uhfVhf": 48,
+            "atscMajor": 48,
+            "atscMinor": 4
+        },
+        {
+            "stationID": 76276,
+            "uhfVhf": 25,
+            "atscMajor": 24,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 76277,
+            "uhfVhf": 25,
+            "atscMajor": 24,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 78580,
+            "uhfVhf": 18,
+            "atscMajor": 63,
+            "atscMinor": 7
+        },
+        {
+            "stationID": 79028,
+            "uhfVhf": 29,
+            "atscMajor": 66,
+            "atscMinor": 7
+        },
+        {
+            "stationID": 79045,
+            "uhfVhf": 18,
+            "atscMajor": 63,
+            "atscMinor": 8
+        },
+        {
+            "stationID": 79046,
+            "uhfVhf": 18,
+            "atscMajor": 63,
+            "atscMinor": 9
+        },
+        {
+            "stationID": 81334,
+            "uhfVhf": 44,
+            "atscMajor": 5,
+            "atscMinor": 3
+        },
+        {
+            "stationID": 81349,
+            "uhfVhf": 38,
+            "atscMajor": 9,
+            "atscMinor": 4
+        },
+        {
+            "stationID": 81776,
+            "uhfVhf": 2,
+            "atscMajor": 42,
+            "atscMinor": 5
+        },
+        {
+            "stationID": 81777,
+            "uhfVhf": 2,
+            "atscMajor": 42,
+            "atscMinor": 6
+        },
+        {
+            "stationID": 82183,
+            "uhfVhf": 40,
+            "atscMajor": 41,
+            "atscMinor": 2
+        },
+        {
+            "stationID": 82708,
+            "uhfVhf": 31,
+            "atscMajor": 31,
+            "atscMinor": 5
+        }
+    ]
+}, "stations": [
+    {
+        "name": "WRNTLP (WRNT-LP)",
+        "callsign": "WRNTLP",
+        "affiliate": "Low Power",
+        "broadcaster": {
+            "city": "Hartford",
+            "state": "CT",
+            "zipcode": "06105",
+            "country": "United States"
+        },
+        "language": "English",
+        "stationID": 16454
+    },
+    {
+        "name": "WUVN",
+        "callsign": "WUVN",
+        "affiliate": "Univision (SI) Affiliate",
+        "broadcaster": {
+            "city": "Hartford",
+            "state": "CT",
+            "zipcode": "06103",
+            "country": "United States"
+        },
+        "language": "Spanish",
+        "stationID": 18154
+    },
+    {
+        "name": "W22BN",
+        "callsign": "W22BN",
+        "affiliate": "Low Power",
+        "broadcaster": {
+            "city": "Danbury",
+            "state": "CT",
+            "zipcode": "06810",
+            "country": "United States"
+        },
+        "language": "English",
+        "stationID": 33016
+    },
+    {
+        "name": "WNYXLP (WNYX-LP)",
+        "callsign": "WNYXLP",
+        "affiliate": "Low Power",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10010",
+            "country": "United States"
+        },
+        "language": "Spanish",
+        "stationID": 33083
+    },
+    {
+        "name": "WCBSDT (WCBS-DT)",
+        "callsign": "WCBSDT",
+        "affiliate": "CBS Affiliate",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10019",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/7c2557dcb737cd54b8c268d98a5d27ae.png",
+                "md5": "PZ0u6ArsYi4r4tOs9va+LA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 16689
+    },
+    {
+        "name": "WTNHDT (WTNH-DT)",
+        "callsign": "WTNHDT",
+        "affiliate": "ABC Affiliate",
+        "broadcaster": {
+            "city": "New Haven",
+            "state": "CT",
+            "zipcode": "06510",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/7c2557dcb737cd54b8c268d98a5d27ae.png",
+                "md5": "PZ0u6ArsYi4r4tOs9va+LA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 19576
+    },
+    {
+        "name": "WNYWDT (WNYW-DT)",
+        "callsign": "WNYWDT",
+        "affiliate": "Fox Affiliate",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10021",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/ca3c0d4a5a6d169247f6bcfaadb7dd22.png",
+                "md5": "B6mbP3bN27hbveFW8sicUw",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 20360
+    },
+    {
+        "name": "WPIXDT (WPIX-DT)",
+        "callsign": "WPIXDT",
+        "affiliate": "CW Affiliate",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10017",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a001f572247fd5234911c69925c3dde9.png",
+                "md5": "dZ3xN+CvDEmoDQi0mGp8kg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 20373
+    },
+    {
+        "name": "WABCDT (WABC-DT)",
+        "callsign": "WABCDT",
+        "affiliate": "ABC Affiliate",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10023",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/2fe48e60f3f4357c7b059affeac979c3.png",
+                "md5": "d32l0XVUhmIWMCkm1Jk+ng",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 20453
+    },
+    {
+        "name": "WNBCDT (WNBC-DT)",
+        "callsign": "WNBCDT",
+        "affiliate": "NBC Affiliate",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10012",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/03171b2e451233b2bf32f25265b5b56a.png",
+                "md5": "II2VklRNK+ZmhKIrsCrbIg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 20459
+    },
+    {
+        "name": "WNETDT (WNET-DT)",
+        "callsign": "WNETDT",
+        "affiliate": "PBS Affiliate",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10019",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/0854b8717f97867dd08dc1419b8cc47b.png",
+                "md5": "E9okHWlFJiQ33wkTFmFEZA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 26182
+    },
+    {
+        "name": "WNYEDT (WNYE-DT)",
+        "callsign": "WNYEDT",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "Brooklyn",
+            "state": "NY",
+            "zipcode": "11201",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/0854b8717f97867dd08dc1419b8cc47b.png",
+                "md5": "E9okHWlFJiQ33wkTFmFEZA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Multi",
+        "stationID": 26196
+    },
+    {
+        "name": "WWORDT (WWOR-DT)",
+        "callsign": "WWORDT",
+        "affiliate": "MyNetworkTV Affiliate",
+        "broadcaster": {
+            "city": "Secaucus",
+            "state": "NJ",
+            "zipcode": "07094",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/e9cdb95ed0363d79961fa46609bbff7c.png",
+                "md5": "uVKgWQGleqhgJYfTmAPYuA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 26566
+    },
+    {
+        "name": "WNYEDT2 (WNYE-DT2)",
+        "callsign": "WNYEDT2",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "Brooklyn",
+            "state": "NY",
+            "zipcode": "11201",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/e9cdb95ed0363d79961fa46609bbff7c.png",
+                "md5": "uVKgWQGleqhgJYfTmAPYuA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 28270
+    },
+    {
+        "name": "WNYEDT3 (WNYE-DT3)",
+        "callsign": "WNYEDT3",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "Brooklyn",
+            "state": "NY",
+            "zipcode": "11201",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/e9cdb95ed0363d79961fa46609bbff7c.png",
+                "md5": "uVKgWQGleqhgJYfTmAPYuA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Multi",
+        "stationID": 28271
+    },
+    {
+        "name": "WNJNDT (WNJN-DT)",
+        "callsign": "WNJNDT",
+        "affiliate": "PBS Affiliate",
+        "broadcaster": {
+            "city": "Trenton",
+            "state": "NJ",
+            "zipcode": "08625",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/e9cdb95ed0363d79961fa46609bbff7c.png",
+                "md5": "uVKgWQGleqhgJYfTmAPYuA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 29139
+    },
+    {
+        "name": "WNYWDT2 (WNYW-DT2)",
+        "callsign": "WNYWDT2",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10021",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/e9cdb95ed0363d79961fa46609bbff7c.png",
+                "md5": "uVKgWQGleqhgJYfTmAPYuA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 30763
+    },
+    {
+        "name": "WNETDT2 (WNET-DT2)",
+        "callsign": "WNETDT2",
+        "affiliate": "PBS Affiliate",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10019",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/e9cdb95ed0363d79961fa46609bbff7c.png",
+                "md5": "uVKgWQGleqhgJYfTmAPYuA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 31780
+    },
+    {
+        "name": "WNJNDT3 (WNJN-DT3)",
+        "callsign": "WNJNDT3",
+        "affiliate": "PBS Affiliate",
+        "broadcaster": {
+            "city": "Trenton",
+            "state": "NJ",
+            "zipcode": "08625",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/e9cdb95ed0363d79961fa46609bbff7c.png",
+                "md5": "uVKgWQGleqhgJYfTmAPYuA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 33860
+    },
+    {
+        "name": "WLIWDT2 (WLIW-DT2)",
+        "callsign": "WLIWDT2",
+        "affiliate": "PBS Affiliate",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10001",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/e9cdb95ed0363d79961fa46609bbff7c.png",
+                "md5": "uVKgWQGleqhgJYfTmAPYuA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 34135
+    },
+    {
+        "name": "WEDWDT (WEDW-DT)",
+        "callsign": "WEDWDT",
+        "affiliate": "PBS Affiliate",
+        "broadcaster": {
+            "city": "Hartford",
+            "state": "CT",
+            "zipcode": "06106",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/e9cdb95ed0363d79961fa46609bbff7c.png",
+                "md5": "uVKgWQGleqhgJYfTmAPYuA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 34254
+    },
+    {
+        "name": "WEDWDT2 (WEDW-DT2)",
+        "callsign": "WEDWDT2",
+        "affiliate": "PBS Affiliate",
+        "broadcaster": {
+            "city": "Hartford",
+            "state": "CT",
+            "zipcode": "06106",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/e9cdb95ed0363d79961fa46609bbff7c.png",
+                "md5": "uVKgWQGleqhgJYfTmAPYuA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 34260
+    },
+    {
+        "name": "WEDWDT3 (WEDW-DT3)",
+        "callsign": "WEDWDT3",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "Hartford",
+            "state": "CT",
+            "zipcode": "06106",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/e9cdb95ed0363d79961fa46609bbff7c.png",
+                "md5": "uVKgWQGleqhgJYfTmAPYuA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 34262
+    },
+    {
+        "name": "WLIWDT (WLIW-DT)",
+        "callsign": "WLIWDT",
+        "affiliate": "PBS Affiliate",
+        "broadcaster": {
+            "city": "Plainview",
+            "state": "NY",
+            "zipcode": "11803",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/e9cdb95ed0363d79961fa46609bbff7c.png",
+                "md5": "uVKgWQGleqhgJYfTmAPYuA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 34325
+    },
+    {
+        "name": "WABCDT2 (WABC-DT2)",
+        "callsign": "WABCDT2",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10023",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/e9cdb95ed0363d79961fa46609bbff7c.png",
+                "md5": "uVKgWQGleqhgJYfTmAPYuA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 35230
+    },
+    {
+        "name": "WXTVDT (WXTV-DT)",
+        "callsign": "WXTVDT",
+        "affiliate": "Univision (SI) Affiliate",
+        "broadcaster": {
+            "city": "Teaneck",
+            "state": "NJ",
+            "zipcode": "07666",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/ad639161b6bc68a1e3d591833823b73b.png",
+                "md5": "7qq86J5fcOw9Bsfwrxpqcw",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Spanish",
+        "stationID": 35361
+    },
+    {
+        "name": "WFUTDT (WFUT-DT)",
+        "callsign": "WFUTDT",
+        "affiliate": "UniMas Affiliate",
+        "broadcaster": {
+            "city": "Newark",
+            "state": "NJ",
+            "zipcode": "07107",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/ad639161b6bc68a1e3d591833823b73b.png",
+                "md5": "7qq86J5fcOw9Bsfwrxpqcw",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Spanish",
+        "stationID": 35364
+    },
+    {
+        "name": "WCTXDT (WCTX-DT)",
+        "callsign": "WCTXDT",
+        "affiliate": "MyNetworkTV Affiliate",
+        "broadcaster": {
+            "city": "New Haven",
+            "state": "CT",
+            "zipcode": "06510",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/ad639161b6bc68a1e3d591833823b73b.png",
+                "md5": "7qq86J5fcOw9Bsfwrxpqcw",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 35469
+    },
+    {
+        "name": "WRNNDT (WRNN-DT)",
+        "callsign": "WRNNDT",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "Rye Brook",
+            "state": "NY",
+            "zipcode": "10573",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/ad639161b6bc68a1e3d591833823b73b.png",
+                "md5": "7qq86J5fcOw9Bsfwrxpqcw",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 35855
+    },
+    {
+        "name": "WMBCDT (WMBC-DT)",
+        "callsign": "WMBCDT",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "West Caldwell",
+            "state": "NJ",
+            "zipcode": "07006",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/ad639161b6bc68a1e3d591833823b73b.png",
+                "md5": "7qq86J5fcOw9Bsfwrxpqcw",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 35911
+    },
+    {
+        "name": "WTBYDT (WTBY-DT)",
+        "callsign": "WTBYDT",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "Fishkill",
+            "state": "NY",
+            "zipcode": "12524",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/ad639161b6bc68a1e3d591833823b73b.png",
+                "md5": "7qq86J5fcOw9Bsfwrxpqcw",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 36164
+    },
+    {
+        "name": "WTBYDT2 (WTBY-DT2)",
+        "callsign": "WTBYDT2",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "Fishkill",
+            "state": "NY",
+            "zipcode": "12524",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/ad639161b6bc68a1e3d591833823b73b.png",
+                "md5": "7qq86J5fcOw9Bsfwrxpqcw",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 36166
+    },
+    {
+        "name": "WTBYDT3 (WTBY-DT3)",
+        "callsign": "WTBYDT3",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "Fishkill",
+            "state": "NY",
+            "zipcode": "12524",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/ad639161b6bc68a1e3d591833823b73b.png",
+                "md5": "7qq86J5fcOw9Bsfwrxpqcw",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 36168
+    },
+    {
+        "name": "WTBYDT4 (WTBY-DT4)",
+        "callsign": "WTBYDT4",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "Fishkill",
+            "state": "NY",
+            "zipcode": "12524",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/ad639161b6bc68a1e3d591833823b73b.png",
+                "md5": "7qq86J5fcOw9Bsfwrxpqcw",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Spanish",
+        "stationID": 36171
+    },
+    {
+        "name": "WTNH-DT2 10",
+        "callsign": "WTNHDT2",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New Haven",
+            "state": "CT",
+            "zipcode": "06510",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/ad639161b6bc68a1e3d591833823b73b.png",
+                "md5": "7qq86J5fcOw9Bsfwrxpqcw",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 40520
+    },
+    {
+        "name": "WTNH-DT3 10",
+        "callsign": "WTNHDT3",
+        "affiliate": "ABC Affiliate",
+        "broadcaster": {
+            "city": "New Haven",
+            "state": "CT",
+            "zipcode": "06510",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/ad639161b6bc68a1e3d591833823b73b.png",
+                "md5": "7qq86J5fcOw9Bsfwrxpqcw",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 40521
+    },
+    {
+        "name": "WNYJDT (WNYJ-DT)",
+        "callsign": "WFMEDT",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "West Orange",
+            "state": "NJ",
+            "zipcode": "07052",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/ad639161b6bc68a1e3d591833823b73b.png",
+                "md5": "7qq86J5fcOw9Bsfwrxpqcw",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 43679
+    },
+    {
+        "name": "WNJBDT (WNJB-DT)",
+        "callsign": "WNJBDT",
+        "affiliate": "PBS Affiliate",
+        "broadcaster": {
+            "city": "Trenton",
+            "state": "NJ",
+            "zipcode": "08625",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/72d76cd6df7604611cda95d5a771d63f.png",
+                "md5": "E9okHWlFJiQ33wkTFmFEZA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 43691
+    },
+    {
+        "name": "WPXNDT (WPXN-DT)",
+        "callsign": "WPXNDT",
+        "affiliate": "ION Affiliate",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10281",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/72d76cd6df7604611cda95d5a771d63f.png",
+                "md5": "E9okHWlFJiQ33wkTFmFEZA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 43818
+    },
+    {
+        "name": "WNYJDT2 (WNYJ-DT2)",
+        "callsign": "WFMEDT2",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "West Orange",
+            "state": "NJ",
+            "zipcode": "07052",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/72d76cd6df7604611cda95d5a771d63f.png",
+                "md5": "E9okHWlFJiQ33wkTFmFEZA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 43839
+    },
+    {
+        "name": "WLIWDT3 (WLIW-DT3)",
+        "callsign": "WLIWDT3",
+        "affiliate": "PBS Affiliate",
+        "broadcaster": {
+            "city": "Plainview",
+            "state": "NY",
+            "zipcode": "11803",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/72d76cd6df7604611cda95d5a771d63f.png",
+                "md5": "E9okHWlFJiQ33wkTFmFEZA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 44147
+    },
+    {
+        "name": "WNETDT3 (WNET-DT3)",
+        "callsign": "WNETDT3",
+        "affiliate": "PBS Affiliate",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10001",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/72d76cd6df7604611cda95d5a771d63f.png",
+                "md5": "E9okHWlFJiQ33wkTFmFEZA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Spanish",
+        "stationID": 44667
+    },
+    {
+        "name": "WNBCDT2 (WNBC-DT2)",
+        "callsign": "WNBCDT2",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10012",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/72d76cd6df7604611cda95d5a771d63f.png",
+                "md5": "E9okHWlFJiQ33wkTFmFEZA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 44936
+    },
+    {
+        "name": "WWORDT2 (WWOR-DT2)",
+        "callsign": "WWORDT2",
+        "affiliate": "MyNetworkTV Affiliate",
+        "broadcaster": {
+            "city": "Secaucus",
+            "state": "NJ",
+            "zipcode": "07094",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/72d76cd6df7604611cda95d5a771d63f.png",
+                "md5": "E9okHWlFJiQ33wkTFmFEZA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 45650
+    },
+    {
+        "name": "WABCDT3 (WABC-DT3)",
+        "callsign": "WABCDT3",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10023",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/72d76cd6df7604611cda95d5a771d63f.png",
+                "md5": "E9okHWlFJiQ33wkTFmFEZA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 50276
+    },
+    {
+        "name": "WPIXDT2 (WPIX-DT2)",
+        "callsign": "WPIXDT2",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10017",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/72d76cd6df7604611cda95d5a771d63f.png",
+                "md5": "E9okHWlFJiQ33wkTFmFEZA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 50777
+    },
+    {
+        "name": "WNJUDT (WNJU-DT)",
+        "callsign": "WNJUDT",
+        "affiliate": "TELEMUNDO (HBC) Affiliate",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10112",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/8941da8fce8341b1bcbb7dbe44aed0c8.png",
+                "md5": "mEI0zEnGgXTJ6BVYheJnBA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Spanish",
+        "stationID": 54437
+    },
+    {
+        "name": "WPXNDT2 (WPXN-DT2)",
+        "callsign": "WPXNDT2",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10281",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/8941da8fce8341b1bcbb7dbe44aed0c8.png",
+                "md5": "mEI0zEnGgXTJ6BVYheJnBA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 54618
+    },
+    {
+        "name": "WPXNDT3 (WPXN-DT3)",
+        "callsign": "WPXNDT3",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10281",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/8941da8fce8341b1bcbb7dbe44aed0c8.png",
+                "md5": "mEI0zEnGgXTJ6BVYheJnBA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 55285
+    },
+    {
+        "name": "WPXNDT4 (WPXN-DT4)",
+        "callsign": "WPXNDT4",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10281",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/8941da8fce8341b1bcbb7dbe44aed0c8.png",
+                "md5": "mEI0zEnGgXTJ6BVYheJnBA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 55347
+    },
+    {
+        "name": "WTBYDT5 (WTBY-DT5)",
+        "callsign": "WTBYDT5",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "Fishkill",
+            "state": "NY",
+            "zipcode": "12524",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/8941da8fce8341b1bcbb7dbe44aed0c8.png",
+                "md5": "mEI0zEnGgXTJ6BVYheJnBA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 55478
+    },
+    {
+        "name": "WRNNDT2 (WRNN-DT2)",
+        "callsign": "WRNNDT2",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "Rye Brook",
+            "state": "NY",
+            "zipcode": "10573",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/8941da8fce8341b1bcbb7dbe44aed0c8.png",
+                "md5": "mEI0zEnGgXTJ6BVYheJnBA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 55565
+    },
+    {
+        "name": "WRNNDT3 (WRNN-DT3)",
+        "callsign": "WRNNDT3",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "Rye Brook",
+            "state": "NY",
+            "zipcode": "10573",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/8941da8fce8341b1bcbb7dbe44aed0c8.png",
+                "md5": "mEI0zEnGgXTJ6BVYheJnBA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 55567
+    },
+    {
+        "name": "WMBCDT3 (WMBC-DT3)",
+        "callsign": "WMBCDT3",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "West Caldwell",
+            "state": "NJ",
+            "zipcode": "07006",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/8941da8fce8341b1bcbb7dbe44aed0c8.png",
+                "md5": "mEI0zEnGgXTJ6BVYheJnBA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 55772
+    },
+    {
+        "name": "WMBCDT4 (WMBC-DT4)",
+        "callsign": "WMBCDT4",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "West Caldwell",
+            "state": "NJ",
+            "zipcode": "07006",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/8941da8fce8341b1bcbb7dbe44aed0c8.png",
+                "md5": "mEI0zEnGgXTJ6BVYheJnBA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 55773
+    },
+    {
+        "name": "WMBCDT2 (WMBC-DT2)",
+        "callsign": "WMBCDT2",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "West Caldwell",
+            "state": "NJ",
+            "zipcode": "07006",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/8941da8fce8341b1bcbb7dbe44aed0c8.png",
+                "md5": "mEI0zEnGgXTJ6BVYheJnBA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 55810
+    },
+    {
+        "name": "WCTXDT2 (WCTX-DT2)",
+        "callsign": "WCTXDT2",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New Haven",
+            "state": "CT",
+            "zipcode": "06510",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/8941da8fce8341b1bcbb7dbe44aed0c8.png",
+                "md5": "mEI0zEnGgXTJ6BVYheJnBA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 59401
+    },
+    {
+        "name": "WMBCDT5 (WMBC-DT5)",
+        "callsign": "WMBCDT5",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "West Caldwell",
+            "state": "NJ",
+            "zipcode": "07006",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/8941da8fce8341b1bcbb7dbe44aed0c8.png",
+                "md5": "mEI0zEnGgXTJ6BVYheJnBA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 62811
+    },
+    {
+        "name": "WZMEDT (WZME-DT)",
+        "callsign": "WZMEDT",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New London",
+            "state": "CT",
+            "zipcode": "06320",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/8941da8fce8341b1bcbb7dbe44aed0c8.png",
+                "md5": "mEI0zEnGgXTJ6BVYheJnBA",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 64008
+    },
+    {
+        "name": "WMBCDT6 (WMBC-DT6)",
+        "callsign": "WMBCDT6",
+        "affiliate": "Azteca America Affiliate",
+        "broadcaster": {
+            "city": "West Caldwell",
+            "state": "NJ",
+            "zipcode": "07006",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Spanish",
+        "stationID": 64933
+    },
+    {
+        "name": "WPIXDT3 (WPIX-DT3)",
+        "callsign": "WPIXDT3",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10017",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 65092
+    },
+    {
+        "name": "WNYJDT3 (WNYJ-DT3)",
+        "callsign": "WFMEDT3",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "West Orange",
+            "state": "NJ",
+            "zipcode": "07052",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 66259
+    },
+    {
+        "name": "WNYJDT4 (WNYJ-DT4)",
+        "callsign": "WFMEDT4",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "West Orange",
+            "state": "NJ",
+            "zipcode": "07052",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 66260
+    },
+    {
+        "name": "WNYJDT5 (WNYJ-DT5)",
+        "callsign": "WFMEDT5",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "West Orange",
+            "state": "NJ",
+            "zipcode": "07052",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 66261
+    },
+    {
+        "name": "WNYJDT6 (WNYJ-DT6)",
+        "callsign": "WFMEDT6",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "West Orange",
+            "state": "NJ",
+            "zipcode": "07052",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 66262
+    },
+    {
+        "name": "WFUTDT2 (WFUT-DT2)",
+        "callsign": "WFUTDT2",
+        "affiliate": "Univision (SI) Affiliate",
+        "broadcaster": {
+            "city": "Newark",
+            "state": "NJ",
+            "zipcode": "07107",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Spanish",
+        "stationID": 67228
+    },
+    {
+        "name": "WKOBLD (WKOB-LD)",
+        "callsign": "WKOBLD",
+        "affiliate": "Low Power",
+        "broadcaster": {
+            "city": "Unknown",
+            "state": "",
+            "zipcode": "00000",
+            "country": "Unknown",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 68621
+    },
+    {
+        "name": "WKOBLD2 (WKOB-LD2)",
+        "callsign": "WKOBLD2",
+        "affiliate": "Low Power",
+        "broadcaster": {
+            "city": "Unknown",
+            "state": "",
+            "zipcode": "00000",
+            "country": "Unknown",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 70833
+    },
+    {
+        "name": "WKOBLD3 (WKOB-LD3)",
+        "callsign": "WKOBLD3",
+        "affiliate": "Low Power",
+        "broadcaster": {
+            "city": "Unknown",
+            "state": "",
+            "zipcode": "00000",
+            "country": "Unknown",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 70835
+    },
+    {
+        "name": "WKOBLD4 (WKOB-LD4)",
+        "callsign": "WKOBLD4",
+        "affiliate": "Low Power",
+        "broadcaster": {
+            "city": "Unknown",
+            "state": "",
+            "zipcode": "00000",
+            "country": "Unknown",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 70837
+    },
+    {
+        "name": "WCTXDT3 (WCTX-DT3)",
+        "callsign": "WCTXDT3",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New Haven",
+            "state": "CT",
+            "zipcode": "06510",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 72024
+    },
+    {
+        "name": "WZMEDT2 (WZME-DT2)",
+        "callsign": "WZMEDT2",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New London",
+            "state": "CT",
+            "zipcode": "06320",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 74322
+    },
+    {
+        "name": "WNJUDT3 (WNJU-DT3)",
+        "callsign": "WNJUDT3",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10112",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Spanish",
+        "stationID": 74569
+    },
+    {
+        "name": "WNJUDT2 (WNJU-DT2)",
+        "callsign": "WNJUDT2",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10112",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Spanish",
+        "stationID": 74578
+    },
+    {
+        "name": "WCBSDT2 (WCBS-DT2)",
+        "callsign": "WCBSDT2",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10019",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 74916
+    },
+    {
+        "name": "WWORDT3 (WWOR-DT3)",
+        "callsign": "WWORDT3",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "Secaucus",
+            "state": "NJ",
+            "zipcode": "07094",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 75009
+    },
+    {
+        "name": "WASALD (WASA-LD)",
+        "callsign": "WASALD",
+        "affiliate": "Low Power",
+        "broadcaster": {
+            "city": "Burbank",
+            "state": "CA",
+            "zipcode": "91504",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Spanish",
+        "stationID": 75011
+    },
+    {
+        "name": "WRNNDT5 (WRNN-DT5)",
+        "callsign": "WRNNDT5",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "Rye Brook",
+            "state": "NY",
+            "zipcode": "10573",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 75494
+    },
+    {
+        "name": "WRNNDT4 (WRNN-DT4)",
+        "callsign": "WRNNDT4",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "Rye Brook",
+            "state": "NY",
+            "zipcode": "10573",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 75533
+    },
+    {
+        "name": "WASALD2 (WASA-LD2)",
+        "callsign": "WASALD2",
+        "affiliate": "Low Power",
+        "broadcaster": {
+            "city": "Burbank",
+            "state": "CA",
+            "zipcode": "91504",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 76276
+    },
+    {
+        "name": "WASALD3 (WASA-LD3)",
+        "callsign": "WASALD3",
+        "affiliate": "Low Power",
+        "broadcaster": {
+            "city": "Burbank",
+            "state": "CA",
+            "zipcode": "91504",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Multi",
+        "stationID": 76277
+    },
+    {
+        "name": "WMBCDT7 (WMBC-DT7)",
+        "callsign": "WMBCDT7",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "West Caldwell",
+            "state": "NJ",
+            "zipcode": "07006",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Spanish",
+        "stationID": 78580
+    },
+    {
+        "name": "WNYJDT7 (WNYJ-DT7)",
+        "callsign": "WFMEDT7",
+        "affiliate": "Radio Station",
+        "broadcaster": {
+            "city": "West Orange",
+            "state": "NJ",
+            "zipcode": "07052",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 79028
+    },
+    {
+        "name": "WMBCDT8 (WMBC-DT8)",
+        "callsign": "WMBCDT8",
+        "affiliate": "Radio Station",
+        "broadcaster": {
+            "city": "West Caldwell",
+            "state": "NJ",
+            "zipcode": "07006",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 79045
+    },
+    {
+        "name": "WMBCDT9 (WMBC-DT9)",
+        "callsign": "WMBCDT9",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "West Caldwell",
+            "state": "NJ",
+            "zipcode": "07006",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 79046
+    },
+    {
+        "name": "WNYWDT3 (WNYW-DT3)",
+        "callsign": "WNYWDT3",
+        "affiliate": "Fox Affiliate",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10021",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 81334
+    },
+    {
+        "name": "WWORDT4 (WWOR-DT4)",
+        "callsign": "WWORDT4",
+        "affiliate": "MundoFOX Affiliate",
+        "broadcaster": {
+            "city": "Secaucus",
+            "state": "NJ",
+            "zipcode": "07094",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Spanish",
+        "stationID": 81349
+    },
+    {
+        "name": "WKOBLD5 (WKOB-LD5)",
+        "callsign": "WKOBLD5",
+        "affiliate": "Low Power",
+        "broadcaster": {
+            "city": "Unknown",
+            "state": "",
+            "zipcode": "00000",
+            "country": "Unknown",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 81776
+    },
+    {
+        "name": "WKOBLD6 (WKOB-LD6)",
+        "callsign": "WKOBLD6",
+        "affiliate": "Low Power",
+        "broadcaster": {
+            "city": "Unknown",
+            "state": "",
+            "zipcode": "00000",
+            "country": "Unknown",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Spanish",
+        "stationID": 81777
+    },
+    {
+        "name": "WXTVDT2 (WXTV-DT2)",
+        "callsign": "WXTVDT2",
+        "affiliate": "UniMas Affiliate",
+        "broadcaster": {
+            "city": "Teaneck",
+            "state": "NJ",
+            "zipcode": "07666",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "Spanish",
+        "stationID": 82183
+    },
+    {
+        "name": "WPXNDT5 (WPXN-DT5)",
+        "callsign": "WPXNDT5",
+        "affiliate": "Independent",
+        "broadcaster": {
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10281",
+            "country": "United States",
+            "logo": {
+                "URL": "https:\/\/s3.amazonaws.com\/schedulesdirect\/images\/a558b1692da438e38edd0f5f7962ddc5.png",
+                "md5": "vjq6cGzBTSqdERXkQmuVqg",
+                "modified": "2013-10-03T02:57:30Z",
+                "dimension": "180x135"
+            }
+        },
+        "language": "English",
+        "stationID": 82708
+    }
+], "metadata": [
+    {
+        "modified": "2013-10-09T04:15:01Z",
+        "device": "Antenna",
+        "transport": "Antenna"
+    }
+]}
