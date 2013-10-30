@@ -20,7 +20,8 @@ package com.tikinou.schedulesdirect
  * @author Sebastien Astie
  */
 public enum SchedulesDirectApiVersion {
-    VERSION_20130709("20130709")
+    VERSION_20130709("20130709"),
+    VERSION_20131021("20131021")
 
     SchedulesDirectApiVersion(String v) { value = v }
     final String value

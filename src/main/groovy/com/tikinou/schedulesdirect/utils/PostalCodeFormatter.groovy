@@ -36,6 +36,6 @@ class PostalCodeFormatter {
                     throw new ValidationException("postal code for United States must be at least 5 characters long")
                 return code + postalcode[0..4]
         }
-        return code + postalcode
+        return postalcode
     }
 }

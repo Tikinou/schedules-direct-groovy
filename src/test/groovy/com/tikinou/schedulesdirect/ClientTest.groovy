@@ -25,11 +25,11 @@ import org.junit.Test
  */
 class ClientTest {
     private def client
-    private def postalCode = 94002
+    private def postalCode = 10562
 
     @Before
     void setUp() {
-        client = new Client(SchedulesDirectApiVersion.VERSION_20130709)
+        client = new Client(SchedulesDirectApiVersion.VERSION_20131021)
     }
 
     @After
@@ -100,6 +100,19 @@ class ClientTest {
         println "credentials used " << credentials
         client.execute(cmd)
         println "Get Lineups: " << cmd.results
+        assert cmd.results.code == ResponseCode.OK.code
+    }
+
+    @Test
+    void testGetSubscribedHeadends() {
+        def credentials = createCredentials()
+        client.connect(credentials)
+        def cmd = client.getCommand(ActionType.GET, ObjectTypes.HEADENDS)
+        cmd.parameters.subscribed = true
+//        cmd.parameters.headendIds = ["NY67791", "CA61516"]
+        println "credentials used " << credentials
+        client.execute(cmd)
+        println "Get Subscribed headends: " << cmd.results
         assert cmd.results.code == ResponseCode.OK.code
     }
 

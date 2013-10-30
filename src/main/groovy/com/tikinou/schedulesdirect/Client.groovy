@@ -20,6 +20,7 @@ import groovy.util.logging.Commons
 import groovyx.net.http.RESTClient
 
 import static com.tikinou.schedulesdirect.SchedulesDirectApiVersion.VERSION_20130709
+import static com.tikinou.schedulesdirect.SchedulesDirectApiVersion.VERSION_20131021
 /**
  * Client class that handles the communication with Schedules Direct JSON API Server.
  * The communication is done via http, the information is processed using JSON
@@ -46,6 +47,7 @@ class Client {
         log.debug("Trying to use api version ${apiVersion.value}")
         switch (apiVersion) {
             case VERSION_20130709:
+            case VERSION_20131021:
                 CommandFactory.concreteFactory = new com.tikinou.schedulesdirect.v20130709.Factory()
                 break
             default:

@@ -20,12 +20,14 @@ import com.tikinou.schedulesdirect.ActionType
 import com.tikinou.schedulesdirect.Command
 import com.tikinou.schedulesdirect.ObjectTypes
 import com.tikinou.schedulesdirect.ValidationException
+import com.tikinou.schedulesdirect.utils.Country
 import com.tikinou.schedulesdirect.utils.PostalCodeFormatter
 import groovy.json.JsonBuilder
 /**
  * @author Sebastien Astie
  */
 class HeadendsCommand extends Command {
+    private static final def SUBSCRIBED = 'Subscribed'
 
     @Override
     protected def prepareJsonRequestData(credentials) {
@@ -63,10 +65,16 @@ class HeadendsCommand extends Command {
     protected void validateParameters() {
         switch (action) {
             case ActionType.GET:
-                if (parameters.country == null)
-                    throw new ValidationException("country parameter is required")
-                if (parameters.postalCode == null)
-                    throw new ValidationException("postalCode parameter is required")
+                if(parameters.subscribed != true){
+                    if (parameters.country == null)
+                        throw new ValidationException("country parameter is required")
+                    if (parameters.postalCode == null)
+                        throw new ValidationException("postalCode parameter is required")
+                } else {
+                    // we need the subscribed head-ends
+                    parameters.country = Country.Worldwide
+                    parameters.postalCode = SUBSCRIBED
+                }
                 break
             case ActionType.ADD:
             case ActionType.DELETE:
