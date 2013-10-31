@@ -62,20 +62,22 @@ class Client {
     RESTClient restClient
     Credentials credentials
 
-
-    void connect(Credentials credentials) {
+    void connect(Credentials credentials, forceConnect = false) {
         if (credentials == null)
             throw AuthenticationException("credentials object cannot be null")
         initializeConnectivityData()
-
-        if (this.credentials != null) {
-            //are these the same credentials ?
-            if (this.credentials.sameUserNamePassword(credentials)) {
-                // is the randhash older than 12 hours ?
-                if (!this.credentials.isOlderThan(CREDENTIALS_EXPIRY_HOURS)) {
-                    log.info("credentials less than ${CREDENTIALS_EXPIRY_HOURS} hours. No need to get a new randhash")
-                    return;
+        if(!forceConnect){
+            if (this.credentials != null) {
+                //are these the same credentials ?
+                if (this.credentials.sameUserNamePassword(credentials)) {
+                    // is the randhash older than 12 hours ?
+                    if (!this.credentials.isOlderThan(CREDENTIALS_EXPIRY_HOURS)) {
+                        log.info("credentials less than ${CREDENTIALS_EXPIRY_HOURS} hours. No need to get a new randhash")
+                        return;
+                    }
                 }
+            } else if(!credentials.isOlderThan(CREDENTIALS_EXPIRY_HOURS)){
+                return
             }
         }
         // if we got here we need to get a new randhash
