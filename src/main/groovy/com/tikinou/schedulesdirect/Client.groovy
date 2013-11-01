@@ -77,6 +77,7 @@ class Client {
                     }
                 }
             } else if(!credentials.isOlderThan(CREDENTIALS_EXPIRY_HOURS)){
+                this.credentials = credentials
                 return
             }
         }
