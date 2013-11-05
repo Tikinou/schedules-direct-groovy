@@ -29,7 +29,10 @@ class ClientTest {
 
     @Before
     void setUp() {
+
         client = new Client(SchedulesDirectApiVersion.VERSION_20131021)
+        // use beta site
+//        client.baseUrl="http://23.21.174.111/"
     }
 
     @After
@@ -170,14 +173,15 @@ class ClientTest {
     void testAddAndHeadend() {
         def credentials = createCredentials()
         client.connect(credentials)
-        def headendId = "DISH501"
-        // adding the headend
-        def cmd = client.getCommand(ActionType.ADD, ObjectTypes.HEADENDS)
-        cmd.parameters.headendId = headendId
-        println "Adding headend ${headendId}"
-        client.execute(cmd)
-        println cmd.results
-        assert cmd.results.code == ResponseCode.OK.code
+        for(headendId in ["DISH501", "NY62482", "NY67791", "PC:10562"]){
+            // adding the headend
+            def cmd = client.getCommand(ActionType.ADD, ObjectTypes.HEADENDS)
+            cmd.parameters.headendId = headendId
+            println "Adding headend ${headendId}"
+            client.execute(cmd)
+            println cmd.results
+            assert cmd.results.code == ResponseCode.OK.code
+        }
     }
 
     private def createCredentials() {
