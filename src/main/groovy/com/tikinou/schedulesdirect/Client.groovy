@@ -47,8 +47,10 @@ class Client {
         log.debug("Trying to use api version ${apiVersion.value}")
         switch (apiVersion) {
             case VERSION_20130709:
-            case VERSION_20131021:
                 CommandFactory.concreteFactory = new com.tikinou.schedulesdirect.v20130709.Factory()
+                break
+            case VERSION_20131021:
+                CommandFactory.concreteFactory = new com.tikinou.schedulesdirect.v20131021.Factory()
                 break
             default:
                 log.error("Unknown api version provided: ${apiVersion}")
