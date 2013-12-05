@@ -108,7 +108,7 @@ uploadArchives {
             case 'snapshot':
             case 'release':
                 mavenDeployer {
-                    beforeDeployment { MavenDeployment deployment -> signPom(deployment) }
+                    beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
                     repository(url: sonatypeRepositoryUrl) {
                         authentication(userName: sonatypeUsername, password: sonatypePassword)
