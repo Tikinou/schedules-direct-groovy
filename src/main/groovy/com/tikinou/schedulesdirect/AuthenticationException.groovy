@@ -25,7 +25,8 @@ class AuthenticationException extends GroovyException {
     def responseData
 
     AuthenticationException(msg, response) {
-        super(msg)
+        super("${msg} ${response}")
         responseData = response
     }
+
 }

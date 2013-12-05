@@ -1,4 +1,980 @@
-{"headend": "NY67791", "name": "Verizon Fios Queens", "location": "Fresh Meadows", "deviceTypes": ["X"], "X": {
+{"headend": "NY67791", "name": "Verizon Fios Queens", "location": "Fresh Meadows", "Q": {
+    "map": [
+        {
+            "channel": "339",
+            "qamType": "qam_256",
+            "qamFreq": 321000000,
+            "qamProgram": 512,
+            "stationID": 80809
+        },
+        {
+            "channel": "500",
+            "qamType": "qam_256",
+            "qamFreq": 321000000,
+            "qamProgram": 514,
+            "stationID": 80816
+        },
+        {
+            "channel": "8",
+            "qamType": "qam_256",
+            "qamFreq": 411000000,
+            "qamProgram": 100,
+            "stationID": 17098
+        },
+        {
+            "channel": "8",
+            "qamType": "qam_256",
+            "qamFreq": 411000000,
+            "qamProgram": 100,
+            "stationID": 17098
+        },
+        {
+            "channel": "8",
+            "qamType": "qam_256",
+            "qamFreq": 411000000,
+            "qamProgram": 100,
+            "stationID": 17098
+        },
+        {
+            "channel": "2",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1001,
+            "stationID": 11331
+        },
+        {
+            "channel": "2",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1001,
+            "stationID": 11331
+        },
+        {
+            "channel": "2",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1001,
+            "stationID": 11331
+        },
+        {
+            "channel": "4",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1003,
+            "stationID": 11705
+        },
+        {
+            "channel": "4",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1003,
+            "stationID": 11705
+        },
+        {
+            "channel": "4",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1003,
+            "stationID": 11705
+        },
+        {
+            "channel": "5",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1004,
+            "stationID": 11746
+        },
+        {
+            "channel": "5",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1004,
+            "stationID": 11746
+        },
+        {
+            "channel": "5",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1004,
+            "stationID": 11746
+        },
+        {
+            "channel": "7",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1006,
+            "stationID": 11259
+        },
+        {
+            "channel": "7",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1006,
+            "stationID": 11259
+        },
+        {
+            "channel": "7",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1006,
+            "stationID": 11259
+        },
+        {
+            "channel": "9",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1007,
+            "stationID": 11760
+        },
+        {
+            "channel": "9",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1007,
+            "stationID": 11760
+        },
+        {
+            "channel": "9",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1007,
+            "stationID": 11760
+        },
+        {
+            "channel": "10",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1008,
+            "stationID": 31225
+        },
+        {
+            "channel": "10",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1008,
+            "stationID": 31225
+        },
+        {
+            "channel": "10",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1008,
+            "stationID": 31225
+        },
+        {
+            "channel": "31",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1021,
+            "stationID": 11743
+        },
+        {
+            "channel": "31",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1021,
+            "stationID": 11743
+        },
+        {
+            "channel": "14",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1040,
+            "stationID": 15760
+        },
+        {
+            "channel": "14",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1040,
+            "stationID": 15760
+        },
+        {
+            "channel": "14",
+            "qamType": "qam_256",
+            "qamFreq": 459000000,
+            "qamProgram": 1040,
+            "stationID": 15760
+        },
+        {
+            "channel": "11",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1009,
+            "stationID": 11779
+        },
+        {
+            "channel": "11",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1009,
+            "stationID": 11779
+        },
+        {
+            "channel": "11",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1009,
+            "stationID": 11779
+        },
+        {
+            "channel": "12",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1010,
+            "stationID": 11726
+        },
+        {
+            "channel": "12",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1010,
+            "stationID": 11726
+        },
+        {
+            "channel": "12",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1010,
+            "stationID": 11726
+        },
+        {
+            "channel": "13",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1011,
+            "stationID": 11715
+        },
+        {
+            "channel": "13",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1011,
+            "stationID": 11715
+        },
+        {
+            "channel": "13",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1011,
+            "stationID": 11715
+        },
+        {
+            "channel": "23",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1013,
+            "stationID": 11723
+        },
+        {
+            "channel": "23",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1013,
+            "stationID": 11723
+        },
+        {
+            "channel": "23",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1013,
+            "stationID": 11723
+        },
+        {
+            "channel": "21",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1014,
+            "stationID": 11643
+        },
+        {
+            "channel": "21",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1014,
+            "stationID": 11643
+        },
+        {
+            "channel": "21",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1014,
+            "stationID": 11643
+        },
+        {
+            "channel": "25",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1016,
+            "stationID": 11744
+        },
+        {
+            "channel": "25",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1016,
+            "stationID": 11744
+        },
+        {
+            "channel": "29",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1020,
+            "stationID": 25955
+        },
+        {
+            "channel": "29",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1020,
+            "stationID": 25955
+        },
+        {
+            "channel": "19",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1023,
+            "stationID": 15715
+        },
+        {
+            "channel": "19",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1023,
+            "stationID": 15715
+        },
+        {
+            "channel": "19",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 1023,
+            "stationID": 15715
+        },
+        {
+            "channel": "480",
+            "qamType": "qam_256",
+            "qamFreq": 465000000,
+            "qamProgram": 10480,
+            "stationID": 55578
+        },
+        {
+            "channel": "296",
+            "qamType": "qam_256",
+            "qamFreq": 471000000,
+            "qamProgram": 1019,
+            "stationID": 62900
+        },
+        {
+            "channel": "466",
+            "qamType": "qam_256",
+            "qamFreq": 471000000,
+            "qamProgram": 1039,
+            "stationID": 58698
+        },
+        {
+            "channel": "463",
+            "qamType": "qam_256",
+            "qamFreq": 471000000,
+            "qamProgram": 1061,
+            "stationID": 81462
+        },
+        {
+            "channel": "6",
+            "qamType": "qam_256",
+            "qamFreq": 471000000,
+            "qamProgram": 10006,
+            "stationID": 35855
+        },
+        {
+            "channel": "6",
+            "qamType": "qam_256",
+            "qamFreq": 471000000,
+            "qamProgram": 10006,
+            "stationID": 35855
+        },
+        {
+            "channel": "6",
+            "qamType": "qam_256",
+            "qamFreq": 471000000,
+            "qamProgram": 10006,
+            "stationID": 35855
+        },
+        {
+            "channel": "20",
+            "qamType": "qam_256",
+            "qamFreq": 471000000,
+            "qamProgram": 10015,
+            "stationID": 64144
+        },
+        {
+            "channel": "20",
+            "qamType": "qam_256",
+            "qamFreq": 471000000,
+            "qamProgram": 10015,
+            "stationID": 64144
+        },
+        {
+            "channel": "20",
+            "qamType": "qam_256",
+            "qamFreq": 471000000,
+            "qamProgram": 10015,
+            "stationID": 64144
+        },
+        {
+            "channel": "462",
+            "qamType": "qam_256",
+            "qamFreq": 471000000,
+            "qamProgram": 10462,
+            "stationID": 75011
+        },
+        {
+            "channel": "477",
+            "qamType": "qam_256",
+            "qamFreq": 471000000,
+            "qamProgram": 10477,
+            "stationID": 75968
+        },
+        {
+            "channel": "481",
+            "qamType": "qam_256",
+            "qamFreq": 471000000,
+            "qamProgram": 10481,
+            "stationID": 35855
+        },
+        {
+            "channel": "482",
+            "qamType": "qam_256",
+            "qamFreq": 471000000,
+            "qamProgram": 10482,
+            "stationID": 75494
+        },
+        {
+            "channel": "49",
+            "qamType": "qam_256",
+            "qamFreq": 477000000,
+            "qamProgram": 158,
+            "stationID": 21586
+        },
+        {
+            "channel": "512",
+            "qamType": "qam_256",
+            "qamFreq": 495000000,
+            "qamProgram": 1049,
+            "stationID": 54437
+        },
+        {
+            "channel": "523",
+            "qamType": "qam_256",
+            "qamFreq": 495000000,
+            "qamProgram": 1050,
+            "stationID": 29139
+        },
+        {
+            "channel": "464",
+            "qamType": "qam_256",
+            "qamFreq": 495000000,
+            "qamProgram": 10464,
+            "stationID": 74578
+        },
+        {
+            "channel": "17",
+            "qamType": "qam_256",
+            "qamFreq": 501000000,
+            "qamProgram": 1015,
+            "stationID": 12452
+        },
+        {
+            "channel": "17",
+            "qamType": "qam_256",
+            "qamFreq": 501000000,
+            "qamProgram": 1015,
+            "stationID": 12452
+        },
+        {
+            "channel": "17",
+            "qamType": "qam_256",
+            "qamFreq": 501000000,
+            "qamProgram": 1015,
+            "stationID": 12452
+        },
+        {
+            "channel": "41",
+            "qamType": "qam_256",
+            "qamFreq": 501000000,
+            "qamProgram": 1022,
+            "stationID": 12001
+        },
+        {
+            "channel": "517",
+            "qamType": "qam_256",
+            "qamFreq": 501000000,
+            "qamProgram": 1053,
+            "stationID": 34225
+        },
+        {
+            "channel": "541",
+            "qamType": "qam_256",
+            "qamFreq": 501000000,
+            "qamProgram": 1054,
+            "stationID": 35361
+        },
+        {
+            "channel": "511",
+            "qamType": "qam_256",
+            "qamFreq": 507000000,
+            "qamProgram": 1024,
+            "stationID": 20373
+        },
+        {
+            "channel": "502",
+            "qamType": "qam_256",
+            "qamFreq": 507000000,
+            "qamProgram": 1025,
+            "stationID": 16689
+        },
+        {
+            "channel": "465",
+            "qamType": "qam_256",
+            "qamFreq": 507000000,
+            "qamProgram": 10465,
+            "stationID": 50777
+        },
+        {
+            "channel": "490",
+            "qamType": "qam_256",
+            "qamFreq": 507000000,
+            "qamProgram": 10490,
+            "stationID": 65092
+        },
+        {
+            "channel": "513",
+            "qamType": "qam_256",
+            "qamFreq": 513000000,
+            "qamProgram": 1026,
+            "stationID": 26182
+        },
+        {
+            "channel": "504",
+            "qamType": "qam_256",
+            "qamFreq": 513000000,
+            "qamProgram": 1027,
+            "stationID": 20459
+        },
+        {
+            "channel": "460",
+            "qamType": "qam_256",
+            "qamFreq": 513000000,
+            "qamProgram": 1031,
+            "stationID": 44936
+        },
+        {
+            "channel": "472",
+            "qamType": "qam_256",
+            "qamFreq": 513000000,
+            "qamProgram": 1034,
+            "stationID": 31780
+        },
+        {
+            "channel": "474",
+            "qamType": "qam_256",
+            "qamFreq": 513000000,
+            "qamProgram": 1048,
+            "stationID": 44667
+        },
+        {
+            "channel": "505",
+            "qamType": "qam_256",
+            "qamFreq": 519000000,
+            "qamProgram": 1028,
+            "stationID": 20360
+        },
+        {
+            "channel": "507",
+            "qamType": "qam_256",
+            "qamFreq": 519000000,
+            "qamProgram": 1029,
+            "stationID": 20453
+        },
+        {
+            "channel": "467",
+            "qamType": "qam_256",
+            "qamFreq": 519000000,
+            "qamProgram": 1041,
+            "stationID": 35230
+        },
+        {
+            "channel": "468",
+            "qamType": "qam_256",
+            "qamFreq": 519000000,
+            "qamProgram": 1042,
+            "stationID": 35230
+        },
+        {
+            "channel": "493",
+            "qamType": "qam_256",
+            "qamFreq": 519000000,
+            "qamProgram": 14405,
+            "stationID": 30763
+        },
+        {
+            "channel": "509",
+            "qamType": "qam_256",
+            "qamFreq": 525000000,
+            "qamProgram": 1030,
+            "stationID": 26566
+        },
+        {
+            "channel": "470",
+            "qamType": "qam_256",
+            "qamFreq": 525000000,
+            "qamProgram": 1032,
+            "stationID": 34325
+        },
+        {
+            "channel": "471",
+            "qamType": "qam_256",
+            "qamFreq": 525000000,
+            "qamProgram": 1033,
+            "stationID": 34135
+        },
+        {
+            "channel": "473",
+            "qamType": "qam_256",
+            "qamFreq": 525000000,
+            "qamProgram": 1035,
+            "stationID": 44147
+        },
+        {
+            "channel": "476",
+            "qamType": "qam_256",
+            "qamFreq": 525000000,
+            "qamProgram": 10476,
+            "stationID": 75009
+        },
+        {
+            "channel": "491",
+            "qamType": "qam_256",
+            "qamFreq": 531000000,
+            "qamProgram": 1043,
+            "stationID": 54618
+        },
+        {
+            "channel": "492",
+            "qamType": "qam_256",
+            "qamFreq": 531000000,
+            "qamProgram": 1044,
+            "stationID": 55285
+        },
+        {
+            "channel": "531",
+            "qamType": "qam_256",
+            "qamFreq": 531000000,
+            "qamProgram": 1045,
+            "stationID": 43818
+        },
+        {
+            "channel": "18",
+            "qamType": "qam_256",
+            "qamFreq": 537000000,
+            "qamProgram": 1058,
+            "stationID": 12477
+        },
+        {
+            "channel": "18",
+            "qamType": "qam_256",
+            "qamFreq": 537000000,
+            "qamProgram": 1058,
+            "stationID": 12477
+        },
+        {
+            "channel": "18",
+            "qamType": "qam_256",
+            "qamFreq": 537000000,
+            "qamProgram": 1058,
+            "stationID": 12477
+        },
+        {
+            "channel": "461",
+            "qamType": "qam_256",
+            "qamFreq": 537000000,
+            "qamProgram": 1059,
+            "stationID": 64933
+        },
+        {
+            "channel": "478",
+            "qamType": "qam_256",
+            "qamFreq": 537000000,
+            "qamProgram": 1060,
+            "stationID": 47481
+        },
+        {
+            "channel": "510",
+            "qamType": "qam_256",
+            "qamFreq": 537000000,
+            "qamProgram": 10510,
+            "stationID": 31225
+        },
+        {
+            "channel": "499",
+            "qamType": "qam_256",
+            "qamFreq": 555000000,
+            "qamProgram": 4099,
+            "stationID": 51853
+        },
+        {
+            "channel": "119",
+            "qamType": "qam_256",
+            "qamFreq": 789000000,
+            "qamProgram": 103,
+            "stationID": 11187
+        },
+        {
+            "channel": "860",
+            "qamType": "qam_256",
+            "qamFreq": 789000000,
+            "qamProgram": 456,
+            "stationID": 81867
+        },
+        {
+            "channel": "28",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12728,
+            "stationID": 23336
+        },
+        {
+            "channel": "28",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12728,
+            "stationID": 23336
+        },
+        {
+            "channel": "30",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12730,
+            "stationID": 23338
+        },
+        {
+            "channel": "30",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12730,
+            "stationID": 23338
+        },
+        {
+            "channel": "32",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12732,
+            "stationID": 23340
+        },
+        {
+            "channel": "32",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12732,
+            "stationID": 23340
+        },
+        {
+            "channel": "33",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12733,
+            "stationID": 23341
+        },
+        {
+            "channel": "33",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12733,
+            "stationID": 23341
+        },
+        {
+            "channel": "34",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12734,
+            "stationID": 23342
+        },
+        {
+            "channel": "34",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12734,
+            "stationID": 23342
+        },
+        {
+            "channel": "35",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12735,
+            "stationID": 23343
+        },
+        {
+            "channel": "35",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12735,
+            "stationID": 23343
+        },
+        {
+            "channel": "36",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12736,
+            "stationID": 23344
+        },
+        {
+            "channel": "36",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12736,
+            "stationID": 23344
+        },
+        {
+            "channel": "37",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12737,
+            "stationID": 23345
+        },
+        {
+            "channel": "37",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12737,
+            "stationID": 23345
+        },
+        {
+            "channel": "38",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12738,
+            "stationID": 23346
+        },
+        {
+            "channel": "38",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12738,
+            "stationID": 23346
+        },
+        {
+            "channel": "39",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12739,
+            "stationID": 23347
+        },
+        {
+            "channel": "39",
+            "qamType": "qam_256",
+            "qamFreq": 813000000,
+            "qamProgram": 12739,
+            "stationID": 23347
+        },
+        {
+            "channel": "24",
+            "qamType": "qam_256",
+            "qamFreq": 819000000,
+            "qamProgram": 12824,
+            "stationID": 23332
+        },
+        {
+            "channel": "24",
+            "qamType": "qam_256",
+            "qamFreq": 819000000,
+            "qamProgram": 12824,
+            "stationID": 23332
+        },
+        {
+            "channel": "26",
+            "qamType": "qam_256",
+            "qamFreq": 819000000,
+            "qamProgram": 12826,
+            "stationID": 23334
+        },
+        {
+            "channel": "26",
+            "qamType": "qam_256",
+            "qamFreq": 819000000,
+            "qamProgram": 12826,
+            "stationID": 23334
+        },
+        {
+            "channel": "27",
+            "qamType": "qam_256",
+            "qamFreq": 819000000,
+            "qamProgram": 12827,
+            "stationID": 23335
+        },
+        {
+            "channel": "27",
+            "qamType": "qam_256",
+            "qamFreq": 819000000,
+            "qamProgram": 12827,
+            "stationID": 23335
+        },
+        {
+            "channel": "40",
+            "qamType": "qam_256",
+            "qamFreq": 819000000,
+            "qamProgram": 12840,
+            "stationID": 23348
+        },
+        {
+            "channel": "42",
+            "qamType": "qam_256",
+            "qamFreq": 819000000,
+            "qamProgram": 12842,
+            "stationID": 23350
+        },
+        {
+            "channel": "43",
+            "qamType": "qam_256",
+            "qamFreq": 819000000,
+            "qamProgram": 12843,
+            "stationID": 23351
+        },
+        {
+            "channel": "44",
+            "qamType": "qam_256",
+            "qamFreq": 819000000,
+            "qamProgram": 12844,
+            "stationID": 23352
+        },
+        {
+            "channel": "45",
+            "qamType": "qam_256",
+            "qamFreq": 819000000,
+            "qamProgram": 12845,
+            "stationID": 23353
+        },
+        {
+            "channel": "46",
+            "qamType": "qam_256",
+            "qamFreq": 819000000,
+            "qamProgram": 12846,
+            "stationID": 23354
+        },
+        {
+            "channel": "47",
+            "qamType": "qam_256",
+            "qamFreq": 819000000,
+            "qamProgram": 12847,
+            "stationID": 23355
+        },
+        {
+            "channel": "1982",
+            "qamType": "qam_256",
+            "qamFreq": 819000000,
+            "qamProgram": 12882,
+            "stationID": 70090
+        }
+    ]
+}, "deviceTypes": ["X", "Q"], "X": {
     "map": [
         {
             "stationID": 80665,
@@ -18,7 +994,7 @@
         },
         {
             "stationID": 35855,
-            "channel": "006"
+            "channel": "481"
         },
         {
             "stationID": 11259,
@@ -34,7 +1010,7 @@
         },
         {
             "stationID": 31225,
-            "channel": "010"
+            "channel": "510"
         },
         {
             "stationID": 11779,
@@ -178,23 +1154,23 @@
         },
         {
             "stationID": 11207,
-            "channel": "050"
+            "channel": "1500"
         },
         {
             "stationID": 11164,
-            "channel": "051"
+            "channel": "1501"
         },
         {
             "stationID": 11867,
-            "channel": "052"
+            "channel": "1502"
         },
         {
             "stationID": 14321,
-            "channel": "053"
+            "channel": "1504"
         },
         {
             "stationID": 11163,
-            "channel": "054"
+            "channel": "1505"
         },
         {
             "stationID": 10179,
@@ -214,15 +1190,15 @@
         },
         {
             "stationID": 30017,
-            "channel": "076"
+            "channel": "1526"
         },
         {
             "stationID": 49603,
-            "channel": "077"
+            "channel": "1527"
         },
         {
             "stationID": 10979,
-            "channel": "078"
+            "channel": "1528"
         },
         {
             "stationID": 82671,
@@ -230,7 +1206,7 @@
         },
         {
             "stationID": 11105,
-            "channel": "080"
+            "channel": "1529"
         },
         {
             "stationID": 83122,
@@ -242,7 +1218,7 @@
         },
         {
             "stationID": 17927,
-            "channel": "084"
+            "channel": "1522"
         },
         {
             "stationID": 56783,
@@ -250,7 +1226,7 @@
         },
         {
             "stationID": 62079,
-            "channel": "086"
+            "channel": "1530"
         },
         {
             "stationID": 58570,
@@ -282,19 +1258,19 @@
         },
         {
             "stationID": 10142,
-            "channel": "100"
+            "channel": "1541"
         },
         {
             "stationID": 10145,
-            "channel": "101"
+            "channel": "1542"
         },
         {
             "stationID": 10139,
-            "channel": "102"
+            "channel": "1544"
         },
         {
             "stationID": 16300,
-            "channel": "103"
+            "channel": "1545"
         },
         {
             "stationID": 14755,
@@ -318,7 +1294,7 @@
         },
         {
             "stationID": 10161,
-            "channel": "109"
+            "channel": "1546"
         },
         {
             "stationID": 10162,
@@ -330,15 +1306,15 @@
         },
         {
             "stationID": 47176,
-            "channel": "114"
+            "channel": "1750"
         },
         {
             "stationID": 58649,
-            "channel": "117"
+            "channel": "1547"
         },
         {
             "stationID": 16374,
-            "channel": "118"
+            "channel": "1543"
         },
         {
             "stationID": 11187,
@@ -346,7 +1322,7 @@
         },
         {
             "stationID": 11150,
-            "channel": "120"
+            "channel": "1562"
         },
         {
             "stationID": 24959,
@@ -386,7 +1362,7 @@
         },
         {
             "stationID": 16331,
-            "channel": "130"
+            "channel": "1565"
         },
         {
             "stationID": 82665,
@@ -402,15 +1378,15 @@
         },
         {
             "stationID": 11158,
-            "channel": "139"
+            "channel": "1566"
         },
         {
             "stationID": 10918,
-            "channel": "140"
+            "channel": "1580"
         },
         {
             "stationID": 18480,
-            "channel": "141"
+            "channel": "1581"
         },
         {
             "stationID": 29612,
@@ -430,19 +1406,19 @@
         },
         {
             "stationID": 11069,
-            "channel": "150"
+            "channel": "1600"
         },
         {
             "stationID": 10269,
-            "channel": "151"
+            "channel": "1601"
         },
         {
             "stationID": 16604,
-            "channel": "152"
+            "channel": "1602"
         },
         {
             "stationID": 14948,
-            "channel": "157"
+            "channel": "1603"
         },
         {
             "stationID": 81617,
@@ -458,7 +1434,7 @@
         },
         {
             "stationID": 70387,
-            "channel": "161"
+            "channel": "1625"
         },
         {
             "stationID": 58493,
@@ -470,11 +1446,11 @@
         },
         {
             "stationID": 12574,
-            "channel": "164"
+            "channel": "1621"
         },
         {
             "stationID": 14902,
-            "channel": "165"
+            "channel": "1622"
         },
         {
             "stationID": 30156,
@@ -494,15 +1470,15 @@
         },
         {
             "stationID": 11180,
-            "channel": "170"
+            "channel": "1623"
         },
         {
             "stationID": 11097,
-            "channel": "180"
+            "channel": "1645"
         },
         {
             "stationID": 10035,
-            "channel": "181"
+            "channel": "1641"
         },
         {
             "stationID": 48543,
@@ -538,7 +1514,7 @@
         },
         {
             "stationID": 10149,
-            "channel": "190"
+            "channel": "1644"
         },
         {
             "stationID": 55205,
@@ -550,7 +1526,7 @@
         },
         {
             "stationID": 10989,
-            "channel": "196"
+            "channel": "1640"
         },
         {
             "stationID": 70492,
@@ -562,7 +1538,7 @@
         },
         {
             "stationID": 10093,
-            "channel": "199"
+            "channel": "1700"
         },
         {
             "stationID": 10986,
@@ -570,7 +1546,7 @@
         },
         {
             "stationID": 16361,
-            "channel": "211"
+            "channel": "1661"
         },
         {
             "stationID": 44228,
@@ -606,7 +1582,7 @@
         },
         {
             "stationID": 10138,
-            "channel": "221"
+            "channel": "1665"
         },
         {
             "stationID": 18717,
@@ -662,7 +1638,7 @@
         },
         {
             "stationID": 16123,
-            "channel": "244"
+            "channel": "1707"
         },
         {
             "stationID": 56056,
@@ -678,7 +1654,7 @@
         },
         {
             "stationID": 10171,
-            "channel": "250"
+            "channel": "1729"
         },
         {
             "stationID": 18279,
@@ -686,7 +1662,7 @@
         },
         {
             "stationID": 11006,
-            "channel": "252"
+            "channel": "1728"
         },
         {
             "stationID": 11007,
@@ -706,11 +1682,11 @@
         },
         {
             "stationID": 12131,
-            "channel": "257"
+            "channel": "1726"
         },
         {
             "stationID": 21883,
-            "channel": "258"
+            "channel": "1725"
         },
         {
             "stationID": 16618,
@@ -734,19 +1710,19 @@
         },
         {
             "stationID": 18715,
-            "channel": "273"
+            "channel": "1660"
         },
         {
             "stationID": 10222,
-            "channel": "274"
+            "channel": "1503"
         },
         {
             "stationID": 14791,
-            "channel": "275"
+            "channel": "1643"
         },
         {
             "stationID": 18262,
-            "channel": "276"
+            "channel": "1642"
         },
         {
             "stationID": 29114,
@@ -754,7 +1730,7 @@
         },
         {
             "stationID": 17142,
-            "channel": "279"
+            "channel": "1648"
         },
         {
             "stationID": 35492,
@@ -842,11 +1818,11 @@
         },
         {
             "stationID": 15377,
-            "channel": "311"
+            "channel": "1521"
         },
         {
             "stationID": 32161,
-            "channel": "313"
+            "channel": "1523"
         },
         {
             "stationID": 21345,
@@ -1214,10 +2190,6 @@
         },
         {
             "stationID": 35230,
-            "channel": "467"
-        },
-        {
-            "stationID": 35230,
             "channel": "468"
         },
         {
@@ -1255,10 +2227,6 @@
         {
             "stationID": 55578,
             "channel": "480"
-        },
-        {
-            "stationID": 35855,
-            "channel": "481"
         },
         {
             "stationID": 75494,
@@ -1311,10 +2279,6 @@
         {
             "stationID": 26566,
             "channel": "509"
-        },
-        {
-            "stationID": 31225,
-            "channel": "510"
         },
         {
             "stationID": 20373,
@@ -1946,7 +2910,7 @@
         },
         {
             "stationID": 55597,
-            "channel": "1450"
+            "channel": "1489"
         },
         {
             "stationID": 72809,
@@ -2057,10 +3021,6 @@
             "channel": "1488"
         },
         {
-            "stationID": 55597,
-            "channel": "1489"
-        },
-        {
             "stationID": 20810,
             "channel": "1490"
         },
@@ -2099,30 +3059,6 @@
         {
             "stationID": 21115,
             "channel": "1499"
-        },
-        {
-            "stationID": 11207,
-            "channel": "1500"
-        },
-        {
-            "stationID": 11164,
-            "channel": "1501"
-        },
-        {
-            "stationID": 11867,
-            "channel": "1502"
-        },
-        {
-            "stationID": 10222,
-            "channel": "1503"
-        },
-        {
-            "stationID": 14321,
-            "channel": "1504"
-        },
-        {
-            "stationID": 11163,
-            "channel": "1505"
         },
         {
             "stationID": 49022,
@@ -2165,40 +3101,8 @@
             "channel": "1520"
         },
         {
-            "stationID": 15377,
-            "channel": "1521"
-        },
-        {
-            "stationID": 17927,
-            "channel": "1522"
-        },
-        {
-            "stationID": 32161,
-            "channel": "1523"
-        },
-        {
             "stationID": 75176,
             "channel": "1524"
-        },
-        {
-            "stationID": 30017,
-            "channel": "1526"
-        },
-        {
-            "stationID": 49603,
-            "channel": "1527"
-        },
-        {
-            "stationID": 10979,
-            "channel": "1528"
-        },
-        {
-            "stationID": 11105,
-            "channel": "1529"
-        },
-        {
-            "stationID": 62079,
-            "channel": "1530"
         },
         {
             "stationID": 34863,
@@ -2225,34 +3129,6 @@
             "channel": "1540"
         },
         {
-            "stationID": 10142,
-            "channel": "1541"
-        },
-        {
-            "stationID": 10145,
-            "channel": "1542"
-        },
-        {
-            "stationID": 16374,
-            "channel": "1543"
-        },
-        {
-            "stationID": 10139,
-            "channel": "1544"
-        },
-        {
-            "stationID": 16300,
-            "channel": "1545"
-        },
-        {
-            "stationID": 10161,
-            "channel": "1546"
-        },
-        {
-            "stationID": 58649,
-            "channel": "1547"
-        },
-        {
             "stationID": 59298,
             "channel": "1548"
         },
@@ -2277,10 +3153,6 @@
             "channel": "1561"
         },
         {
-            "stationID": 11150,
-            "channel": "1562"
-        },
-        {
             "stationID": 19247,
             "channel": "1563"
         },
@@ -2289,28 +3161,12 @@
             "channel": "1564"
         },
         {
-            "stationID": 16331,
-            "channel": "1565"
-        },
-        {
-            "stationID": 11158,
-            "channel": "1566"
-        },
-        {
             "stationID": 36139,
             "channel": "1567"
         },
         {
             "stationID": 79605,
             "channel": "1570"
-        },
-        {
-            "stationID": 10918,
-            "channel": "1580"
-        },
-        {
-            "stationID": 18480,
-            "channel": "1581"
         },
         {
             "stationID": 73812,
@@ -2333,84 +3189,16 @@
             "channel": "1590"
         },
         {
-            "stationID": 11069,
-            "channel": "1600"
-        },
-        {
-            "stationID": 10269,
-            "channel": "1601"
-        },
-        {
-            "stationID": 16604,
-            "channel": "1602"
-        },
-        {
-            "stationID": 14948,
-            "channel": "1603"
-        },
-        {
             "stationID": 33570,
             "channel": "1620"
-        },
-        {
-            "stationID": 12574,
-            "channel": "1621"
-        },
-        {
-            "stationID": 14902,
-            "channel": "1622"
-        },
-        {
-            "stationID": 11180,
-            "channel": "1623"
-        },
-        {
-            "stationID": 70387,
-            "channel": "1625"
-        },
-        {
-            "stationID": 10989,
-            "channel": "1640"
-        },
-        {
-            "stationID": 10035,
-            "channel": "1641"
-        },
-        {
-            "stationID": 18262,
-            "channel": "1642"
-        },
-        {
-            "stationID": 14791,
-            "channel": "1643"
-        },
-        {
-            "stationID": 10149,
-            "channel": "1644"
-        },
-        {
-            "stationID": 11097,
-            "channel": "1645"
         },
         {
             "stationID": 36138,
             "channel": "1646"
         },
         {
-            "stationID": 17142,
-            "channel": "1648"
-        },
-        {
             "stationID": 79696,
             "channel": "1650"
-        },
-        {
-            "stationID": 18715,
-            "channel": "1660"
-        },
-        {
-            "stationID": 16361,
-            "channel": "1661"
         },
         {
             "stationID": 34393,
@@ -2423,10 +3211,6 @@
         {
             "stationID": 34394,
             "channel": "1664"
-        },
-        {
-            "stationID": 10138,
-            "channel": "1665"
         },
         {
             "stationID": 32749,
@@ -2489,10 +3273,6 @@
             "channel": "1693"
         },
         {
-            "stationID": 10093,
-            "channel": "1700"
-        },
-        {
             "stationID": 47303,
             "channel": "1701"
         },
@@ -2511,10 +3291,6 @@
         {
             "stationID": 33431,
             "channel": "1705"
-        },
-        {
-            "stationID": 16123,
-            "channel": "1707"
         },
         {
             "stationID": 25347,
@@ -2537,24 +3313,8 @@
             "channel": "1724"
         },
         {
-            "stationID": 21883,
-            "channel": "1725"
-        },
-        {
-            "stationID": 12131,
-            "channel": "1726"
-        },
-        {
             "stationID": 60755,
             "channel": "1727"
-        },
-        {
-            "stationID": 11006,
-            "channel": "1728"
-        },
-        {
-            "stationID": 10171,
-            "channel": "1729"
         },
         {
             "stationID": 79606,
@@ -2567,10 +3327,6 @@
         {
             "stationID": 52649,
             "channel": "1741"
-        },
-        {
-            "stationID": 47176,
-            "channel": "1750"
         },
         {
             "stationID": 44852,
@@ -4201,7 +4957,7 @@
     },
     {
         "name": "Music Choice: University",
-        "callsign": "MCU",
+        "callsign": "MC03",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -5722,7 +6478,7 @@
     {
         "name": "TV Japan HD",
         "callsign": "TVJPNHD",
-        "affiliate": "Cablecast",
+        "affiliate": "Satellite",
         "broadcaster": {
             "city": "New York",
             "state": "NY",
@@ -6652,7 +7408,7 @@
     },
     {
         "name": "Music Choice: Hit List",
-        "callsign": "MCHIT",
+        "callsign": "MC01",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6671,7 +7427,7 @@
     },
     {
         "name": "Music Choice: Hip Hop and R&B",
-        "callsign": "MCHPR",
+        "callsign": "MC02",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6690,7 +7446,7 @@
     },
     {
         "name": "Music Choice: R&B Classics",
-        "callsign": "MCRBC",
+        "callsign": "MC08",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6709,7 +7465,7 @@
     },
     {
         "name": "Music Choice: Gospel",
-        "callsign": "MCGOS",
+        "callsign": "MC10",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6728,7 +7484,7 @@
     },
     {
         "name": "Music Choice: Rock",
-        "callsign": "MCROK",
+        "callsign": "MC14",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6747,7 +7503,7 @@
     },
     {
         "name": "Music Choice: Metal",
-        "callsign": "MCMET",
+        "callsign": "MC15",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6785,7 +7541,7 @@
     },
     {
         "name": "Music Choice: Dance\/Electronica",
-        "callsign": "MCDAE",
+        "callsign": "MC04",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6804,7 +7560,7 @@
     },
     {
         "name": "Music Choice: Hip Hop Classic",
-        "callsign": "MCHHC",
+        "callsign": "MC06",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6823,7 +7579,7 @@
     },
     {
         "name": "Music Choice: Rap",
-        "callsign": "MCRAP",
+        "callsign": "MC05",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6842,7 +7598,7 @@
     },
     {
         "name": "Music Choice: Throwback Jamz",
-        "callsign": "MCTJM",
+        "callsign": "MC07",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6861,7 +7617,7 @@
     },
     {
         "name": "Music Choice: R&B & Soul",
-        "callsign": "MCRBS",
+        "callsign": "MC09",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6880,7 +7636,7 @@
     },
     {
         "name": "Music Choice: Reggae",
-        "callsign": "MCREG",
+        "callsign": "MC11",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6899,7 +7655,7 @@
     },
     {
         "name": "Music Choice: Classic Rock",
-        "callsign": "MCCRK",
+        "callsign": "MC12",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6918,7 +7674,7 @@
     },
     {
         "name": "Music Choice: Retro Rock",
-        "callsign": "MCRRK",
+        "callsign": "MC13",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6937,7 +7693,7 @@
     },
     {
         "name": "Music Choice: Alternative",
-        "callsign": "MCALT",
+        "callsign": "MC16",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6956,7 +7712,7 @@
     },
     {
         "name": "Music Choice: Classic Alternative",
-        "callsign": "MCCAL",
+        "callsign": "MC17",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6975,7 +7731,7 @@
     },
     {
         "name": "Music Choice: Adult Alternative",
-        "callsign": "MCAAL",
+        "callsign": "MC18",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -6994,7 +7750,7 @@
     },
     {
         "name": "Music Choice: Soft Rock",
-        "callsign": "MCSRK",
+        "callsign": "MC19",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7013,7 +7769,7 @@
     },
     {
         "name": "Music Choice: Pop Hits",
-        "callsign": "MCPHT",
+        "callsign": "MC20",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7032,7 +7788,7 @@
     },
     {
         "name": "Music Choice: 90s Channel",
-        "callsign": "MC90S",
+        "callsign": "MC21",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7051,7 +7807,7 @@
     },
     {
         "name": "Music Choice: 80's",
-        "callsign": "MC80S",
+        "callsign": "MC22",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7070,7 +7826,7 @@
     },
     {
         "name": "Music Choice: 70's",
-        "callsign": "MC70S",
+        "callsign": "MC23",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7089,7 +7845,7 @@
     },
     {
         "name": "Music Choice: Solid Gold Oldies",
-        "callsign": "MCGLD",
+        "callsign": "MC24",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7108,7 +7864,7 @@
     },
     {
         "name": "Music Choice: Party Favorites",
-        "callsign": "MCPRT",
+        "callsign": "MC25",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7127,7 +7883,7 @@
     },
     {
         "name": "Music Choice: Stage & Screen",
-        "callsign": "MCSSC",
+        "callsign": "MC26",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7146,7 +7902,7 @@
     },
     {
         "name": "Music Choice: Kidz Only!",
-        "callsign": "MCKID",
+        "callsign": "MC27",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7165,7 +7921,7 @@
     },
     {
         "name": "Music Choice: Toddler Tunes",
-        "callsign": "MCTOT",
+        "callsign": "MC28",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7184,7 +7940,7 @@
     },
     {
         "name": "Music Choice: Today's Country",
-        "callsign": "MCTDC",
+        "callsign": "MC29",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7203,7 +7959,7 @@
     },
     {
         "name": "Music Choice: True Country",
-        "callsign": "MCTRC",
+        "callsign": "MC30",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7241,7 +7997,7 @@
     },
     {
         "name": "Music Choice: Classic Country",
-        "callsign": "MCCLC",
+        "callsign": "MC31",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7260,7 +8016,7 @@
     },
     {
         "name": "Music Choice: Contemporary Christian",
-        "callsign": "MCCCH",
+        "callsign": "MC32",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7279,7 +8035,7 @@
     },
     {
         "name": "Music Choice: Sounds of the Season",
-        "callsign": "MCSEA",
+        "callsign": "MC33",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7298,7 +8054,7 @@
     },
     {
         "name": "Music Choice: Soundscapes",
-        "callsign": "MCSSP",
+        "callsign": "MC34",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7317,7 +8073,7 @@
     },
     {
         "name": "Music Choice: Smooth Jazz",
-        "callsign": "MCSJZ",
+        "callsign": "MC35",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7336,7 +8092,7 @@
     },
     {
         "name": "Music Choice: Jazz",
-        "callsign": "MCJAZ",
+        "callsign": "MC36",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7355,7 +8111,7 @@
     },
     {
         "name": "Music Choice: Blues",
-        "callsign": "MCBLU",
+        "callsign": "MC37",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7374,7 +8130,7 @@
     },
     {
         "name": "Music Choice: Singers & Swing",
-        "callsign": "MCSWG",
+        "callsign": "MC38",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7393,7 +8149,7 @@
     },
     {
         "name": "Music Choice: Easy Listening",
-        "callsign": "MCELS",
+        "callsign": "MC39",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7412,7 +8168,7 @@
     },
     {
         "name": "Music Choice: Classical Masterpieces",
-        "callsign": "MCCMP",
+        "callsign": "MC40",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7431,7 +8187,7 @@
     },
     {
         "name": "Music Choice: Light Classical",
-        "callsign": "MCLTC",
+        "callsign": "MC41",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7450,7 +8206,7 @@
     },
     {
         "name": "Music Choice: Musica Urbana",
-        "callsign": "MCURB",
+        "callsign": "MC42",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7469,7 +8225,7 @@
     },
     {
         "name": "Music Choice: Pop Latino",
-        "callsign": "MCPLT",
+        "callsign": "MC43",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7488,7 +8244,7 @@
     },
     {
         "name": "Music Choice: Tropicales",
-        "callsign": "MCTRP",
+        "callsign": "MC44",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7507,7 +8263,7 @@
     },
     {
         "name": "Music Choice: Mexicana",
-        "callsign": "MCMEX",
+        "callsign": "MC45",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -7526,7 +8282,7 @@
     },
     {
         "name": "Music Choice: Romances",
-        "callsign": "MCROM",
+        "callsign": "MC46",
         "affiliate": "Music",
         "broadcaster": {
             "city": "Horsham",
@@ -15771,6 +16527,11 @@
         "stationID": 68065
     }
 ], "metadata": [
+    {
+        "device": "Q",
+        "modified": "2013-11-18T20:41:19Z",
+        "transport": "QAM"
+    },
     {
         "device": "X",
         "modified": "2013-11-05T19:28:46Z",

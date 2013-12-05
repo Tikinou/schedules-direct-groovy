@@ -32,7 +32,7 @@ class ClientTest {
 
         client = new Client(SchedulesDirectApiVersion.VERSION_20131021)
         // use beta site
-//        client.baseUrl="http://23.21.174.111/"
+        client.baseUrl="http://23.21.174.111/"
     }
 
     @After
