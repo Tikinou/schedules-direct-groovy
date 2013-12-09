@@ -1,17 +1,105 @@
-{"programID": "EP017398160007", "md5": "gYooHUOHcpAY09fQDvewhQ", "descriptionLanguage": "English", "colorCode": "Color", "sourceType": "Network", "showType": "Series", "episodeTitle150": "Abstinence and Pudding", "syndicatedEpisodeNumber": "106", "originalAirDate": "2013-10-28", "castAndCrew": ["Actor:Anna Faris", "Actor:Allison Janney", "Actor:Nate Corddry", "Actor:Matt Jones", "Actor:Sadie Calvano", "Actor:Blake Garrett Rosenthal", "Actor:Spencer Daniels", "Actor:French Stewart", "Guest Star:Justin Long", "Guest Star:Reggie De Leon", "Guest Star:Mimi Kennedy", "Executive Producer:Chuck Lorre", "Executive Producer:Eddie Gorodetsky", "Executive Producer:Nick Bakay", "Writer:Nick Bakay", "Writer:Gemma Baker", "Writer:Chuck Lorre", "Writer:Eddie Gorodetsky", "Director:Jeff Greenstein"], "genres": ["Sitcom"], "titles": {
-    "title120": "Mom"
+{"programID": "EP000003240231", "md5": "ZOCGyyWdnY9y6wAOLJqzNA", "descriptionLanguage": "English", "colorCode": "B & W", "sourceType": "Syndicated", "showType": "Series", "episodeTitle150": "Class Reunion", "syndicatedEpisodeNumber": "82", "originalAirDate": "1963-02-04", "castAndCrew": [
+    {
+        "personID": 489,
+        "role": "Actor",
+        "name": "Andy Griffith"
+    },
+    {
+        "personID": 490,
+        "role": "Actor",
+        "name": "Ronny Howard"
+    },
+    {
+        "personID": 491,
+        "role": "Actor",
+        "name": "Don Knotts"
+    },
+    {
+        "personID": 492,
+        "role": "Actor",
+        "name": "Frances Bavier"
+    },
+    {
+        "personID": 143,
+        "role": "Guest Star",
+        "name": "Peggy McCay"
+    },
+    {
+        "personID": 51412,
+        "role": "Guest Star",
+        "name": "Virginia Eilers"
+    },
+    {
+        "personID": 3090,
+        "role": "Guest Star",
+        "name": "Barbara Perry"
+    },
+    {
+        "personID": 13573,
+        "role": "Guest Star",
+        "name": "Don Haggerty"
+    },
+    {
+        "personID": 51413,
+        "role": "Guest Star",
+        "name": "Frank Behrens"
+    },
+    {
+        "personID": 20236,
+        "role": "Guest Star",
+        "name": "Molly Dodd"
+    },
+    {
+        "personID": 632,
+        "role": "Guest Star",
+        "name": "Paul Smith"
+    },
+    {
+        "personID": 548,
+        "role": "Director",
+        "name": "Bob Sweeney"
+    },
+    {
+        "personID": 500,
+        "role": "Producer",
+        "name": "Aaron Reuben"
+    },
+    {
+        "personID": 517,
+        "role": "Writer",
+        "name": "Jim Fritzell"
+    },
+    {
+        "personID": 518,
+        "role": "Writer",
+        "name": "Everett Greenbaum"
+    }
+], "genres": ["Sitcom"], "titles": {
+    "title120": "The Andy Griffith Show",
+    "title20": "Andy Griffith Show",
+    "title10": "Griffith"
 }, "descriptions": {
-    "description255": "Christy wants to take things slow with Adam (Justin Long); Bonnie has a disagreement with her rival, Marjorie.",
-    "description100": "Christy wants to take things slow with Adam; Bonnie has a disagreement with her rival, Marjorie.",
-    "description60": "Christy wants to take things slow with Adam.",
-    "description40": "Christy takes things slow with Adam.",
-    "alternateDescription100": "Christy wants to take things slow with Adam; Bonnie has a disagreement with her rival, Marjorie."
+    "description255": "Andy and Barney look forward to seeing their high-school sweethearts at the Mayberry Class of '45 reunion.",
+    "description100": "Andy and Barney's high-school class holds a reunion.",
+    "description60": "Andy and Barney's high-school class holds a reunion.",
+    "description40": "High-school class reunion.",
+    "alternateDescription100": "Andy and Barney's high-school class holds a reunion.",
+    "seriesDescription": "Widowed sheriff Andy Taylor raises his son in Mayberry, North Carolina."
 }, "metadata": [
     {
+        "tvdb": {
+            "season": "3",
+            "episode": "19",
+            "seriesid": "77754"
+        },
         "Tribune": {
-            "season": "1",
-            "episode": "6",
-            "seriesid": "9978206"
+            "season": "3",
+            "episode": "19",
+            "seriesid": "183943"
+        },
+        "tvrage": {
+            "season": "3",
+            "episode": "19"
         }
     }
 ]}
