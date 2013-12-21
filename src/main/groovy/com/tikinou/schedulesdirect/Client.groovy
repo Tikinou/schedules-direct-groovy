@@ -85,6 +85,8 @@ class Client {
         }
         // if we got here we need to get a new randhash
         this.credentials = credentials
+        assert this.credentials.username
+        assert this.credentials.password
         Command cmd = getCommand(ActionType.GET, ObjectTypes.RANDHASH)
         execute(cmd)
         if (cmd.status != CommandStatus.SUCCESS)
