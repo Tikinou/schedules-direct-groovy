@@ -25,4 +25,16 @@ public enum SchedulesDirectApiVersion {
 
     SchedulesDirectApiVersion(String v) { value = v }
     final String value
+
+    static SchedulesDirectApiVersion fromValue(value){
+        if(value){
+            switch (value){
+                case "20130709":
+                    return VERSION_20130709
+                case "20131021":
+                    return VERSION_20131021
+            }
+        }
+        return null
+    }
 }
