@@ -16,11 +16,19 @@
 
 package com.tikinou.schedulesdirect
 
+import com.tikinou.schedulesdirect.core.domain.ActionType
+import com.tikinou.schedulesdirect.core.domain.CommandStatus
+import com.tikinou.schedulesdirect.core.domain.Credentials
+import com.tikinou.schedulesdirect.core.domain.ObjectTypes
+import com.tikinou.schedulesdirect.core.domain.ResponseCode
+import com.tikinou.schedulesdirect.core.domain.SchedulesDirectApiVersion
+import com.tikinou.schedulesdirect.core.exceptions.AuthenticationException
+import com.tikinou.schedulesdirect.core.exceptions.VersionNotSupportedException
 import groovy.util.logging.Commons
 import groovyx.net.http.RESTClient
 
-import static com.tikinou.schedulesdirect.SchedulesDirectApiVersion.VERSION_20130709
-import static com.tikinou.schedulesdirect.SchedulesDirectApiVersion.VERSION_20131021
+import static com.tikinou.schedulesdirect.core.domain.SchedulesDirectApiVersion.VERSION_20130709
+import static com.tikinou.schedulesdirect.core.domain.SchedulesDirectApiVersion.VERSION_20131021
 /**
  * Client class that handles the communication with Schedules Direct JSON API Server.
  * The communication is done via http, the information is processed using JSON
@@ -66,7 +74,7 @@ class Client {
 
     void connect(Credentials credentials, forceConnect = false) {
         if (credentials == null)
-            throw AuthenticationException("credentials object cannot be null")
+            throw new AuthenticationException("credentials object cannot be null")
         initializeConnectivityData()
         if(!forceConnect){
             if (this.credentials != null) {
@@ -90,7 +98,7 @@ class Client {
         Command cmd = getCommand(ActionType.GET, ObjectTypes.RANDHASH)
         execute(cmd)
         if (cmd.status != CommandStatus.SUCCESS)
-            throw new AuthenticationException("Could not login to schedules direct", cmd.results)
+            throw new AuthenticationException("Could not login to schedules direct", ResponseCode.fromCode(cmd.results.code))
     }
 
     void execute(Command command) {

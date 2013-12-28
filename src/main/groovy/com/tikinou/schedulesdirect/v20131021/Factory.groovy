@@ -17,9 +17,9 @@ package com.tikinou.schedulesdirect.v20131021
 
 import com.tikinou.schedulesdirect.v20130709.*
 
-import static com.tikinou.schedulesdirect.ActionType.*
-import static com.tikinou.schedulesdirect.ObjectTypes.*
-import static com.tikinou.schedulesdirect.SchedulesDirectApiVersion.VERSION_20131021
+import static com.tikinou.schedulesdirect.core.domain.ActionType.*
+import static com.tikinou.schedulesdirect.core.domain.ObjectTypes.*
+import static com.tikinou.schedulesdirect.core.domain.SchedulesDirectApiVersion.VERSION_20131021
 /**
  * Factory for Commands running against version 20130709
  * @author Sebastien Astie

@@ -17,9 +17,10 @@
 package com.tikinou.schedulesdirect.v20130709
 
 import com.tikinou.schedulesdirect.Command
-import com.tikinou.schedulesdirect.ObjectTypes
-import com.tikinou.schedulesdirect.ValidationException
+import com.tikinou.schedulesdirect.core.domain.ObjectTypes
+import com.tikinou.schedulesdirect.core.exceptions.ValidationException
 import groovy.json.JsonBuilder
+
 /**
  * @author Sebastien Astie
  */

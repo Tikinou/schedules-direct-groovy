@@ -17,9 +17,9 @@
 package com.tikinou.schedulesdirect.v20130709
 
 import com.tikinou.schedulesdirect.Command
-import com.tikinou.schedulesdirect.ObjectTypes
-import com.tikinou.schedulesdirect.ResponseCode
+import com.tikinou.schedulesdirect.core.domain.ObjectTypes
 import groovy.json.JsonBuilder
+
 /**
  * @author Sebastien Astie
  */

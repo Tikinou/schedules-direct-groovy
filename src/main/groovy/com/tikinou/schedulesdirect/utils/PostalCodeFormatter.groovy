@@ -16,10 +16,11 @@
 
 package com.tikinou.schedulesdirect.utils
 
-import com.tikinou.schedulesdirect.ValidationException
+import com.tikinou.schedulesdirect.core.domain.Country
+import com.tikinou.schedulesdirect.core.exceptions.ValidationException
 
-import static com.tikinou.schedulesdirect.utils.Country.Canada
-import static com.tikinou.schedulesdirect.utils.Country.UnitedState
+import static com.tikinou.schedulesdirect.core.domain.Country.Canada
+import static com.tikinou.schedulesdirect.core.domain.Country.UnitedState
 /**
  * @author Sebastien Astie
  */

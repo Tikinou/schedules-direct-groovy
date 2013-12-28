@@ -15,7 +15,13 @@
 
 package com.tikinou.schedulesdirect
 
-import com.tikinou.schedulesdirect.utils.Country
+import com.tikinou.schedulesdirect.core.domain.ActionType
+import com.tikinou.schedulesdirect.core.domain.Credentials
+import com.tikinou.schedulesdirect.core.domain.ObjectTypes
+import com.tikinou.schedulesdirect.core.domain.ResponseCode
+import com.tikinou.schedulesdirect.core.domain.SchedulesDirectApiVersion
+import com.tikinou.schedulesdirect.core.domain.Country
+import com.tikinou.schedulesdirect.core.exceptions.VersionNotSupportedException
 import groovy.json.JsonSlurper
 import org.junit.After
 import org.junit.Before

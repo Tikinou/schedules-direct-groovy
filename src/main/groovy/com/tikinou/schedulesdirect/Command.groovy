@@ -16,6 +16,10 @@
 
 package com.tikinou.schedulesdirect
 
+import com.tikinou.schedulesdirect.core.domain.ActionType
+import com.tikinou.schedulesdirect.core.domain.CommandStatus
+import com.tikinou.schedulesdirect.core.domain.SchedulesDirectApiVersion
+import com.tikinou.schedulesdirect.core.exceptions.AuthenticationException
 import groovy.json.JsonSlurper
 import groovyx.net.http.ContentType
 /**

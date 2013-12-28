@@ -17,9 +17,9 @@
 package com.tikinou.schedulesdirect.v20130709
 
 import com.tikinou.schedulesdirect.Command
-import com.tikinou.schedulesdirect.CommandStatus
-import com.tikinou.schedulesdirect.ObjectTypes
-import com.tikinou.schedulesdirect.ResponseCode
+import com.tikinou.schedulesdirect.core.domain.CommandStatus
+import com.tikinou.schedulesdirect.core.domain.ObjectTypes
+import com.tikinou.schedulesdirect.core.domain.ResponseCode
 import groovy.json.JsonBuilder
 import org.apache.commons.codec.digest.DigestUtils
 import org.joda.time.DateTime
