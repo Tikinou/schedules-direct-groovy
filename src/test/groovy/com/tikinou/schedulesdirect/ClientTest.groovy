@@ -193,17 +193,18 @@ class ClientTest {
     private def createCredentials() {
         def slurper = new JsonSlurper()
         def config = slurper.parseText(ClientTest.class.getResource('/credentials.json').text)
+        println("loaded config : $config")
         def credentials = new Credentials(username: config.username, password: config.password)
         // override from system props (can be provided from gradle.properties)
         String userName = System.properties["credentials.username"]
-        if (userName != null)
+        if (userName)
             credentials.username = userName
         String password = System.properties["credentials.password"]
-        if (password != null)
+        if (password)
             credentials.password = password
 
-        assert credentials.username != "CHANGE_USER_NAME"
-        assert credentials.password != "CHANGE_PASSWORD"
+        assert credentials.username && credentials.username != "CHANGE_USER_NAME"
+        assert credentials.password && credentials.password != "CHANGE_PASSWORD"
         return credentials
     }
 
