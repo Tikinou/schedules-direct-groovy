@@ -19,19 +19,18 @@ package com.tikinou.schedulesdirect.v20130709
 import com.tikinou.schedulesdirect.core.domain.ActionType
 import com.tikinou.schedulesdirect.Command
 import com.tikinou.schedulesdirect.core.domain.ObjectTypes
+import com.tikinou.schedulesdirect.core.domain.postalcode.DefaultPostalCodeFormatter
+import com.tikinou.schedulesdirect.core.domain.postalcode.PostalCodeFormatter
 import com.tikinou.schedulesdirect.core.exceptions.ValidationException
 import com.tikinou.schedulesdirect.core.domain.Country
-import com.tikinou.schedulesdirect.utils.PostalCodeFormatter
 import groovy.json.JsonBuilder
-
-import static com.tikinou.schedulesdirect.core.domain.Country.Canada
-import static com.tikinou.schedulesdirect.core.domain.Country.UnitedState
 
 /**
  * @author Sebastien Astie
  */
 class HeadendsCommand extends Command {
     private static final def SUBSCRIBED = 'Subscribed'
+    private static final PostalCodeFormatter POSTAL_CODE_FORMATTER = new DefaultPostalCodeFormatter()
 
     @Override
     protected def prepareJsonRequestData(credentials) {
@@ -43,7 +42,7 @@ class HeadendsCommand extends Command {
                 jsonRequest {
                     request {
                         country parameters.country.code
-                        postalcode formatPostalCode(parameters.country, parameters.postalCode.toString())
+                        postalcode POSTAL_CODE_FORMATTER.format(parameters.country, parameters.postalCode.toString())
                     }
                     randhash credentials.randhash
                     action action.name().toLowerCase()
@@ -90,18 +89,5 @@ class HeadendsCommand extends Command {
         }
     }
 
-    def formatPostalCode(Country country, String postalcode) {
-        def code = "PC:"
-        switch (country) {
-            case Canada:
-                if (postalcode.length() < 4)
-                    throw new ValidationException("postal code for Canada must be at least 4 characters long")
-                return code + postalcode[0..3] // grab the 4 left most
-            case UnitedState:
-                if (postalcode.length() < 5)
-                    throw new ValidationException("postal code for United States must be at least 5 characters long")
-                return code + postalcode[0..4]
-        }
-        return postalcode
-    }
+
 }
