@@ -24,6 +24,9 @@ import com.tikinou.schedulesdirect.core.domain.Country
 import com.tikinou.schedulesdirect.utils.PostalCodeFormatter
 import groovy.json.JsonBuilder
 
+import static com.tikinou.schedulesdirect.core.domain.Country.Canada
+import static com.tikinou.schedulesdirect.core.domain.Country.UnitedState
+
 /**
  * @author Sebastien Astie
  */
@@ -40,7 +43,7 @@ class HeadendsCommand extends Command {
                 jsonRequest {
                     request {
                         country parameters.country.code
-                        postalcode PostalCodeFormatter.format(parameters.country, parameters.postalCode.toString())
+                        postalcode formatPostalCode(parameters.country, parameters.postalCode.toString())
                     }
                     randhash credentials.randhash
                     action action.name().toLowerCase()
@@ -85,5 +88,20 @@ class HeadendsCommand extends Command {
             default:
                 break
         }
+    }
+
+    def formatPostalCode(Country country, String postalcode) {
+        def code = "PC:"
+        switch (country) {
+            case Canada:
+                if (postalcode.length() < 4)
+                    throw new ValidationException("postal code for Canada must be at least 4 characters long")
+                return code + postalcode[0..3] // grab the 4 left most
+            case UnitedState:
+                if (postalcode.length() < 5)
+                    throw new ValidationException("postal code for United States must be at least 5 characters long")
+                return code + postalcode[0..4]
+        }
+        return postalcode
     }
 }
