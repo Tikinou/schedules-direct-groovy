@@ -52,6 +52,7 @@ switch(build_type){
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 test{
@@ -64,7 +65,7 @@ test{
 
 dependencies {
     compile group:'joda-time', name:'joda-time', version:'2.3'
-    compile group:'com.tikinou.oss', name:'schedules-direct-core-api', version:'1.8'
+    compile group:'com.tikinou.oss', name:'schedules-direct-core-api', version:'1.9-SNAPSHOT'
     compile group:'org.codehaus.groovy', name:'groovy-all', version:'2.2.1'
     compile ('org.codehaus.groovy.modules.http-builder:http-builder:0.6'){
         exclude group:'org.codehaus.groovy', module:'groovy'
