@@ -1,6 +1,7 @@
 package com.tikinou.schedulesdirect
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.tikinou.schedulesdirect.core.Command
 import com.tikinou.schedulesdirect.core.CommandResult
 import com.tikinou.schedulesdirect.core.SchedulesDirectClient
 import com.tikinou.schedulesdirect.core.domain.CommandStatus
@@ -27,7 +28,7 @@ class ClientUtils {
         objectMapper = ModuleRegistration.getInstance().getConfiguredObjectMapper()
     }
 
-    void executeRequest(SchedulesDirectClient client, com.tikinou.schedulesdirect.core.Command command, Class<? extends CommandResult> resultType){
+    void executeRequest(SchedulesDirectClient client, Command command, Class<? extends CommandResult> resultType){
         def postBody = "request=" + URLEncoder.encode(objectMapper.writeValueAsString(command.parameters), "UTF-8")
         RESTClient restClient = new RESTClient(client.baseUrl)
         def response = restClient.post(path:client.endpoint, requestContentType: ContentType.URLENC, body: postBody)

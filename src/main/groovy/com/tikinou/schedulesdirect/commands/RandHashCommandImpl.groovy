@@ -23,12 +23,13 @@ import static com.tikinou.schedulesdirect.core.domain.CommandStatus.SUCCESS
 class RandHashCommandImpl extends AbstractRandhashCommand{
     @Override
     void execute(SchedulesDirectClient client) {
+        ClientUtils clientUtils = ClientUtils.instance
         try{
             status = RUNNING
             validateParameters()
-            ClientUtils.executeRequest(client, this, RandHashResult.class)
+            clientUtils.executeRequest(client, this, RandHashResult.class)
             if(status == SUCCESS){
-                parameters.credentials.randhash = result.randhash
+                parameters.credentials.randhash = results.randhash
                 parameters.credentials.randhashDateTime = DateTime.now()
             }
         } catch (Exception e){
