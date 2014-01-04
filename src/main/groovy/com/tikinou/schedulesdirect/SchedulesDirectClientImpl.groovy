@@ -1,7 +1,11 @@
 package com.tikinou.schedulesdirect
 
+import com.tikinou.schedulesdirect.commands.AddHeadendCommandImpl
+import com.tikinou.schedulesdirect.commands.DeleteHeadendCommandImpl
 import com.tikinou.schedulesdirect.commands.RandHashCommandImpl
 import com.tikinou.schedulesdirect.core.AbstractSchedulesDirectClient
+import com.tikinou.schedulesdirect.core.commands.headend.AddHeadendCommand
+import com.tikinou.schedulesdirect.core.commands.message.DeleteMessageCommand
 import com.tikinou.schedulesdirect.core.commands.randhash.RandHashCommand
 
 /**
@@ -13,6 +17,10 @@ class SchedulesDirectClientImpl extends AbstractSchedulesDirectClient{
         switch (commandClass){
             case RandHashCommand.class:
                 return (T)new RandHashCommandImpl()
+            case AddHeadendCommand.class:
+                return (T)new AddHeadendCommandImpl()
+            case DeleteMessageCommand.class:
+                return (T)new DeleteHeadendCommandImpl()
         }
         return null
     }
