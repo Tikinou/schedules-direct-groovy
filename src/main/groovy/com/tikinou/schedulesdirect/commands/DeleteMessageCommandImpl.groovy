@@ -31,7 +31,7 @@ class DeleteMessageCommandImpl extends AbstractDeleteMessageCommand{
     @Override
     public void validateParameters() throws ValidationException {
         assert parameters
-        if (parameters.messageIds)
+        if (!parameters.messageIds)
             throw new ValidationException("messageIds parameter is required");
     }
 }

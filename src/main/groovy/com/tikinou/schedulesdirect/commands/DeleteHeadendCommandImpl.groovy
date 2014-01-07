@@ -31,7 +31,7 @@ class DeleteHeadendCommandImpl extends AbstractDeleteHeadendCommand{
     @Override
     public void validateParameters() throws ValidationException {
         assert parameters
-        if(parameters.headendId){
+        if(!parameters.headendId){
             throw new ValidationException("headendId parameter is required");
         }
     }

@@ -123,7 +123,7 @@ class ClientTest {
     public void testStatus() throws Exception {
         Credentials credentials = connect()
         GetStatusCommand cmd = client.createCommand(GetStatusCommand.class)
-        cmd.parameters = new GetStatusCommandParameters(credentials.randhash, SchedulesDirectApiVersion.VERSION_20131021)
+        cmd.parameters = new GetStatusCommandParameters()
         executeCommand(cmd);
     }
 
@@ -131,7 +131,7 @@ class ClientTest {
     public void testLineups() throws Exception {
         Credentials credentials = connect()
         GetLineupsCommand cmd = client.createCommand(GetLineupsCommand.class)
-        cmd.parameters =  new GetLineupsCommandParameters(credentials.randhash, SchedulesDirectApiVersion.VERSION_20131021, ["NY67791"])
+        cmd.parameters =  new GetLineupsCommandParameters(["NY67791"])
         executeCommand(cmd)
     }
 
@@ -139,7 +139,7 @@ class ClientTest {
     public void testPrograms() throws Exception {
         Credentials credentials = connect()
         GetProgramsCommand cmd = client.createCommand(GetProgramsCommand.class)
-        cmd.parameters =  new GetProgramsCommandParameters(credentials.randhash, SchedulesDirectApiVersion.VERSION_20131021, ["EP017398160007", "SH013762600000", "MV003954050000"])
+        cmd.parameters =  new GetProgramsCommandParameters(["EP017398160007", "SH013762600000", "MV003954050000"])
         executeCommand(cmd)
     }
 
@@ -147,7 +147,7 @@ class ClientTest {
     public void testSchedules() throws Exception {
         Credentials credentials = connect()
         GetSchedulesCommand cmd = client.createCommand(GetSchedulesCommand.class)
-        cmd.parameters =  new GetSchedulesCommandParameters(credentials.randhash, SchedulesDirectApiVersion.VERSION_20131021, ["16689", "20360", "20453", "21868"])
+        cmd.parameters =  new GetSchedulesCommandParameters(["16689", "20360", "20453", "21868"])
         executeCommand(cmd)
     }
 
@@ -155,9 +155,7 @@ class ClientTest {
     public void testGetSubscribedHeadends() throws Exception {
         Credentials credentials = connect()
         GetHeadendsCommand cmd = client.createCommand(GetHeadendsCommand.class)
-        GetHeadendsParameters parameters =  new GetHeadendsParameters(credentials.randhash, SchedulesDirectApiVersion.VERSION_20131021)
-        parameters.subscribed = true
-        cmd.parameters = parameters
+        cmd.parameters =  new GetHeadendsParameters(subscribed: true)
         executeCommand(cmd)
     }
 
@@ -165,31 +163,36 @@ class ClientTest {
     public void testGetHeadends() throws Exception {
         Credentials credentials = connect()
         GetHeadendsCommand cmd = client.createCommand(GetHeadendsCommand.class)
-        GetHeadendsParameters parameters =  new GetHeadendsParameters(credentials.randhash, SchedulesDirectApiVersion.VERSION_20131021)
-        parameters.country = Country.UnitedStates
-        parameters.postalCode = "10564"
-        cmd.parameters = parameters
+        cmd.parameters = new GetHeadendsParameters(country: Country.UnitedStates, postalCode: "10562")
         executeCommand(cmd);
+    }
+
+
+    public void testDeleteHeadend() throws Exception {
+        connect()
+        String headend = "PC:10562"
+        DeleteHeadendCommand delCmd = client.createCommand(DeleteHeadendCommand.class)
+        delCmd.parameters = new AddDeleteHeadendParameters(true, headend)
+        println "Deleting headend " << headend
+        executeCommand(delCmd)
+        println "Deleted headend " << headend
     }
 
     public void testAddAndDeleteHeadends() throws Exception{
         Credentials credentials = connect()
         GetHeadendsCommand cmd = client.createCommand(GetHeadendsCommand.class)
-        GetHeadendsParameters parameters =  new GetHeadendsParameters(credentials.randhash, SchedulesDirectApiVersion.VERSION_20131021)
-        parameters.country = Country.UnitedStates
-        parameters.postalCode = postalCode
-        cmd.parameters = parameters
+        cmd.parameters = new GetHeadendsParameters(country: Country.UnitedStates, postalCode: postalCode)
         executeCommand(cmd)
         println "Got Headends, try to find the first one and add it"
         assert !cmd.results.data
         Headend headend = cmd.results.data[0]
         AddHeadendCommand addCmd = client.createCommand(AddHeadendCommand.class)
-        addCmd.parameters = new AddDeleteHeadendParameters(credentials.getRandhash(), false, SchedulesDirectApiVersion.VERSION_20131021, headend.headend)
+        addCmd.parameters = new AddDeleteHeadendParameters(false, headend.headend)
         println "Adding headend " << headend.headend
         executeCommand(addCmd)
         println "Added headend " << headend.headend
         DeleteHeadendCommand delCmd = client.createCommand(DeleteHeadendCommand.class)
-        delCmd.parameters = new AddDeleteHeadendParameters(credentials.getRandhash(), true, SchedulesDirectApiVersion.VERSION_20131021, headend.headend);
+        delCmd.parameters = new AddDeleteHeadendParameters(true, headend.headend)
         println "Deleting headend " << headend.headend
         executeCommand(delCmd)
         println "Deleted headend " << headend.headend
