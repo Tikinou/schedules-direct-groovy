@@ -2,40 +2,35 @@ package com.tikinou.schedulesdirect.commands
 
 import com.tikinou.schedulesdirect.ClientUtils
 import com.tikinou.schedulesdirect.core.SchedulesDirectClient
-import com.tikinou.schedulesdirect.core.commands.randhash.AbstractRandhashCommand
-import com.tikinou.schedulesdirect.core.commands.randhash.RandHashParameters
-import com.tikinou.schedulesdirect.core.commands.randhash.RandHashResult
-import com.tikinou.schedulesdirect.core.domain.CommandStatus
-import com.tikinou.schedulesdirect.core.domain.Credentials
+import com.tikinou.schedulesdirect.core.commands.token.AbstractTokenCommand
+import com.tikinou.schedulesdirect.core.commands.token.TokenResult
 import com.tikinou.schedulesdirect.core.exceptions.ValidationException
 import groovy.util.logging.Commons
-import groovyx.net.http.RESTClient
+import groovyx.net.http.HttpResponseException
 import org.joda.time.DateTime
 
-import static com.tikinou.schedulesdirect.core.domain.CommandStatus.FAILURE
-import static com.tikinou.schedulesdirect.core.domain.CommandStatus.RUNNING
-import static com.tikinou.schedulesdirect.core.domain.CommandStatus.SUCCESS
+import static com.tikinou.schedulesdirect.core.domain.CommandStatus.*
 
 /**
  * @author Sebastien Astie.
  */
 @Commons
-class RandHashCommandImpl extends AbstractRandhashCommand{
+class TokenCommandImpl extends AbstractTokenCommand{
     @Override
     void execute(SchedulesDirectClient client) {
         ClientUtils clientUtils = ClientUtils.instance
         try{
             status = RUNNING
             validateParameters()
-            clientUtils.executeRequest(client, this, RandHashResult.class)
+            clientUtils.executeRequest(client, this, TokenResult.class)
             if(status == SUCCESS){
-                parameters.credentials.randhash = results.randhash
-                parameters.credentials.randhashDateTime = DateTime.now()
+                parameters.credentials.token = results.token
+                parameters.credentials.tokenDateTime = DateTime.now()
             }
         } catch (Exception e){
             log.error("Error while executing command.", e);
             status = FAILURE;
-            results = new RandHashResult(message: e.message)
+            results = new TokenResult(message: e.message)
         }
     }
 

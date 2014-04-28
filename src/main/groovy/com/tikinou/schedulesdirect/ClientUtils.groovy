@@ -1,9 +1,11 @@
 package com.tikinou.schedulesdirect
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.tikinou.schedulesdirect.core.Command
 import com.tikinou.schedulesdirect.core.CommandResult
+import com.tikinou.schedulesdirect.core.HttpMethod
+import com.tikinou.schedulesdirect.core.ParameterizedCommand
 import com.tikinou.schedulesdirect.core.SchedulesDirectClient
+import com.tikinou.schedulesdirect.core.commands.AuthenticatedBaseCommandParameter
 import com.tikinou.schedulesdirect.core.domain.CommandStatus
 import com.tikinou.schedulesdirect.core.domain.Credentials
 import com.tikinou.schedulesdirect.core.exceptions.AuthenticationException
@@ -28,25 +30,53 @@ class ClientUtils {
         objectMapper = ModuleRegistration.getInstance().getConfiguredObjectMapper()
     }
 
-    void executeRequest(SchedulesDirectClient client, Command command, Class<? extends CommandResult> resultType){
-        def postBody = "request=" + URLEncoder.encode(objectMapper.writeValueAsString(command.parameters), "UTF-8")
-        RESTClient restClient = new RESTClient(client.baseUrl)
-        def response = restClient.post(path:client.endpoint, requestContentType: ContentType.URLENC, body: postBody)
-        if(response.status == HttpStatus.SC_OK){
-            if (response.data != null) {
-                if (response.data instanceof InputStream)
-                    command.results = objectMapper.readValue(new InputStreamReader(response.data), resultType)
-                else
-                    command.results = objectMapper.readValue((String)response.data.text(), resultType)
-            }
-            command.status = CommandStatus.SUCCESS
-        } else {
-            command.status = CommandStatus.FAILURE
+    def executeRequest(SchedulesDirectClient client, ParameterizedCommand command, Class<? extends CommandResult> resultType, boolean returnRaw = false) {
+        RESTClient restClient = new RESTClient(client.url.endsWith("/") ? client.url : client.url + "/")
+        restClient.parser."application/json" = restClient.parser."text/plain"
+        restClient.headers["User-Agent"] = "tikinou-sd-api"
+        if (command.parameters instanceof AuthenticatedBaseCommandParameter) {
+            def token = ((AuthenticatedBaseCommandParameter) command.parameters).token
+            restClient.headers["token"] = token
         }
+
+
+        def reqBody = objectMapper.writeValueAsString(command.parameters)
+        def response
+        switch (command.method) {
+            case HttpMethod.PUT:
+                restClient.put(path: command.endPoint, requestContentType: ContentType.JSON, body: reqBody)
+                break;
+            case HttpMethod.DELETE:
+                restClient.delete(path: command.endPoint, requestContentType: ContentType.JSON, body: reqBody)
+                break;
+            case HttpMethod.POST:
+                response = restClient.post(path: command.endPoint, requestContentType: ContentType.JSON, body: reqBody)
+                break;
+            case HttpMethod.GET:
+                def reqParams = command.parameters.toRequestParameters()
+                response = restClient.get(path: command.endPoint, query: reqParams)
+                break;
+
+        }
+
+        command.status = CommandStatus.FAILURE
+        if (response.status == HttpStatus.SC_OK) {
+            if(returnRaw){
+                command.status = CommandStatus.SUCCESS
+                return response.data
+            }
+            else if (response.data != null) {
+                command.results = objectMapper.readValue(response.data, resultType)
+                command.status = CommandStatus.SUCCESS
+            }
+
+        }
+        return null
     }
 
     void failIfUnauthenticated(Credentials credentials) throws AuthenticationException {
-        if (credentials.getRandhash() == null)
-            throw new AuthenticationException("Not authenticated");
+        if (credentials.token == null)
+            throw new AuthenticationException("Not authenticated")
     }
+
 }

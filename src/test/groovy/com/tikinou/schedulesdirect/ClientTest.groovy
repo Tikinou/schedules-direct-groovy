@@ -18,36 +18,25 @@ package com.tikinou.schedulesdirect
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.tikinou.schedulesdirect.core.Command
 import com.tikinou.schedulesdirect.core.SchedulesDirectClient
-import com.tikinou.schedulesdirect.core.commands.headend.AddDeleteHeadendParameters
-import com.tikinou.schedulesdirect.core.commands.headend.AddHeadendCommand
-import com.tikinou.schedulesdirect.core.commands.headend.DeleteHeadendCommand
 import com.tikinou.schedulesdirect.core.commands.headend.GetHeadendsCommand
 import com.tikinou.schedulesdirect.core.commands.headend.GetHeadendsParameters
-import com.tikinou.schedulesdirect.core.commands.lineup.GetLineupsCommand
-import com.tikinou.schedulesdirect.core.commands.lineup.GetLineupsCommandParameters
+import com.tikinou.schedulesdirect.core.commands.lineup.*
 import com.tikinou.schedulesdirect.core.commands.message.DeleteMessageCommand
 import com.tikinou.schedulesdirect.core.commands.metadata.UpdateMetadataCommand
 import com.tikinou.schedulesdirect.core.commands.program.GetProgramsCommand
 import com.tikinou.schedulesdirect.core.commands.program.GetProgramsCommandParameters
-import com.tikinou.schedulesdirect.core.commands.randhash.RandHashCommand
 import com.tikinou.schedulesdirect.core.commands.schedules.GetSchedulesCommand
 import com.tikinou.schedulesdirect.core.commands.schedules.GetSchedulesCommandParameters
 import com.tikinou.schedulesdirect.core.commands.status.GetStatusCommand
 import com.tikinou.schedulesdirect.core.commands.status.GetStatusCommandParameters
-import com.tikinou.schedulesdirect.core.domain.ActionType
-import com.tikinou.schedulesdirect.core.domain.CommandStatus
-import com.tikinou.schedulesdirect.core.domain.Credentials
-import com.tikinou.schedulesdirect.core.domain.Headend
-import com.tikinou.schedulesdirect.core.domain.ObjectTypes
-import com.tikinou.schedulesdirect.core.domain.ResponseCode
-import com.tikinou.schedulesdirect.core.domain.SchedulesDirectApiVersion
-import com.tikinou.schedulesdirect.core.domain.Country
+import com.tikinou.schedulesdirect.core.commands.token.TokenCommand
+import com.tikinou.schedulesdirect.core.domain.*
 import com.tikinou.schedulesdirect.core.exceptions.VersionNotSupportedException
 import com.tikinou.schedulesdirect.core.jackson.ModuleRegistration
-import groovy.json.JsonSlurper
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
+
 /**
  * @author: Sebastien Astie
  */
@@ -68,18 +57,18 @@ class ClientTest {
     @Test
     public void testConnect() throws Exception {
         Credentials credentials = createCredentials()
-        assert !credentials.randhash
+        assert !credentials.token
         client.connect(credentials)
-        assert credentials.randhash
+        assert credentials.token
         println "TestConnect success: credentials now: $credentials"
     }
 
     @Test
     public void testMultipleConnect() throws Exception {
         Credentials credentials = createCredentials()
-        assert !credentials.randhash
+        assert !credentials.token
         client.connect(credentials)
-        assert credentials.randhash
+        assert credentials.token
         client.connect(credentials)
     }
 
@@ -107,15 +96,16 @@ class ClientTest {
 
     @Test
     void testGetCommand() {
-        assert client.createCommand(AddHeadendCommand.class)
-        assert client.createCommand(DeleteHeadendCommand.class)
+        assert client.createCommand(AbstractAddLineupCommand.class)
+        assert client.createCommand(AbstractDeleteLineupCommand.class)
         assert client.createCommand(DeleteMessageCommand.class)
         assert client.createCommand(GetHeadendsCommand.class)
-        assert client.createCommand(GetLineupsCommand.class)
+        assert client.createCommand(GetSubscribedLineupsCommand.class)
+        assert client.createCommand(GetLineupDetailsCommand.class)
         assert client.createCommand(GetProgramsCommand.class)
         assert client.createCommand(GetSchedulesCommand.class)
         assert client.createCommand(GetStatusCommand.class)
-        assert client.createCommand(RandHashCommand.class)
+        assert client.createCommand(TokenCommand.class)
         assert client.createCommand(UpdateMetadataCommand.class)
     }
 
@@ -130,8 +120,8 @@ class ClientTest {
     @Test
     public void testLineups() throws Exception {
         Credentials credentials = connect()
-        GetLineupsCommand cmd = client.createCommand(GetLineupsCommand.class)
-        cmd.parameters =  new GetLineupsCommandParameters(["NY67791"])
+        GetLineupDetailsCommand cmd = client.createCommand(GetLineupDetailsCommand.class)
+        cmd.parameters =  new LineupCommandParameters("NY67791")
         executeCommand(cmd)
     }
 
@@ -154,8 +144,8 @@ class ClientTest {
     @Test
     public void testGetSubscribedHeadends() throws Exception {
         Credentials credentials = connect()
-        GetHeadendsCommand cmd = client.createCommand(GetHeadendsCommand.class)
-        cmd.parameters =  new GetHeadendsParameters(subscribed: true)
+        GetSubscribedLineupsCommand cmd = client.createCommand(GetSubscribedLineupsCommand.class)
+        cmd.parameters =  new GetSubscribedLineupsCommandParameters()
         executeCommand(cmd)
     }
 
@@ -168,14 +158,13 @@ class ClientTest {
     }
 
 
-    public void testDeleteHeadend() throws Exception {
+    public void testDeleteLineup() throws Exception {
         connect()
-        String headend = "PC:10562"
-        DeleteHeadendCommand delCmd = client.createCommand(DeleteHeadendCommand.class)
-        delCmd.parameters = new AddDeleteHeadendParameters(true, headend)
-        println "Deleting headend " << headend
+        AbstractDeleteLineupCommand delCmd = client.createCommand(AbstractDeleteLineupCommand.class)
+        delCmd.parameters = new LineupCommandParameters("USA-NY3232-X")
+        println "Deleting lineup " << delCmd.parameters.lineupId
         executeCommand(delCmd)
-        println "Deleted headend " << headend
+        println "Deleted lineup " << delCmd.parameters.lineupId
     }
 
     public void testAddAndDeleteHeadends() throws Exception{
@@ -184,18 +173,25 @@ class ClientTest {
         cmd.parameters = new GetHeadendsParameters(country: Country.UnitedStates, postalCode: postalCode)
         executeCommand(cmd)
         println "Got Headends, try to find the first one and add it"
-        assert !cmd.results.data
-        Headend headend = cmd.results.data[0]
-        AddHeadendCommand addCmd = client.createCommand(AddHeadendCommand.class)
-        addCmd.parameters = new AddDeleteHeadendParameters(false, headend.headend)
-        println "Adding headend " << headend.headend
+        assert cmd.results.headends
+        Headend headend
+        for(Headend a : cmd.results.headends.values()){
+            headend = a
+            break;
+        }
+        String uri = headend.lineups[0].uri
+        LineupCommandParameters p = new LineupCommandParameters(uri.substring(uri.lastIndexOf('/') + 1))
+
+        AbstractAddLineupCommand addCmd = client.createCommand(AbstractAddLineupCommand.class)
+        addCmd.parameters = p
+        println "Adding lineup " << p.lineupId
         executeCommand(addCmd)
-        println "Added headend " << headend.headend
-        DeleteHeadendCommand delCmd = client.createCommand(DeleteHeadendCommand.class)
-        delCmd.parameters = new AddDeleteHeadendParameters(true, headend.headend)
-        println "Deleting headend " << headend.headend
+        println "Added lineup " << p.lineupId
+        AbstractDeleteLineupCommand delCmd = client.createCommand(AbstractDeleteLineupCommand.class)
+        delCmd.parameters = p
+        println "Deleting lineup " << p.lineupId
         executeCommand(delCmd)
-        println "Deleted headend " << headend.headend
+        println "Deleted lineup " << p.lineupId
     }
 
     private Credentials connect() throws Exception {
