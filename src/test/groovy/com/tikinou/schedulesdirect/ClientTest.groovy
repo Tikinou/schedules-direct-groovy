@@ -20,6 +20,8 @@ import com.tikinou.schedulesdirect.core.Command
 import com.tikinou.schedulesdirect.core.SchedulesDirectClient
 import com.tikinou.schedulesdirect.core.commands.headend.GetHeadendsCommand
 import com.tikinou.schedulesdirect.core.commands.headend.GetHeadendsParameters
+import com.tikinou.schedulesdirect.core.commands.image.GetImageCommand
+import com.tikinou.schedulesdirect.core.commands.image.GetImageParameters
 import com.tikinou.schedulesdirect.core.commands.lineup.*
 import com.tikinou.schedulesdirect.core.commands.message.DeleteMessageCommand
 import com.tikinou.schedulesdirect.core.commands.metadata.UpdateMetadataCommand
@@ -47,7 +49,7 @@ class ClientTest {
     @Before
     void setUp() {
         client = new SchedulesDirectClientImpl()
-        client.setup(SchedulesDirectApiVersion.VERSION_20131021, true)
+        client.setup(SchedulesDirectApiVersion.VERSION_20131021, null, true)
     }
 
     @After
@@ -74,7 +76,7 @@ class ClientTest {
 
     @Test(expected = VersionNotSupportedException.class)
     public void testUnknownVersion() throws Exception{
-        client.setup(null, false)
+        client.setup(null, null, false)
     }
 
     private Credentials createCredentials() throws IOException {
@@ -157,6 +159,13 @@ class ClientTest {
         executeCommand(cmd);
     }
 
+    @Test
+    public void testGetImage() throws Exception {
+        Credentials credentials = connect()
+        GetImageCommand cmd = client.createCommand(GetImageCommand.class)
+        cmd.parameters = new GetImageParameters("assets/p3561420_b_v5_aa.jpg")
+        executeCommand(cmd);
+    }
 
     public void testDeleteLineup() throws Exception {
         connect()

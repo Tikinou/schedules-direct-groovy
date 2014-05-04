@@ -3,6 +3,7 @@ package com.tikinou.schedulesdirect
 import com.tikinou.schedulesdirect.commands.*
 import com.tikinou.schedulesdirect.core.AbstractSchedulesDirectClient
 import com.tikinou.schedulesdirect.core.commands.headend.GetHeadendsCommand
+import com.tikinou.schedulesdirect.core.commands.image.GetImageCommand
 import com.tikinou.schedulesdirect.core.commands.lineup.AbstractAddLineupCommand
 import com.tikinou.schedulesdirect.core.commands.lineup.AbstractDeleteLineupCommand
 import com.tikinou.schedulesdirect.core.commands.lineup.GetLineupDetailsCommand
@@ -29,6 +30,8 @@ class SchedulesDirectClientImpl extends AbstractSchedulesDirectClient{
                 return (T)new DeleteMessageCommandImpl()
             case GetHeadendsCommand.class:
                 return (T)new GetHeadendsCommandImpl()
+            case GetImageCommand.class:
+                return (T)new GetImageCommandImpl()
             case GetLineupDetailsCommand.class:
                 return (T)new GetLineupDetailsCommandImpl()
             case GetProgramsCommand.class:

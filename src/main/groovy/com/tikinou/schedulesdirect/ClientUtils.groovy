@@ -33,7 +33,7 @@ class ClientUtils {
     def executeRequest(SchedulesDirectClient client, ParameterizedCommand command, Class<? extends CommandResult> resultType, boolean returnRaw = false) {
         RESTClient restClient = new RESTClient(client.url.endsWith("/") ? client.url : client.url + "/")
         restClient.parser."application/json" = restClient.parser."text/plain"
-        restClient.headers["User-Agent"] = "tikinou-sd-api"
+        restClient.headers["User-Agent"] = client.userAgent ?: "tikinou-sd-api";
         if (command.parameters instanceof AuthenticatedBaseCommandParameter) {
             def token = ((AuthenticatedBaseCommandParameter) command.parameters).token
             restClient.headers["token"] = token
