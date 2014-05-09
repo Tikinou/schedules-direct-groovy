@@ -11,6 +11,7 @@ import com.tikinou.schedulesdirect.core.domain.Credentials
 import com.tikinou.schedulesdirect.core.exceptions.AuthenticationException
 import com.tikinou.schedulesdirect.core.jackson.ModuleRegistration
 import groovyx.net.http.ContentType
+import groovyx.net.http.HttpResponseException
 import groovyx.net.http.RESTClient
 import org.apache.http.HttpStatus
 
@@ -38,7 +39,6 @@ class ClientUtils {
             def token = ((AuthenticatedBaseCommandParameter) command.parameters).token
             restClient.headers["token"] = token
         }
-
 
         def reqBody = objectMapper.writeValueAsString(command.parameters)
         def response
@@ -79,4 +79,16 @@ class ClientUtils {
             throw new AuthenticationException("Not authenticated")
     }
 
+    int retryConnection(SchedulesDirectClient client, AuthenticatedBaseCommandParameter params, HttpResponseException ex, int numRetries) throws Exception {
+        numRetries--
+        if(numRetries < 0)
+            throw ex
+        if(ex.statusCode == HttpStatus.SC_FORBIDDEN) {
+            client.credentials.resetTokenInfo()
+            params.token = null
+            client.connect(client.credentials, false)
+            params.token = client.credentials.token
+        }
+        return numRetries;
+    }
 }

@@ -6,19 +6,27 @@ import com.tikinou.schedulesdirect.core.commands.BaseCommandResult
 import com.tikinou.schedulesdirect.core.commands.metadata.AbstractUpdateMetadataCommand
 import com.tikinou.schedulesdirect.core.domain.CommandStatus
 import com.tikinou.schedulesdirect.core.exceptions.ValidationException
+import groovyx.net.http.HttpResponseException
 
 /**
  * @author Sebastien Astie.
  */
 class UpdateMetadataCommandImpl extends AbstractUpdateMetadataCommand{
     @Override
-    public void execute(SchedulesDirectClient client) {
+    public void execute(SchedulesDirectClient client, int numRetries) {
         ClientUtils clientUtils = ClientUtils.instance
         try{
             clientUtils.failIfUnauthenticated(client.credentials)
             status = CommandStatus.RUNNING
             validateParameters()
-            clientUtils.executeRequest(client,this, BaseCommandResult.class)
+            while(numRetries >= 0) {
+                try {
+                    clientUtils.executeRequest(client,this, BaseCommandResult.class)
+                    break
+                } catch (HttpResponseException ex) {
+                    numRetries = clientUtils.retryConnection(client, parameters, ex, numRetries)
+                }
+            }
         } catch (Exception e){
             log.error("Error while executing command.", e)
             status = CommandStatus.FAILURE

@@ -12,6 +12,8 @@ import com.tikinou.schedulesdirect.core.domain.program.ProgramSD
 import com.tikinou.schedulesdirect.core.exceptions.ValidationException
 import com.tikinou.schedulesdirect.core.jackson.ModuleRegistration
 import groovy.util.logging.Commons
+import groovyx.net.http.HttpResponseException
+import org.apache.http.HttpStatus
 
 /**
  * @author Sebastien Astie.
@@ -19,15 +21,22 @@ import groovy.util.logging.Commons
 @Commons
 class GetImageCommandImpl extends AbstractGetImageCommand{
     @Override
-    public void execute(SchedulesDirectClient client) {
+    public void execute(SchedulesDirectClient client, int numRetries) {
         ClientUtils clientUtils = ClientUtils.instance
         try{
             clientUtils.failIfUnauthenticated(client.credentials)
             status = CommandStatus.RUNNING
             validateParameters()
-            def rawResponseData = clientUtils.executeRequest(client,this, GetImageResult.class, true)
-            if (rawResponseData instanceof InputStream)
-                results = new GetImageResult(image: ((InputStream)rawResponseData).bytes)
+            while(numRetries >= 0) {
+                try {
+                    def rawResponseData = clientUtils.executeRequest(client, this, GetImageResult.class, true)
+                    if (rawResponseData instanceof InputStream)
+                        results = new GetImageResult(image: ((InputStream) rawResponseData).bytes)
+                    break
+                } catch (HttpResponseException ex) {
+                    numRetries = clientUtils.retryConnection(client, parameters, ex, numRetries)
+                }
+            }
         } catch (Exception e){
             log.error("Error while executing command.", e)
             status = CommandStatus.FAILURE

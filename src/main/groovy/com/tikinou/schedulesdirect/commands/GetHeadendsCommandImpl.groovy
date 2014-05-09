@@ -19,13 +19,20 @@ class GetHeadendsCommandImpl extends AbstractGetHeadendsCommand{
     private static PostalCodeFormatter POSTAL_CODE_FORMATTER = new DefaultPostalCodeFormatter()
 
     @Override
-    void execute(SchedulesDirectClient client) {
+    void execute(SchedulesDirectClient client, int numRetries) {
         ClientUtils clientUtils = ClientUtils.getInstance()
         try{
             clientUtils.failIfUnauthenticated(client.credentials)
             status = CommandStatus.RUNNING
             validateParameters()
-            clientUtils.executeRequest(client,this, GetHeadendsResult.class)
+            while(numRetries >= 0) {
+                try {
+                    clientUtils.executeRequest(client,this, GetHeadendsResult.class)
+                    break
+                } catch (HttpResponseException ex) {
+                    numRetries = clientUtils.retryConnection(client, parameters, ex, numRetries)
+                }
+            }
         } catch (Exception e){
             log.error("Error while executing command.", e)
             status = CommandStatus.FAILURE

@@ -7,6 +7,7 @@ import com.tikinou.schedulesdirect.core.commands.lineup.GetLineupDetailsResult
 import com.tikinou.schedulesdirect.core.domain.CommandStatus
 import com.tikinou.schedulesdirect.core.exceptions.ValidationException
 import groovy.util.logging.Commons
+import groovyx.net.http.HttpResponseException
 
 /**
  * @author Sebastien Astie.
@@ -14,13 +15,20 @@ import groovy.util.logging.Commons
 @Commons
 class GetLineupDetailsCommandImpl extends AbstractGetLineupDetailsCommand{
     @Override
-    public void execute(SchedulesDirectClient client) {
+    public void execute(SchedulesDirectClient client, int numRetries) {
         ClientUtils clientUtils = ClientUtils.instance
         try{
             clientUtils.failIfUnauthenticated(client.credentials)
             status = CommandStatus.RUNNING
             validateParameters()
-            clientUtils.executeRequest(client,this, GetLineupDetailsResult.class)
+            while(numRetries >= 0) {
+                try {
+                    clientUtils.executeRequest(client,this, GetLineupDetailsResult.class)
+                    break
+                } catch (HttpResponseException ex) {
+                    numRetries = clientUtils.retryConnection(client, parameters, ex, numRetries)
+                }
+            }
         } catch (Exception e){
             log.error("Error while executing command.", e)
             status = CommandStatus.FAILURE

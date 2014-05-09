@@ -17,7 +17,7 @@ import static com.tikinou.schedulesdirect.core.domain.CommandStatus.*
 @Commons
 class TokenCommandImpl extends AbstractTokenCommand{
     @Override
-    void execute(SchedulesDirectClient client) {
+    void execute(SchedulesDirectClient client, int numRetries) {
         ClientUtils clientUtils = ClientUtils.instance
         try{
             status = RUNNING

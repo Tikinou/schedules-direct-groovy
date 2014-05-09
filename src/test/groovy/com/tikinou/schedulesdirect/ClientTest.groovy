@@ -43,9 +43,9 @@ import org.junit.Test
  * @author: Sebastien Astie
  */
 class ClientTest {
+    private static final int NUM_TRIES = 2
     private SchedulesDirectClient client
     private def postalCode = "94105"
-
     @Before
     void setUp() {
         client = new SchedulesDirectClientImpl()
@@ -210,7 +210,7 @@ class ClientTest {
     }
 
     private void executeCommand(Command cmd) throws Exception{
-        client.execute(cmd)
+        client.execute(cmd, NUM_TRIES)
         println cmd.results
         assert cmd.status == CommandStatus.SUCCESS
     }
